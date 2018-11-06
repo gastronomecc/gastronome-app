@@ -1,3 +1,31 @@
 <resources>
+    <!--App Information -->
     <string name="app_name">gastronome</string>
+    <!--Login Page-->
+    <string name="loginWelcome">Welcome to Gastronome</string>
+    <string name="loginPrompt">Please sign in to your account.</string>
+    <string name="loginEmail">email</string>
+    <string name="loginPassword">password</string>
+    <string name="loginButton">login</string>
+    <!--Login Page Help-->
+    <string name="loginHelpForgotPassword">Forgot your password?</string>
+    <string name="loginHelpSignUp1">Don\'t have an account?</string>
+    <string name="loginHelpSignUp2">\tSign up.</string>
+    <!--Hello Page -->
+    <string name="hellopagetext1">Hello there!</string>
+    <string name="hellopagetext2">Before we begin, we\'d like to get to know more about you.</string>
+    <!--Already have an account -->
+    <string name="alreadyhaveaccount1">Already have an account?</string>
+    <string name="alreadyhaveaccount2">\tLog in.</string>
+    <!--Account Registration -->
+    <string name="registrationTitle">Account Registration</string>
+    <string name="registrationName">name</string>
+    <string name="registrationEmail">email</string>
+    <string name="registrationPassword">password</string>
+    <string name="registrationConfirmPassword">confirm password</string>
+    <string name="registrationRegisterButton">register</string>
+    <!--Gender Selection-->
+    <string name="genderSelectPrompt">What\'s your gender?</string>
+    <string name="genderFemale">female</string>
+    <string name="genderMale">male</string>
 </resources>
