@@ -21,7 +21,12 @@
         <activity android:name=".HelloPage" />
         <activity android:name=".Registration" />
         <activity android:name=".Home" />
-        <activity android:name=".GenderSelection"></activity>
+        <activity android:name=".GenderSelection" />
+        <activity android:name=".InputAge" />
+        <activity android:name=".InputWeight" />
+        <activity android:name=".InputHeight" />
+        <activity android:name=".ChooseGoal" />
+        <activity android:name=".ContinueToSignUp"></activity>
     </application>
 
 </manifest>

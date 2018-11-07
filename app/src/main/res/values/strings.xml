@@ -28,4 +28,23 @@
     <string name="genderSelectPrompt">What\'s your gender?</string>
     <string name="genderFemale">female</string>
     <string name="genderMale">male</string>
+    <!--Prompt Age Page-->
+    <string name="promptAge">How old are you?</string>
+    <!--Prompt Height Page-->
+    <string name="promptHeight">How old are you?</string>
+    <!--Prompt Weight Page-->
+    <string name="promptWeight">How old are you?</string>
+    <!--Choose Goal Page-->
+    <string name="chooseGoal">What\'s your goal?</string>
+    <string name="loseWeight">Lose weight</string>
+    <string name="loseWeightDescription">Burn fat &amp; get lean</string>
+    <string name="getFitter">Get fitter</string>
+    <string name="getFitterDescription">Tone up &amp; feel healthy</string>
+    <string name="gainMuscle">Get fitter</string>
+    <string name="gainMuscleDescription">Build mass &amp; gain strength</string>
+    <!--Continue with account registration-->
+    <string name="OAuthGoogle">Continue with Google</string>
+    <string name="registerEmail">Continue with email</string>
+    <!--Terms and Conditions-->
+    <string name="tos">When you "Continue", you agree to Gastronome\'s <u>Terms of Service</u>. We will manage information about you as described in our <u>Privacy Policy</u>, and <u>Cookie Policy</u>,</string>
 </resources>
