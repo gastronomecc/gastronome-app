@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "258624197134",
+    "firebase_url": "https://p2fsdgastro.firebaseio.com",
+    "project_id": "p2fsdgastro",
+    "storage_bucket": "p2fsdgastro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258624197134:android:5928ae4e288c25da",
+        "android_client_info": {
+          "package_name": "com.kevintoh0305gmail.gastronome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "258624197134-99i49646mvgjn44cqi239h94ge9ln0mg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kevintoh0305gmail.gastronome",
+            "certificate_hash": "6da2bfaf84f7187fa3f7e4aed016bbe2096ed311"
+          }
+        },
+        {
+          "client_id": "258624197134-8s44ih93jmbu1aiqhc7niiromlnvacpj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFah1WoyEZ9c4EimYscCEtI6EYyKOhUfs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "258624197134-8s44ih93jmbu1aiqhc7niiromlnvacpj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
