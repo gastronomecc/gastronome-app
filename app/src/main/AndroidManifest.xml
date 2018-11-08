@@ -26,7 +26,7 @@
         <activity android:name=".InputWeight" />
         <activity android:name=".InputHeight" />
         <activity android:name=".ChooseGoal" />
-        <activity android:name=".ContinueToSignUp"></activity>
+        <activity android:name=".ContinueToSignUp"/>
     </application>
 
 </manifest>

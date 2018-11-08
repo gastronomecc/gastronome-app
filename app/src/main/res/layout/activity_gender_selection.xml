@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="120dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,83 +30,69 @@
         app:layout_constraintStart_toStartOf="@+id/imgGenderLogo"
         app:layout_constraintTop_toBottomOf="@+id/imgGenderLogo" />
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/genderFemale"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="32dp"
+    <Button
+        android:id="@+id/btnGenderFemale"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="70dp"
         android:background="@drawable/gender_card"
-        app:layout_constraintBottom_toBottomOf="@+id/genderMale"
-        app:layout_constraintEnd_toStartOf="@+id/genderMale"
+        app:layout_constraintBottom_toBottomOf="@+id/btnGenderMale"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPromptGender">
+        app:layout_constraintTop_toTopOf="@+id/btnGenderMale"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <ImageView
-            android:id="@+id/imgFemaleSymbol"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp"
-            app:layout_constraintBottom_toTopOf="@+id/tvFemale"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/ic_launcher_round" />
-
-        <TextView
-            android:id="@+id/tvFemale"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="Female"
-            android:textAlignment="center"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgFemaleSymbol" />
-    </android.support.constraint.ConstraintLayout>
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/genderMale"
+    <ImageView
+        android:id="@+id/imgFemaleSymbol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/btnGenderFemale"
+        app:layout_constraintStart_toStartOf="@+id/btnGenderFemale"
+        app:layout_constraintTop_toTopOf="@+id/btnGenderFemale"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/tvFemale"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/genderFemale"
+        app:layout_constraintBottom_toBottomOf="@+id/btnGenderFemale"
+        app:layout_constraintEnd_toEndOf="@+id/imgFemaleSymbol"
+        app:layout_constraintStart_toStartOf="@+id/imgFemaleSymbol"
+        app:layout_constraintTop_toBottomOf="@+id/imgFemaleSymbol" />
+
+
+    <Button
+        android:id="@+id/btnGenderMale"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="70dp"
         android:background="@drawable/gender_card"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/genderFemale"
-        app:layout_constraintTop_toBottomOf="@+id/tvPromptGender">
+        app:layout_constraintTop_toBottomOf="@+id/tvPromptGender" />
 
-        <ImageView
-            android:id="@+id/imgMaleSymbol"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="10dp"
-            app:layout_constraintBottom_toTopOf="@+id/tvMale"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/ic_launcher" />
+    <ImageView
+        android:id="@+id/imgMaleSymbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/btnGenderMale"
+        app:layout_constraintStart_toStartOf="@+id/btnGenderMale"
+        app:layout_constraintTop_toTopOf="@+id/btnGenderMale"
+        app:srcCompat="@mipmap/ic_launcher" />
 
-        <TextView
-            android:id="@+id/tvMale"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="Male"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.377"
-            app:layout_constraintStart_toStartOf="parent" />
-    </android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvMale"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/genderMale"
+        app:layout_constraintBottom_toBottomOf="@+id/btnGenderMale"
+        app:layout_constraintEnd_toEndOf="@+id/imgMaleSymbol"
+        app:layout_constraintStart_toStartOf="@+id/imgMaleSymbol"
+        app:layout_constraintTop_toBottomOf="@+id/imgMaleSymbol" />
 
     <LinearLayout
         android:id="@+id/tvGenderPageText1"

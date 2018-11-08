@@ -10,12 +10,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Random;
 
 public class Registration extends AppCompatActivity {
 
     EditText txtName, txtEmail, txtPassword, txtCfmPassword;
     Button btnRegister;
     FirebaseAuth mAuth;
+    FirebaseDatabase firebaseDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,9 @@ public class Registration extends AppCompatActivity {
         txtPassword = findViewById(R.id.etRegistrationPW);
         txtCfmPassword = findViewById(R.id.etRegistrationCfmPW);
         btnRegister = findViewById(R.id.btnRegisterAccount);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+
+
         mAuth = FirebaseAuth.getInstance();
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
@@ -39,12 +46,17 @@ public class Registration extends AppCompatActivity {
 
                 if (isValid(user_name, user_email, user_password, user_cfmPassword)) {
                     mAuth.createUserWithEmailAndPassword(user_email, user_password);
+                    mAuth.signInWithEmailAndPassword(user_email, user_password);
+                    User newUser = new User(mAuth.getUid(), user_name, user_email, HelloPage.profile.getGoal(), HelloPage.profile.getGender(), HelloPage.profile.getAge(), HelloPage.profile.getHeight(), HelloPage.profile.getWeight(), calculateBMI(HelloPage.profile.getHeight(), HelloPage.profile.getWeight()));
+                    firebaseDatabase.getReference().child("Users").child(mAuth.getUid()).setValue(newUser);
+                    mAuth.signOut();
                     Intent in = new Intent(Registration.this, Login.class);
+                    //Clear activity stack
+                    in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(in);
                 } else {
                     Toast.makeText(Registration.this, "Authentication failed", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
     }
@@ -96,4 +108,10 @@ public class Registration extends AppCompatActivity {
             return true;
         }
     }
+
+    public double calculateBMI(double height, double weight){
+        double bmi = weight / ((height/100) * (height/100));
+        return bmi;
+    }
+
 }

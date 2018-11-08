@@ -130,6 +130,7 @@
         android:id="@+id/tvPromptSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
         android:onClick="onRegistrationClick"
         android:text="@string/loginHelpSignUp2"
         android:textColor="#ff0544"

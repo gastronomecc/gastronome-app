@@ -49,7 +49,7 @@
             android:background="@android:color/transparent"
             android:ems="10"
             android:hint="Eg: 160"
-            android:inputType="number"
+            android:inputType="numberDecimal"
             android:textAlignment="center"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="@+id/tvPromptHeight"

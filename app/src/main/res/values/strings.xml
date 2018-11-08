@@ -26,21 +26,21 @@
     <string name="registrationRegisterButton">register</string>
     <!--Gender Selection-->
     <string name="genderSelectPrompt">What\'s your gender?</string>
-    <string name="genderFemale">female</string>
-    <string name="genderMale">male</string>
+    <string name="genderFemale">Female</string>
+    <string name="genderMale">Male</string>
     <!--Prompt Age Page-->
     <string name="promptAge">How old are you?</string>
     <!--Prompt Height Page-->
-    <string name="promptHeight">How old are you?</string>
+    <string name="promptHeight">How tall are you?</string>
     <!--Prompt Weight Page-->
-    <string name="promptWeight">How old are you?</string>
+    <string name="promptWeight">How much do you weigh?</string>
     <!--Choose Goal Page-->
     <string name="chooseGoal">What\'s your goal?</string>
     <string name="loseWeight">Lose weight</string>
     <string name="loseWeightDescription">Burn fat &amp; get lean</string>
     <string name="getFitter">Get fitter</string>
     <string name="getFitterDescription">Tone up &amp; feel healthy</string>
-    <string name="gainMuscle">Get fitter</string>
+    <string name="gainMuscle">Gain muscle</string>
     <string name="gainMuscleDescription">Build mass &amp; gain strength</string>
     <!--Continue with account registration-->
     <string name="OAuthGoogle">Continue with Google</string>

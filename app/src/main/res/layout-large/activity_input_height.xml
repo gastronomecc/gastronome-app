@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InputWeight">
+    tools:context=".InputHeight">
 
     <ImageView
-        android:id="@+id/imgWeightPageLogo"
+        android:id="@+id/imgHeightPageLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -19,19 +19,19 @@
         app:srcCompat="@mipmap/ic_launcher" />
 
     <TextView
-        android:id="@+id/tvPromptWeight"
+        android:id="@+id/tvPromptHeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="@string/promptWeight"
-        android:textSize="24sp"
+        android:text="@string/promptHeight"
+        android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/imgWeightPageLogo"
-        app:layout_constraintStart_toStartOf="@+id/imgWeightPageLogo"
-        app:layout_constraintTop_toBottomOf="@+id/imgWeightPageLogo" />
+        app:layout_constraintEnd_toEndOf="@+id/imgHeightPageLogo"
+        app:layout_constraintStart_toStartOf="@+id/imgHeightPageLogo"
+        app:layout_constraintTop_toBottomOf="@+id/imgHeightPageLogo" />
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/linearLayout3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -40,45 +40,45 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPromptWeight">
+        app:layout_constraintTop_toBottomOf="@+id/tvPromptHeight">
 
         <EditText
-            android:id="@+id/etWeight"
-            android:layout_width="100dp"
+            android:id="@+id/etHeight"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:ems="10"
-            android:hint="Eg: 70"
-            android:inputType="numberDecimal"
+            android:hint="Eg: 160"
+            android:inputType="number|numberSigned"
             android:textAlignment="center"
-            android:textSize="30sp"
-            app:layout_constraintStart_toStartOf="@+id/tvPromptWeight"
-            app:layout_constraintTop_toBottomOf="@+id/tvPromptWeight" />
+            android:textSize="36sp"
+            app:layout_constraintStart_toStartOf="@+id/tvPromptHeight"
+            app:layout_constraintTop_toBottomOf="@+id/tvPromptHeight" />
 
         <TextView
-            android:id="@+id/tvWeightUnit"
+            android:id="@+id/tvHeightUnit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="KG"
-            android:textSize="16sp"
             android:layout_gravity="center"
-            app:layout_constraintBottom_toBottomOf="@+id/etWeight"
-            app:layout_constraintEnd_toEndOf="@+id/tvPromptWeight"
-            app:layout_constraintStart_toEndOf="@+id/etWeight"
-            app:layout_constraintTop_toTopOf="@+id/etWeight" />
+            android:text="CM"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/etHeight"
+            app:layout_constraintEnd_toEndOf="@+id/tvPromptHeight"
+            app:layout_constraintStart_toEndOf="@+id/etHeight"
+            app:layout_constraintTop_toTopOf="@+id/etHeight" />
 
     </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fabnextpage5"
+        android:id="@+id/fabnextpage4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:clickable="true"
         app:backgroundTint="#ff0544"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
         app:srcCompat="@drawable/peach_rounded_button" />
 
     <LinearLayout
@@ -92,24 +92,23 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/tvWeightText1"
+            android:id="@+id/tvHeightText1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/alreadyhaveaccount1"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/tvWeightText2"
+            android:id="@+id/tvHeightText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/alreadyhaveaccount2"
             android:textColor="#ff0544"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
-
 
 </android.support.constraint.ConstraintLayout>

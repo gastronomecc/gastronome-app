@@ -18,8 +18,6 @@ public class Login extends AppCompatActivity {
     EditText txtEmail, txtPassword;
     FirebaseAuth mAuth;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +49,7 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Intent in = new Intent(Login.this, HelloPage.class);
+                            Intent in = new Intent(Login.this, Home.class);
                             in.setFlags(in.FLAG_ACTIVITY_NEW_TASK | in.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(in);
                         }
@@ -69,7 +67,7 @@ public class Login extends AppCompatActivity {
 
 
     public void onRegistrationClick(View v) {
-        startActivity(new Intent(this, Registration.class));
+        startActivity(new Intent(this, HelloPage.class));
     }
 
 }
