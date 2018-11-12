@@ -28,7 +28,7 @@ public class InputWeight extends AppCompatActivity {
                 }
                 else{
                     double weight = Double.parseDouble(txtWeight.getText().toString().trim());
-                    if (weight>0) {
+                    if (weight>0 && weight< 500) {
                         HelloPage.profile.setWeight(weight);
                         startActivity(new Intent(InputWeight.this, ChooseGoal.class));
                     }

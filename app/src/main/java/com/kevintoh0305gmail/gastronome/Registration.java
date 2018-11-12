@@ -12,8 +12,6 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.Random;
-
 public class Registration extends AppCompatActivity {
 
     EditText txtName, txtEmail, txtPassword, txtCfmPassword;
@@ -47,8 +45,8 @@ public class Registration extends AppCompatActivity {
                 if (isValid(user_name, user_email, user_password, user_cfmPassword)) {
                     mAuth.createUserWithEmailAndPassword(user_email, user_password);
                     mAuth.signInWithEmailAndPassword(user_email, user_password);
-                    User newUser = new User(mAuth.getUid(), user_name, user_email, HelloPage.profile.getGoal(), HelloPage.profile.getGender(), HelloPage.profile.getAge(), HelloPage.profile.getHeight(), HelloPage.profile.getWeight(), calculateBMI(HelloPage.profile.getHeight(), HelloPage.profile.getWeight()));
-                    firebaseDatabase.getReference().child("Users").child(mAuth.getUid()).setValue(newUser);
+                    User newUser = new User(FirebaseAuth.getInstance().getCurrentUser().getUid(), user_name, user_email, HelloPage.profile.getGoal(), HelloPage.profile.getGender(), HelloPage.profile.getAge(), HelloPage.profile.getHeight(), HelloPage.profile.getWeight(), calculateBMI(HelloPage.profile.getHeight(), HelloPage.profile.getWeight()));
+                    firebaseDatabase.getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(newUser);
                     mAuth.signOut();
                     Intent in = new Intent(Registration.this, Login.class);
                     //Clear activity stack

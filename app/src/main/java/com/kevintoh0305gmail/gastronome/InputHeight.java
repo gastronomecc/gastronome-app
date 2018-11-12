@@ -29,7 +29,7 @@ public class InputHeight extends AppCompatActivity {
                 else
                 {
                     double height = Double.parseDouble(txtHeight.getText().toString().trim());
-                    if (height > 0){
+                    if (height > 0 && height < 300){
                         HelloPage.profile.setHeight(height);
                         startActivity(new Intent(InputHeight.this, InputWeight.class));
                     }

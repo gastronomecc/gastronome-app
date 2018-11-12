@@ -83,6 +83,11 @@ public class User {
         Goal = goal;
     }
 
+    public User()
+    {
+
+    }
+
     public User(String uid, String name, String email, String goal, String gender, int age, double height, double weight, double bmi) {
         UserID = uid;
         Name = name;

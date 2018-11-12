@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -16,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Login extends AppCompatActivity {
     Button btnLogin;
     EditText txtEmail, txtPassword;
+    TextView tvError;
     FirebaseAuth mAuth;
 
     @Override
@@ -25,6 +27,7 @@ public class Login extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         txtEmail = findViewById(R.id.etUserEmail);
         txtPassword = findViewById(R.id.etUserPassword);
+        tvError = findViewById(R.id.tvError);
         mAuth = FirebaseAuth.getInstance();
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +60,8 @@ public class Login extends AppCompatActivity {
                         {
                             Toast.makeText(Login.this, "Authentication failed", Toast.LENGTH_SHORT).show();
                             txtPassword.setText("");
+                            tvError.setText("Invalid email or password :-(");
+
                         }
                     }
                 });

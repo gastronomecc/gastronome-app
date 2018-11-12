@@ -8,15 +8,15 @@
 
     <ImageView
         android:id="@+id/imgGenderLogo"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="200dp"
         android:layout_marginTop="120dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@drawable/temp_icon" />
 
     <TextView
         android:id="@+id/tvPromptGender"
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="@string/genderSelectPrompt"
-        android:textSize="24sp"
+        android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/imgGenderLogo"
         app:layout_constraintStart_toStartOf="@+id/imgGenderLogo"
@@ -35,7 +35,6 @@
         android:layout_width="150dp"
         android:layout_height="0dp"
         android:layout_marginStart="100dp"
-        android:layout_marginEnd="24dp"
         android:background="@drawable/gender_card"
         app:layout_constraintBottom_toBottomOf="@+id/btnGenderMale"
         app:layout_constraintEnd_toStartOf="@+id/imgGenderLogo"
@@ -46,33 +45,34 @@
     <ImageView
         android:id="@+id/imgFemaleSymbol"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvFemale"
         app:layout_constraintEnd_toEndOf="@+id/btnGenderFemale"
         app:layout_constraintStart_toStartOf="@+id/btnGenderFemale"
         app:layout_constraintTop_toTopOf="@+id/btnGenderFemale"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@drawable/femenine" />
 
     <TextView
         android:id="@+id/tvFemale"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="3dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/genderFemale"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/btnGenderFemale"
         app:layout_constraintEnd_toEndOf="@+id/imgFemaleSymbol"
-        app:layout_constraintStart_toStartOf="@+id/imgFemaleSymbol"
-        app:layout_constraintTop_toBottomOf="@+id/imgFemaleSymbol" />
+        app:layout_constraintStart_toStartOf="@+id/imgFemaleSymbol" />
 
 
     <Button
         android:id="@+id/btnGenderMale"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="100dp"
         android:background="@drawable/gender_card"
         app:layout_constraintEnd_toEndOf="parent"
@@ -82,24 +82,27 @@
     <ImageView
         android:id="@+id/imgMaleSymbol"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvMale"
         app:layout_constraintEnd_toEndOf="@+id/btnGenderMale"
         app:layout_constraintStart_toStartOf="@+id/btnGenderMale"
         app:layout_constraintTop_toTopOf="@+id/btnGenderMale"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@drawable/masculine" />
 
     <TextView
         android:id="@+id/tvMale"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/genderMale"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/btnGenderMale"
         app:layout_constraintEnd_toEndOf="@+id/imgMaleSymbol"
-        app:layout_constraintStart_toStartOf="@+id/imgMaleSymbol"
-        app:layout_constraintTop_toBottomOf="@+id/imgMaleSymbol" />
+        app:layout_constraintStart_toStartOf="@+id/imgMaleSymbol" />
 
     <LinearLayout
         android:id="@+id/tvGenderPageText1"
@@ -119,7 +122,7 @@
             android:layout_weight="1"
             android:text="@string/alreadyhaveaccount1"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tvGenderText2"
@@ -128,7 +131,7 @@
             android:layout_weight="1"
             android:text="@string/alreadyhaveaccount2"
             android:textColor="#ff0544"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
 
