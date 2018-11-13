@@ -31,7 +31,6 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull RecipeViewHolder recipeViewHolder, final int i) {
-        Log.d("TEST", "TEST");
         recipeViewHolder.txtTitle.setText(recipes.get(i).getTitle());
         recipeViewHolder.txtShortDesc.setText(recipes.get(i).getShortDesc());
         recipeViewHolder.btnPrepTime.setText(recipes.get(i).getPrepTime() + " MIN");
