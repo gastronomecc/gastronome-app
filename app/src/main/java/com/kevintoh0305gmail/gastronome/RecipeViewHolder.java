@@ -4,12 +4,13 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class RecipeViewHolder extends RecyclerView.ViewHolder{
 
-    public ImageView imgRecipe;
+    public WebView wv;
     public TextView txtTitle;
     public TextView txtShortDesc;
     public View view;
@@ -19,7 +20,7 @@ public class RecipeViewHolder extends RecyclerView.ViewHolder{
     {
         super(v);
         view = v;
-        imgRecipe = v.findViewById(R.id.imgRecipe);
+        wv = v.findViewById(R.id.wvPic);
         txtTitle = v.findViewById(R.id.txtTitle);
         txtShortDesc = v.findViewById(R.id.txtShortDesc);
         context = c;

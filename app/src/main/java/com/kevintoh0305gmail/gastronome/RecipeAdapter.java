@@ -30,6 +30,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
     public void onBindViewHolder(@NonNull RecipeViewHolder recipeViewHolder, int i) {
         recipeViewHolder.txtTitle.setText(recipes.get(i).getTitle());
         recipeViewHolder.txtShortDesc.setText(recipes.get(i).getShortDesc());
+        recipeViewHolder.wv.loadUrl("https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/01e1ef88-be15-483b-93b9-b5964a756969.jpg?alt=media&token=c719f0ee-7e6e-4505-9ab9-295440d808fb");
 
         recipeViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
