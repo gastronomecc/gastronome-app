@@ -4,35 +4,84 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#0000FF">
+    android:layout_height="match_parent">
 
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/profileBarChart"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/seekBarX"
+        android:layout_height="320dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvStatsTotalCalories"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></com.github.mikephil.charting.charts.BarChart>
+        app:layout_constraintTop_toBottomOf="@+id/tvChartTitle">
 
-    <SeekBar
-        android:id="@+id/seekBarX"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="8dp"
-        android:max="1000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tvXValue"
-        app:layout_constraintStart_toStartOf="parent" />
+    </com.github.mikephil.charting.charts.BarChart>
 
     <TextView
-        android:id="@+id/tvXValue"
+        android:id="@+id/tvChartTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="1000"
-        app:layout_constraintBottom_toBottomOf="@+id/seekBarX"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Weekly Calorie Intake"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/seekBarX" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvStatsTotalCalories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Total: 2144 calories"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileBarChart" />
+
+    <TextView
+        android:id="@+id/tvStatsGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="GOAL"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvStatsToday"
+        app:layout_constraintTop_toBottomOf="@+id/tvStatsToday" />
+
+    <TextView
+        android:id="@+id/tvStatsToday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Today"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/tvStatsTotalCalories"
+        app:layout_constraintTop_toBottomOf="@+id/tvStatsTotalCalories" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Calories per Day : 2000 calories"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/tvStatsGoal"
+        app:layout_constraintTop_toBottomOf="@+id/tvStatsGoal" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="Estimated Weight: 66kg"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
 </android.support.constraint.ConstraintLayout>
