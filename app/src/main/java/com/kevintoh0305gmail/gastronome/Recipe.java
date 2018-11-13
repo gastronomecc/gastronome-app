@@ -16,10 +16,56 @@ public class Recipe {
     String shortDesc;
     String difficulty;
     String dietary;
+    String fats;
+    String carbs;
+    String protein;
+    String salt;
+    String sugar;
 
     public Recipe() {}
 
-    public Recipe(String title, ArrayList<String> ingredients, int prepTime, int readyTime, ArrayList<String> instructions, Long servSize, int calories, String type, String shortDesc, String difficulty, String dietary) {
+    public String getFats() {
+        return fats;
+    }
+
+    public void setFats(String fats) {
+        this.fats = fats;
+    }
+
+    public String getCarbs() {
+        return carbs;
+    }
+
+    public void setCarbs(String carbs) {
+        this.carbs = carbs;
+    }
+
+    public String getProtein() {
+        return protein;
+    }
+
+    public void setProtein(String protein) {
+        this.protein = protein;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    public String getSugar() {
+        return sugar;
+    }
+
+    public void setSugar(String sugar) {
+        this.sugar = sugar;
+    }
+
+    public Recipe(String title, ArrayList<String> ingredients, int prepTime, int readyTime, ArrayList<String> instructions, Long servSize, int calories, String type, String shortDesc, String difficulty, String dietary, String fats, String carbs, String protein, String salt, String sugar) {
+
         this.title = title;
         this.ingredients = ingredients;
         this.prepTime = prepTime;
@@ -31,6 +77,11 @@ public class Recipe {
         this.shortDesc = shortDesc;
         this.difficulty = difficulty;
         this.dietary = dietary;
+        this.fats = fats;
+        this.carbs = carbs;
+        this.protein = protein;
+        this.salt = salt;
+        this.sugar = sugar;
     }
 
     public String getTitle() {

@@ -158,12 +158,12 @@
             </android.support.constraint.ConstraintLayout>
 
             <TextView
-                android:id="@+id/tvDescription"
+                android:id="@+id/tvShortDesc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginEnd="8dp"
                 android:text="Though kale probably originated in the dry heat of the Mediterranean, it became a fixture in the kitchens of northern Europe."
                 android:textAlignment="center"
                 android:textColor="@color/common_google_signin_btn_text_dark_focused"
