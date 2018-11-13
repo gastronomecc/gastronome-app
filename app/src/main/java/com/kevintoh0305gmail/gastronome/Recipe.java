@@ -15,6 +15,9 @@ public class Recipe {
     String shortDesc;
     List<String> tag;
 
+    public Recipe() {}
+
+
     public String getTitle() {
         return title;
     }
