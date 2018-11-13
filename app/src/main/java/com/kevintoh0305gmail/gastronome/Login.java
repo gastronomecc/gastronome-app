@@ -73,9 +73,7 @@ public class Login extends AppCompatActivity {
 
     }
 
-
     public void onRegistrationClick(View v) {
         startActivity(new Intent(this, HelloPage.class));
     }
-
 }
