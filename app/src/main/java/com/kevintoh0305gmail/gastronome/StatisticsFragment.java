@@ -15,6 +15,9 @@ import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.BarEntry;
+
+import java.util.ArrayList;
 
 public class StatisticsFragment extends Fragment {
     private BarChart chart;
@@ -29,7 +32,18 @@ public class StatisticsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-//        chart = view.findViewById(R.id.profileBarChart);
+        chart = view.findViewById(R.id.profileBarChart);
+        chart.setDrawBarShadow(false);
+        chart.setDrawValueAboveBar(true);
+        chart.setMaxVisibleValueCount(50);
+        chart.setDrawGridBackground(true);
+
+        ArrayList<BarEntry> barEntries = new ArrayList<>();
+        barEntries.add(new BarEntry(1, 40f));
+        barEntries.add(new BarEntry(2, 44f));
+
+
+
 //        seekBarX = view.findViewById(R.id.seekBarX);
 //        seekBarX.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 //            @Override
@@ -94,6 +108,5 @@ public class StatisticsFragment extends Fragment {
 //
 //        seekBarX.setProgress(12);
 //        // chart.setDrawLegend(false);
-
     }
 }
