@@ -34,6 +34,7 @@
 
         <activity android:name=".RecipeActivity" />
         <activity android:name=".RecipeInfoActivity" />
+        <activity android:name=".ChooseLoginRegister"></activity>
     </application>
 
 </manifest>
