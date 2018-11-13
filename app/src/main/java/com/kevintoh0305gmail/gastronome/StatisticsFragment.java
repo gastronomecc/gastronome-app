@@ -1,6 +1,5 @@
 package com.kevintoh0305gmail.gastronome;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
