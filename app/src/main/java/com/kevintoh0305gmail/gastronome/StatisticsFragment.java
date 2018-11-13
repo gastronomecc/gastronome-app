@@ -54,7 +54,7 @@ public class StatisticsFragment extends Fragment {
         barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
 
         BarData data = new BarData(barDataSet);
-        data.setBarWidth(0.9f);
+        data.setBarWidth(1.0f);
         chart.setData(data);
 
         String[] days = new String[] {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
