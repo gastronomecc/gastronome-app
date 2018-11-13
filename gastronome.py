@@ -168,7 +168,7 @@ def ResetDatabase():
     "title": "Vegetarian Shepherd's Pies", "type": "Get Fit", "fats":"7g","carbs":"54g","sugar":"8g","salt":"783mg","protein":"12g"})
 
     #recipe 16 Summer Stewed Fish
-    firebase.put("/Recipes","",{"calories":325,"dietary":"None","difficulty":"Medium",
+    firebase.put("/Recipes","Summer Stewed Fish",{"calories":325,"dietary":"None","difficulty":"Medium",
     "ingredients":{"0":"4 Slides stale bread, diced","1":"2 tablespoon Olive oil","2":"1 Onion, finely chopped","3":"2 Garlic cloves, crushed","4":"1 tablespoon Dried chilli flakes","5":"400g Can Chopped Tomatoes","6":"4 Frozen white Fish Fillets, such as cod or pollock","7":"400g Can Butter Beans, drained","8":"Small pack parsley, roughly chopped","9":"1 Lemon, cut into wedges"},"instructions":
     {"0":"Heat oven to 200C/180C fan/gas 6. Put the bread on a large baking sheet, drizzle over 1 tbsp oil and bake for 10 mins until golden. Set aside.",
      "1":"Meanwhile, heat the rest of the oil in a large flameproof casserole dish over a medium heat. Add the onion and cook until softened for about 10 mins, then add the garlic and chilli flakes and stir for 1 min. Tip in the tomatoes and fish fillets. Cover and simmer for 10 mins until the fish is nearly cooked, then uncover.",
@@ -237,17 +237,48 @@ def ResetDatabase():
     "prepTime":10, "readyTime":15, "servSize":2, "shortDesc":"A vegetarian stir-fry packed with spice and flavour. Marinate tofu in ginger, garlic and sesame and serve with a vermicelli noodle mix",
     "title": "Asian tofu with stir-fried noodles, pak choi & sugar snap pea", "type": "Gain Muscles", "fats":"9g","carbs":"45g","sugar":"9g","salt":"1100mg","protein":"15g"})
 
-    #recipe 24
+    #recipe 24 One-Pot Chili Pasta
+    firebase.put("/Recipes","One-Pot Chili Pasta",{"calories":646,"dietary":"None","difficulty":"Medium",
+    "ingredients":{"0":"1 Tbsp olive oil","1":"1 medium onion","2":"2 cloves garlic","3":"1/2 lb ground beef","4":"2 Tbsp flour","5":"2 Tbsp chili powder","6":"15 oz can tomato sauce","7":"15 oz can diced tomatoes","8":"15 oz can black beans","9":"15 oz can kidney beans","10":"1 cup frozen corn kernels","11":"2 cups uncooked elbow macaroni","12":"2 cups beef broth","13":"1 cup shredded cheese"},"instructions":
+    {"0":"Dice the onion and mince the garlic. Cook both in a large pot with olive oil over medium heat for 1-2 minutes, or until soft and transparent. Add the ground beef and continue to stir and cook until it is fully browned. If using a high fat ground beef, drain off the excessive after it is browned.",
+     "1":"Add the flour and chili powder to the pot and stir to coat the meat. Continue to stir and cook the coated meat for 1-2 minutes more. The flour and chili powder may coat the bottom of the pot, but that's okay. Just be careful to not let it burn.",
+     "2":"Drain and rinse the black and kidney beans. Add the beans, tomato sauce, diced tomato, and corn kernels to the pot. Stir well and dissolve the flour/chili powder mixture from the bottom of the pot.",
+     "3":"Add the dry macaroni and two cups of beef broth to the pot and stir to combine. Place a lid on top, turn the heat up to high, and let the pot come to a boil. Once it reaches a boil, give it a quick stir to loosen any pasta stuck to the bottom of the pot, replace the lid, and turn the heat down to medium-low. Let the pot simmer on medium-low for about 15 minutes, or until the pasta is soft and has absorbed most of the liquid. Stir the pot one or two times during the 15 minutes to loosen any pasta stuck to the bottom.",
+     "4":"Once the pasta is fully cooked, turn the heat off and add the cheese. Stir the cheese into the pasta until it has melted in and become slightly creamy. Serve hot."},
+    "prepTime":10, "readyTime":30, "servSize":2, "shortDesc":"A vegetarian stir-fry packed with spice and flavour. Marinate tofu in ginger, garlic and sesame and serve with a vermicelli noodle mix",
+    "title": "One-Pot Chili Pasta", "type": "Gain Muscles", "fats":"15g","carbs":"85g","sugar":"0g","salt":"0g","protein":"44g"})
 
-    #recipe 25
+
+    #recipe 25 Lamb of Gains
+    firebase.put("/Recipes","Lamb of Gains",{"calories":888,"dietary":"None","difficulty":"Medium",
+    "ingredients":{"0":"1 rack of lamb (about 1 1/2 pounds, or 8 ribs), cut into chops and trimmed of fat","1":"Salt and Pepper, to taste","2":"1lb carrots","3":"3 Tbsp Dijon mustard","4":"2 Tbsp extra-virgin olive oil","5":"2 Tbsp finely chopped fresh cilantro","6":"2 Tbsp chopped scallions","7":"2 Tbsp red wine vinegar","8":"1 Tsp loosely packed orange zest"},"instructions":
+    {"0":"Heat a large skillet over medium-high heat. Season lamb with salt and pepper and add to skillet. Sear one side, then cook for 2 minutes on each side.",
+     "1":"While the lamb cooks, add carrots to a running food processor, using chopper to push carrots through. Or grate the carrots on the large holes of a box grater.",
+     "2":"In a large mixing bowl, whisk together Dijon mustard, olive oil, cilantro, scallions, vinegar, and orange zest. Add carrots and, with clean hands, toss with the dressing until carrots are well coated. Season with pepper. Let carrots marinate for 10 minutes. Serve with the lamb."},
+    "prepTime":10, "readyTime":30, "servSize":2, "shortDesc":"A vegetarian stir-fry packed with spice and flavour. Marinate tofu in ginger, garlic and sesame and serve with a vermicelli noodle mix",
+    "title": "Lamb of Gains", "type": "Gain Muscles", "fats":"21g","carbs":"50g","sugar":"0g","salt":"0g","protein":"86g"})
+
+    #recipe 26 Vanilla Almond Butter Protein Granola
+    firebase.put("/Recipes","Vanilla Almond Butter Protein Granola",{"calories":161,"dietary":"None","difficulty":"Medium",
+    "ingredients":{"0":"1/4 cup almond butter","1":"1/4 cup honey","2":"1 tsp. vanilla extract","3":"2 cup rolled oats","4":"1 serving vanilla protein powder (optional)","5":"2 Tbsp. ground flax","6":"1 tsp. cinnamon","7":"1/4 tsp. salt","8":"1/3 cup chocolate chips"},"instructions":
+    {"0":"Preheat oven to 325F and spray a baking sheet with cooking spray or line it with parchment paper or a non-stick baking mat. Set aside.",
+     "1":"In a small saucepan over medium-low heat, add almond butter and honey, stirring until the almond butter is melted and fully combined with the honey. Stir in vanilla extract.",
+     "2":"Remove from heat and add oats, protein powder (if using), flax, cinnamon, and salt. Mix well and use a spatula to ensure that all of the oats are well coated.",
+     "3":"Spread the granola mixture over a baking sheet, leaving as many clusters as you want, and bake for 8 minutes. Remove from oven, stir, and bake for another 8 minutes, or until lightly golden.",
+     "4":"Let cool completely before adding chocolate chips and transferring to a storage container. The granola will still be slightly soft when it comes out of the oven, but it will harden up as it sits at room temperature and cools."},
+    "prepTime":10, "readyTime":16, "servSize":2, "shortDesc":"A vegetarian stir-fry packed with spice and flavour. Marinate tofu in ginger, garlic and sesame and serve with a vermicelli noodle mix",
+    "title": "Vanilla Almond Butter Protein Granola", "type": "Gain Muscles", "fats":"4g","carbs":"27g","sugar":"0g","salt":"0g","protein":"6g"})
+
+
+    print("Database sucessfully restarted to default")
 
 
 
 
 while True:
     print("------MENU------")
-     print("1. Add a new Recipe")
-     print("2. Remove a particular Recipe")
+    print("1. Add a new Recipe")
+    print("2. Remove a particular Recipe")
     print("3. Reset Database")
     print("4. Exit")
     print()
