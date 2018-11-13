@@ -33,7 +33,7 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".RecipeActivity" />
-        <activity android:name=".RecipeInfoActivity"></activity>
+        <activity android:name=".RecipeInfoActivity" />
     </application>
 
 </manifest>
