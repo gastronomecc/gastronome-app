@@ -17,11 +17,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecipeActivity extends AppCompatActivity {
-
     RecyclerView rvRecipe;
     RecipeAdapter recipeAdapter;
     ArrayList<Recipe> recipes = new ArrayList<>();
-
     FirebaseDatabase database;
     DatabaseReference ref;
 

@@ -22,7 +22,8 @@
                 <ImageView
                     android:id="@+id/imgRecipeImage"
                     android:layout_width="0dp"
-                    android:layout_height="220dp"
+                    android:layout_height="180dp"
+                    android:scaleType="fitXY"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -32,7 +33,7 @@
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="15dp">
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:id="@+id/tvTitle"
@@ -105,7 +106,7 @@
                 android:id="@+id/constraintUserActions"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="@+id/constraintHashtagButtons"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/constraintHashtagButtons"
@@ -156,28 +157,36 @@
                     app:layout_constraintTop_toTopOf="@+id/imageButton2" />
 
             </android.support.constraint.ConstraintLayout>
-
-            <TextView
-                android:id="@+id/tvShortDesc"
-                android:layout_width="wrap_content"
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="30dp"
-                android:text="Though kale probably originated in the dry heat of the Mediterranean, it became a fixture in the kitchens of northern Europe."
-                android:textAlignment="center"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintUserActions" />
+                android:background="#FAF9F9"
+                android:layout_marginTop="10dp">
 
+                <TextView
+                    android:id="@+id/tvShortDesc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Though kale probably originated in the dry heat of the Mediterranean, it became a fixture in the kitchens of northern Europe."
+                    android:textAlignment="center"
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="5dp">
 
                 <TextView
                     android:id="@+id/tvRecipeInfoServing"
@@ -240,11 +249,11 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="15dp">
 
                 <Button
                     android:id="@+id/btnReicpeInfoIngredients"
-                    android:layout_width="110dp"
+                    android:layout_width="120dp"
                     android:layout_height="40dp"
                     android:layout_marginStart="8dp"
                     android:background="@drawable/recipe_info_btm_btn_active"
@@ -254,7 +263,7 @@
 
                 <Button
                     android:id="@+id/btnRecipeInfoSteps"
-                    android:layout_width="110dp"
+                    android:layout_width="120dp"
                     android:layout_height="40dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
@@ -269,7 +278,7 @@
 
                 <Button
                     android:id="@+id/btnRecipeInfoNutrition"
-                    android:layout_width="110dp"
+                    android:layout_width="120dp"
                     android:layout_height="40dp"
                     android:layout_marginEnd="8dp"
                     android:background="@drawable/recipe_info_btm_btn_inactive"
@@ -293,7 +302,7 @@
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/rvIngredients"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="600dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginEnd="32dp"
                     app:layout_constraintBottom_toBottomOf="parent"

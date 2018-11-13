@@ -24,7 +24,7 @@ public class InputAge extends AppCompatActivity {
             public void onClick(View view) {
                 String age = txtAge.getText().toString().trim();
                 if (age.isEmpty()) { //Check whether the email textbox is empty
-                    txtAge.setError("Username is required");
+                    txtAge.setError("Age is required");
                     txtAge.requestFocus();
                 }
                 else{
