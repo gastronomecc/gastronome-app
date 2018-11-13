@@ -5,18 +5,16 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class RecipeInfoActivity extends AppCompatActivity {
 
     TextView tvTitle, tvShortDesc, tvServSize;
-    Button btnPrepTime, btnDifficulty, btnDietary;
+    Button btnPrepTime, btnDifficulty, btnDietary, btnIngredients, btnSteps, btnNutrition;
     RecyclerView rvIngredients;
     IngredientsAdapter ingredientsAdapter;
 
@@ -32,6 +30,9 @@ public class RecipeInfoActivity extends AppCompatActivity {
         btnDifficulty = findViewById(R.id.btnRecipeInfoDifficultyHashtag);
         btnDietary = findViewById(R.id.btnRecipeInfoMealType);
         rvIngredients = findViewById(R.id.rvIngredients);
+        btnIngredients = findViewById(R.id.btnReicpeInfoIngredients);
+        btnSteps = findViewById(R.id.btnRecipeInfoSteps);
+        btnNutrition = findViewById(R.id.btnRecipeInfoNutrition);
 
         Recipe selectedRecipe = RecipeAdapter.selectedRecipe;
         String title = selectedRecipe.getTitle();
@@ -40,23 +41,78 @@ public class RecipeInfoActivity extends AppCompatActivity {
         String difficulty = selectedRecipe.getDifficulty();
         String dietary = selectedRecipe.getDietary();
         long servSize = selectedRecipe.getServSize();
-        ArrayList<String> ingredients = selectedRecipe.getIngredients();
-        List<String> instructions = selectedRecipe.getInstructions();
+        final ArrayList<String> ingredients = selectedRecipe.getIngredients();
+        final ArrayList<String> instructions = selectedRecipe.getInstructions();
+        String fats = selectedRecipe.getFats();
+        String carbs = selectedRecipe.getCarbs();
+        String protein = selectedRecipe.getProtein();
+        String sugar = selectedRecipe.getSugar();
+        String salt = selectedRecipe.getSalt();
+        final ArrayList<String> nutrients = new ArrayList<>();
+        nutrients.add("Calories = " + selectedRecipe.getCalories());
+        nutrients.add("Fats = " + fats);
+        nutrients.add("Carbs = " + carbs);
+        nutrients.add("Protein = " + protein);
+        nutrients.add("Sugar = " + sugar);
+        nutrients.add("Salt = " + salt);
 
         tvTitle.setText(title);
         tvShortDesc.setText(shortDesc);
         btnPrepTime.setText(prepTime + " MIN");
         btnDifficulty.setText(difficulty);
-        if (dietary.equals("None"))
-        {
+        if (dietary.equals("None")) {
             btnDietary.setVisibility(View.INVISIBLE);
         }
-        else
-        {
+        else {
             btnDietary.setText(dietary);
         }
 
         tvServSize.setText("" + servSize);
+
+        btnIngredients.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ingredientsAdapter = new IngredientsAdapter(RecipeInfoActivity.this, ingredients);
+                rvIngredients.setAdapter(ingredientsAdapter);
+                LinearLayoutManager manager = new LinearLayoutManager(RecipeInfoActivity.this);
+                rvIngredients.setLayoutManager(manager);
+                rvIngredients.setItemAnimator(new DefaultItemAnimator());
+                ingredientsAdapter.notifyDataSetChanged();
+                btnIngredients.setBackgroundResource(R.drawable.recipe_info_btm_btn_active);
+                btnSteps.setBackgroundResource(R.drawable.recipe_info_btm_btn_inactive);
+                btnNutrition.setBackgroundResource(R.drawable.recipe_info_btm_btn_inactive);
+            }
+        });
+
+        btnSteps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ingredientsAdapter = new IngredientsAdapter(RecipeInfoActivity.this, instructions);
+                rvIngredients.setAdapter(ingredientsAdapter);
+                LinearLayoutManager manager = new LinearLayoutManager(RecipeInfoActivity.this);
+                rvIngredients.setLayoutManager(manager);
+                rvIngredients.setItemAnimator(new DefaultItemAnimator());
+                ingredientsAdapter.notifyDataSetChanged();
+                btnSteps.setBackgroundResource(R.drawable.recipe_info_btm_btn_active);
+                btnIngredients.setBackgroundResource(R.drawable.recipe_info_btm_btn_inactive);
+                btnNutrition.setBackgroundResource(R.drawable.recipe_info_btm_btn_inactive);
+            }
+        });
+
+        btnNutrition.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ingredientsAdapter = new IngredientsAdapter(RecipeInfoActivity.this, nutrients);
+                rvIngredients.setAdapter(ingredientsAdapter);
+                LinearLayoutManager manager = new LinearLayoutManager(RecipeInfoActivity.this);
+                rvIngredients.setLayoutManager(manager);
+                rvIngredients.setItemAnimator(new DefaultItemAnimator());
+                ingredientsAdapter.notifyDataSetChanged();
+                btnNutrition.setBackgroundResource(R.drawable.recipe_info_btm_btn_active);
+                btnIngredients.setBackgroundResource(R.drawable.recipe_info_btm_btn_inactive);
+                btnSteps.setBackgroundResource(R.drawable.recipe_info_btm_btn_inactive);
+            }
+        });
 
         ingredientsAdapter = new IngredientsAdapter(this, ingredients);
         rvIngredients.setAdapter(ingredientsAdapter);

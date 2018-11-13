@@ -4,13 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
     Context context;
@@ -31,7 +29,6 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull RecipeViewHolder recipeViewHolder, final int i) {
-        Log.d("TEST", "TEST");
         recipeViewHolder.txtTitle.setText(recipes.get(i).getTitle());
         recipeViewHolder.txtShortDesc.setText(recipes.get(i).getShortDesc());
         recipeViewHolder.btnPrepTime.setText(recipes.get(i).getPrepTime() + " MIN");

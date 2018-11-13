@@ -14,7 +14,7 @@
         android:fontFamily="sans-serif"
         android:text="TextView"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/imgIndex"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -77,7 +77,7 @@
         app:srcCompat="@drawable/add_recipe_btn" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imgIndex"
         android:layout_width="120dp"
         android:layout_height="80dp"
         android:layout_marginStart="8dp"
