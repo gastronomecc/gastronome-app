@@ -17,7 +17,7 @@
         tools:layout_editor_absoluteY="12dp" />
 
     <TextView
-        android:id="@+id/txtShortDesc"
+        android:id="@+id/txtIngredients"
         android:layout_width="260dp"
         android:layout_height="15dp"
         android:layout_marginTop="10dp"
@@ -36,8 +36,8 @@
         android:text="90 MIN"
         android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/txtShortDesc"
-        app:layout_constraintTop_toBottomOf="@+id/txtShortDesc" />
+        app:layout_constraintStart_toStartOf="@+id/txtIngredients"
+        app:layout_constraintTop_toBottomOf="@+id/txtIngredients" />
 
     <Button
         android:id="@+id/btnDifficultyTag"
@@ -69,7 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="@+id/txtShortDesc"
+        app:layout_constraintBottom_toBottomOf="@+id/txtIngredients"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/googleg_standard_color_18" />
 
