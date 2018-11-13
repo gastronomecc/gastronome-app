@@ -16,7 +16,7 @@ import java.util.List;
 public class RecipeInfoActivity extends AppCompatActivity {
 
     TextView tvTitle, tvShortDesc, tvServSize;
-    Button btnPrepTime, btnDifficulty, btnDietary;
+    Button btnPrepTime, btnDifficulty, btnDietary, btnIngredients, btnSteps, btnNutrition;
     RecyclerView rvIngredients;
     IngredientsAdapter ingredientsAdapter;
 
@@ -32,6 +32,9 @@ public class RecipeInfoActivity extends AppCompatActivity {
         btnDifficulty = findViewById(R.id.btnRecipeInfoDifficultyHashtag);
         btnDietary = findViewById(R.id.btnRecipeInfoMealType);
         rvIngredients = findViewById(R.id.rvIngredients);
+        btnIngredients = findViewById(R.id.btnReicpeInfoIngredients);
+        btnSteps = findViewById(R.id.btnRecipeInfoSteps);
+        btnNutrition = findViewById(R.id.btnRecipeInfoNutrition);
 
         Recipe selectedRecipe = RecipeAdapter.selectedRecipe;
         String title = selectedRecipe.getTitle();
@@ -40,7 +43,7 @@ public class RecipeInfoActivity extends AppCompatActivity {
         String difficulty = selectedRecipe.getDifficulty();
         String dietary = selectedRecipe.getDietary();
         long servSize = selectedRecipe.getServSize();
-        ArrayList<String> ingredients = selectedRecipe.getIngredients();
+        final ArrayList<String> ingredients = selectedRecipe.getIngredients();
         List<String> instructions = selectedRecipe.getInstructions();
 
         tvTitle.setText(title);
@@ -57,6 +60,10 @@ public class RecipeInfoActivity extends AppCompatActivity {
         }
 
         tvServSize.setText("" + servSize);
+
+
+
+
 
         ingredientsAdapter = new IngredientsAdapter(this, ingredients);
         rvIngredients.setAdapter(ingredientsAdapter);

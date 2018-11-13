@@ -37,9 +37,9 @@ public class RecipeActivity extends AppCompatActivity {
                                       @Override
                                       public void onDataChange(DataSnapshot dataSnapshot) {
                                           for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                                              Log.d("TEST", "TEST");
                                               Recipe recipe = ds.getValue(Recipe.class);
                                               recipes.add(recipe);
-                                              Log.d("TEST", "TEST");
                                           }
                                           recipeAdapter = new RecipeAdapter(RecipeActivity.this, recipes);
                                           rvRecipe.setAdapter(recipeAdapter);

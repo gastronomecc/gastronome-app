@@ -24,7 +24,7 @@ public class RecipeViewHolder extends RecyclerView.ViewHolder{
         view = v;
         //wv = v.findViewById(R.id.wvPic);
         txtTitle = v.findViewById(R.id.txtTitle);
-        txtShortDesc = v.findViewById(R.id.txtIngredients);
+        txtShortDesc = v.findViewById(R.id.txtShortDesc);
         btnPrepTime = v.findViewById(R.id.btnPrepTimeTag);
         btnMealType = v.findViewById(R.id.btnMealTypeTag);
         btnDifficulty = v.findViewById(R.id.btnDifficultyTag);
