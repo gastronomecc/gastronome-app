@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 public class RecipeInfoActivity extends AppCompatActivity {
 
     TextView tvTitle, tvShortDesc, tvServSize;
-    Button btnPrepTime, btnDifficulty, btnDietary, btnIngredients, btnSteps, btnNutrition;
+    Button btnPrepTime, btnDifficulty, btnDietary, btnIngredients, btnSteps, btnNutrition, btnIncrease, btnDecrease;
     RecyclerView rvIngredients;
     IngredientsAdapter ingredientsAdapter;
 
@@ -33,6 +34,8 @@ public class RecipeInfoActivity extends AppCompatActivity {
         btnIngredients = findViewById(R.id.btnReicpeInfoIngredients);
         btnSteps = findViewById(R.id.btnRecipeInfoSteps);
         btnNutrition = findViewById(R.id.btnRecipeInfoNutrition);
+        btnIncrease = findViewById(R.id.btnRecipeInfoAddServing);
+        btnDecrease = findViewById(R.id.btnRecipeInfoRemoveServing);
 
         Recipe selectedRecipe = RecipeAdapter.selectedRecipe;
         String title = selectedRecipe.getTitle();
@@ -111,6 +114,26 @@ public class RecipeInfoActivity extends AppCompatActivity {
                 btnNutrition.setBackgroundResource(R.drawable.recipe_info_btm_btn_active);
                 btnIngredients.setBackgroundResource(R.drawable.recipe_info_btm_btn_inactive);
                 btnSteps.setBackgroundResource(R.drawable.recipe_info_btm_btn_inactive);
+            }
+        });
+
+        btnIncrease.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String serving = "" +  tvServSize.getText();
+                int newServe = Integer.parseInt(serving);
+                newServe++;
+                tvServSize.setText("" + newServe);
+            }
+        });
+
+        btnDecrease.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String serving = "" + tvServSize.getText();
+                int newServe = Integer.parseInt(serving);
+                newServe--;
+                tvServSize.setText("" + newServe);
             }
         });
 
