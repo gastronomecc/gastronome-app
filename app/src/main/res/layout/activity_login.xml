@@ -100,7 +100,6 @@
         android:text="@string/loginHelpSignUp1"
         android:textColor="#000000"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/safeArea1"
         app:layout_constraintEnd_toStartOf="@+id/tvPromptSignUp"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="@+id/tvForgotPassword"
