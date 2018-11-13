@@ -40,7 +40,6 @@ public class Home extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 globals.setCurrentUser(dataSnapshot.getValue(User.class));
-                text.setText(text.getText()+globals.getCurrentUser().getName());
             }
 
             @Override
