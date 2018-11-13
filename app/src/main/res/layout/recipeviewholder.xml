@@ -12,9 +12,7 @@
         android:layout_marginStart="8dp"
         android:fontFamily="sans-serif"
         android:text="TextView"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/wvPic"
-        app:layout_constraintTop_toTopOf="@+id/wvPic" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtShortDesc"
