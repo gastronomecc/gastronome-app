@@ -9,7 +9,7 @@ public class Recipe {
     int prepTime;
     int readyTime;
     List<String> instructions;
-    String servSize;
+    Long servSize;
     int calories;
     String type;
     String shortDesc;
@@ -18,7 +18,7 @@ public class Recipe {
 
     public Recipe() {}
 
-    public Recipe(String title, List<String> ingredients, int prepTime, int readyTime, List<String> instructions, String servSize, int calories, String type, String shortDesc, String difficulty, String dietary) {
+    public Recipe(String title, List<String> ingredients, int prepTime, int readyTime, List<String> instructions, Long servSize, int calories, String type, String shortDesc, String difficulty, String dietary) {
         this.title = title;
         this.ingredients = ingredients;
         this.prepTime = prepTime;
@@ -72,11 +72,11 @@ public class Recipe {
         this.instructions = instructions;
     }
 
-    public String getServSize() {
+    public Long getServSize() {
         return servSize;
     }
 
-    public void setServSize(String servSize) {
+    public void setServSize(Long servSize) {
         this.servSize = servSize;
     }
 

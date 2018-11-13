@@ -69,7 +69,7 @@
         android:layout_height="20dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/mealtypehashtag"
-        android:text="VEGAN"
+        android:text="VEGETARIAN"
         android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="@+id/btnDifficultyTag"
         app:layout_constraintStart_toEndOf="@+id/btnDifficultyTag"
