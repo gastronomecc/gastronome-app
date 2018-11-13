@@ -46,7 +46,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/peach_rounded_button"
+        android:background="#0AC4BA"
         android:text="@string/registerEmail"
         android:textAllCaps="false"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
@@ -93,10 +93,38 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/alreadyhaveaccount2"
-            android:textColor="#ff0544"
+            android:textColor="#037171"
             android:textSize="16sp"
             android:textStyle="bold" />
     </LinearLayout>
+
+    dumpster 🗑, [14.11.18 01:03]
+    <TextView
+        android:id="@+id/tvHelloPageText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="70dp"
+        android:text="@string/alreadyhaveaccount1"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvHelloPageText4"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvHelloPageText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/alreadyhaveaccount2"
+        android:textColor="#ff0544"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvHelloPageText3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvHelloPageText3"
+        app:layout_constraintTop_toTopOf="@+id/tvHelloPageText3" />
 
     <TextView
         android:id="@+id/tvTOS"
