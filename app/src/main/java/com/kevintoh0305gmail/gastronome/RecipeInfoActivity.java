@@ -45,6 +45,18 @@ public class RecipeInfoActivity extends AppCompatActivity {
         long servSize = selectedRecipe.getServSize();
         final ArrayList<String> ingredients = selectedRecipe.getIngredients();
         final ArrayList<String> instructions = selectedRecipe.getInstructions();
+        String fats = selectedRecipe.getFats();
+        String carbs = selectedRecipe.getCarbs();
+        String protein = selectedRecipe.getProtein();
+        String sugar = selectedRecipe.getSugar();
+        String salt = selectedRecipe.getSalt();
+        final ArrayList<String> nutrients = new ArrayList<>();
+        nutrients.add("Calories = " + selectedRecipe.getCalories());
+        nutrients.add("Fats = " + fats);
+        nutrients.add("Carbs = " + carbs);
+        nutrients.add("Protein = " + protein);
+        nutrients.add("Sugar = " + sugar);
+        nutrients.add("Salt = " + salt);
 
         tvTitle.setText(title);
         tvShortDesc.setText(shortDesc);
@@ -90,6 +102,21 @@ public class RecipeInfoActivity extends AppCompatActivity {
                 btnSteps.setBackgroundResource(R.drawable.recipe_info_btm_btn_active);
                 btnIngredients.setBackgroundResource(R.drawable.recipe_info_btm_btn_inactive);
                 btnNutrition.setBackgroundResource(R.drawable.recipe_info_btm_btn_inactive);
+            }
+        });
+
+        btnNutrition.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ingredientsAdapter = new IngredientsAdapter(RecipeInfoActivity.this, nutrients);
+                rvIngredients.setAdapter(ingredientsAdapter);
+                LinearLayoutManager manager = new LinearLayoutManager(RecipeInfoActivity.this);
+                rvIngredients.setLayoutManager(manager);
+                rvIngredients.setItemAnimator(new DefaultItemAnimator());
+                ingredientsAdapter.notifyDataSetChanged();
+                btnNutrition.setBackgroundResource(R.drawable.recipe_info_btm_btn_active);
+                btnIngredients.setBackgroundResource(R.drawable.recipe_info_btm_btn_inactive);
+                btnSteps.setBackgroundResource(R.drawable.recipe_info_btm_btn_inactive);
             }
         });
 
