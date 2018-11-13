@@ -24,11 +24,9 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         btnLogin = findViewById(R.id.btnLogin);
         txtEmail = findViewById(R.id.etUserEmail);
         txtPassword = findViewById(R.id.etUserPassword);
-        tvError = findViewById(R.id.tvError);
         mAuth = FirebaseAuth.getInstance();
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -70,10 +68,5 @@ public class Login extends AppCompatActivity {
                 });
             }
         });
-
-    }
-
-    public void onRegistrationClick(View v) {
-        startActivity(new Intent(this, HelloPage.class));
     }
 }
