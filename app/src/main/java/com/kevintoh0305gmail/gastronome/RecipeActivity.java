@@ -17,11 +17,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecipeActivity extends AppCompatActivity {
-
     RecyclerView rvRecipe;
     RecipeAdapter recipeAdapter;
     ArrayList<Recipe> recipes = new ArrayList<>();
-
     FirebaseDatabase database;
     DatabaseReference ref;
 
@@ -37,6 +35,7 @@ public class RecipeActivity extends AppCompatActivity {
                                       @Override
                                       public void onDataChange(DataSnapshot dataSnapshot) {
                                           for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                                              Log.d("TEST", "TEST");
                                               Recipe recipe = ds.getValue(Recipe.class);
                                               recipes.add(recipe);
                                           }
