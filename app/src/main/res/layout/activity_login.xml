@@ -7,52 +7,32 @@
     tools:context=".Login"
     >
 
-    <ImageView
-        android:id="@+id/imgGastronomeLogo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="90dp"
-        android:contentDescription="Gastronome logo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/temp_icon" />
-
     <TextView
-        android:id="@+id/tvWelcomeSign"
+        android:id="@+id/Healthy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="109dp"
+        android:layout_marginEnd="109dp"
         android:fontFamily="sans-serif"
-        android:text="@string/loginWelcome"
-        android:textSize="24sp"
+        android:text="Login to Gastronome."
+        android:textAlignment="textStart"
+        android:textSize="32dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/imgGastronomeLogo"
-        app:layout_constraintTop_toBottomOf="@+id/imgGastronomeLogo" />
-
-    <TextView
-        android:id="@+id/tvPleaseSignIn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="@string/loginPrompt"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvWelcomeSign"
-        app:layout_constraintStart_toStartOf="@+id/tvWelcomeSign"
-        app:layout_constraintTop_toBottomOf="@+id/tvWelcomeSign" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="218dp" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="60dp"
         android:layout_marginEnd="50dp"
         android:background="@drawable/white_rectangle"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPleaseSignIn">
+        tools:layout_editor_absoluteY="384dp">
 
         <EditText
             android:id="@+id/etUserEmail"
@@ -159,4 +139,5 @@
         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
 </android.support.constraint.ConstraintLayout>
