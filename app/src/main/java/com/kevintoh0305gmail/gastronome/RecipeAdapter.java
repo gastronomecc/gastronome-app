@@ -13,7 +13,9 @@ import java.util.List;
 
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
     Context context;
-    ArrayList<Recipe> recipes = new ArrayList<>();
+    ArrayList<Recipe> recipes;
+    static Recipe selectedRecipe;
+
 
     public RecipeAdapter(Context c, ArrayList<Recipe> l)
     {
@@ -27,17 +29,26 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecipeViewHolder recipeViewHolder, int i) {
+    public void onBindViewHolder(@NonNull RecipeViewHolder recipeViewHolder, final int i) {
         recipeViewHolder.txtTitle.setText(recipes.get(i).getTitle());
         recipeViewHolder.txtShortDesc.setText(recipes.get(i).getShortDesc());
-        recipeViewHolder.wv.loadUrl("https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/01e1ef88-be15-483b-93b9-b5964a756969.jpg?alt=media&token=c719f0ee-7e6e-4505-9ab9-295440d808fb");
+        recipeViewHolder.btnPrepTime.setText(recipes.get(i).getPrepTime() + " MIN");
+        recipeViewHolder.btnDifficulty.setText(recipes.get(i).getDifficulty());
+        if (recipes.get(i).getDietary().equals("None")) {
+            recipeViewHolder.btnMealType.setVisibility(View.INVISIBLE);
+        } else {
+            recipeViewHolder.btnMealType.setText(recipes.get(i).getDietary());
+        }
+        //recipeViewHolder.wv.loadUrl("https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/01e1ef88-be15-483b-93b9-b5964a756969.jpg?alt=media&token=c719f0ee-7e6e-4505-9ab9-295440d808fb");
 
         recipeViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent in = new Intent(context,Login.class);
+                selectedRecipe = recipes.get(i);
+                Intent in = new Intent(context,RecipeInfoActivity.class);
                 context.startActivity(in);
+
             }
         });
         //recipeViewHolder.imgRecipe.setImageURI(recipes.get(i).getShortDesc());
