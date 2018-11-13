@@ -17,6 +17,4 @@ public class NutritionViewHolder extends RecyclerView.ViewHolder {
         txtNutritions = v.findViewById(R.id.txtNutritions);
         context = c;
     }
-
-
 }
