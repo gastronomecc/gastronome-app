@@ -1,14 +1,15 @@
 package com.kevintoh0305gmail.gastronome;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Recipe {
 
     String title;
-    List<String> ingredients;
+    ArrayList<String> ingredients;
     int prepTime;
     int readyTime;
-    List<String> instructions;
+    ArrayList<String> instructions;
     Long servSize;
     int calories;
     String type;
@@ -18,7 +19,7 @@ public class Recipe {
 
     public Recipe() {}
 
-    public Recipe(String title, List<String> ingredients, int prepTime, int readyTime, List<String> instructions, Long servSize, int calories, String type, String shortDesc, String difficulty, String dietary) {
+    public Recipe(String title, ArrayList<String> ingredients, int prepTime, int readyTime, ArrayList<String> instructions, Long servSize, int calories, String type, String shortDesc, String difficulty, String dietary) {
         this.title = title;
         this.ingredients = ingredients;
         this.prepTime = prepTime;
@@ -40,11 +41,11 @@ public class Recipe {
         this.title = title;
     }
 
-    public List<String> getIngredients() {
+    public ArrayList<String> getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(List<String> ingredients) {
+    public void setIngredients(ArrayList<String> ingredients) {
         this.ingredients = ingredients;
     }
 
@@ -64,11 +65,11 @@ public class Recipe {
         this.readyTime = readyTime;
     }
 
-    public List<String> getInstructions() {
+    public ArrayList<String> getInstructions() {
         return instructions;
     }
 
-    public void setInstructions(List<String> instructions) {
+    public void setInstructions(ArrayList<String> instructions) {
         this.instructions = instructions;
     }
 

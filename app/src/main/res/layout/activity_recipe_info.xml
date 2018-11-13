@@ -6,301 +6,232 @@
     android:layout_height="match_parent"
     tools:context=".RecipeInfoActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/imgRecipeImage"
+        android:layout_width="0dp"
+        android:layout_height="220dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/kalesoup" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="STIR FRY CABBAGE"
+        android:textAlignment="center"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgRecipeImage" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintHashtagButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle">
+
+        <Button
+            android:id="@+id/btnRecipeInfoDifficultyHashtag"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/difficultyhashtag"
+            android:text="EASY"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            app:layout_constraintBottom_toBottomOf="@+id/btnRecipeInfoPrepTimeHashtag"
+            app:layout_constraintEnd_toStartOf="@+id/btnRecipeInfoMealType"
+            app:layout_constraintTop_toTopOf="@+id/btnRecipeInfoPrepTimeHashtag" />
+
+        <Button
+            android:id="@+id/btnRecipeInfoPrepTimeHashtag"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/timehashtag"
+            android:text="90 MIN"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnRecipeInfoDifficultyHashtag"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnRecipeInfoMealType"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/mealtypehashtag"
+            android:text="VEGAN"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            app:layout_constraintBottom_toBottomOf="@+id/btnRecipeInfoDifficultyHashtag"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btnRecipeInfoDifficultyHashtag" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintUserActions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/constraintHashtagButtons"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/constraintHashtagButtons"
+        app:layout_constraintTop_toBottomOf="@+id/constraintHashtagButtons">
+
+        <ImageButton
+            android:id="@+id/btnFav"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:background="@android:color/transparent"
+            android:src="@drawable/heart_fav_inactive"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Add to Favourites"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            app:layout_constraintBottom_toBottomOf="@+id/btnFav"
+            app:layout_constraintStart_toEndOf="@+id/btnFav"
+            app:layout_constraintTop_toTopOf="@+id/btnFav" />
 
-                <ImageView
-                    android:id="@+id/imgRecipeImage"
-                    android:layout_width="0dp"
-                    android:layout_height="220dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/kalesoup" />
-            </android.support.constraint.ConstraintLayout>
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/add_recipe_btn" />
 
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="15dp">
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Add to Recipes"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
+            app:layout_constraintStart_toEndOf="@+id/imageButton2"
+            app:layout_constraintTop_toTopOf="@+id/imageButton2" />
 
-                <TextView
-                    android:id="@+id/tvTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="STIR FRY CABBAGE"
-                    android:textAlignment="center"
-                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.496"
-                    app:layout_constraintStart_toStartOf="parent" />
+    </android.support.constraint.ConstraintLayout>
 
-            </android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvShortDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Though kale probably originated in the dry heat of the Mediterranean, it became a fixture in the kitchens of northern Europe."
+        android:textAlignment="center"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintUserActions" />
 
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/constraintHashtagButtons"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                app:layout_constraintEnd_toEndOf="@+id/tvTitle"
-                app:layout_constraintStart_toStartOf="@+id/tvTitle"
-                app:layout_constraintTop_toBottomOf="@+id/tvTitle"
-                android:layout_gravity="center_horizontal">
 
-                <Button
-                    android:id="@+id/btnRecipeInfoDifficultyHashtag"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/difficultyhashtag"
-                    android:text="EASY"
-                    android:textColor="@color/common_google_signin_btn_text_dark_default"
-                    app:layout_constraintBottom_toBottomOf="@+id/btnRecipeInfoPrepTimeHashtag"
-                    app:layout_constraintEnd_toStartOf="@+id/btnRecipeInfoMealType"
-                    app:layout_constraintTop_toTopOf="@+id/btnRecipeInfoPrepTimeHashtag" />
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/tvShortDesc"
+        app:layout_constraintStart_toStartOf="@+id/tvShortDesc"
+        app:layout_constraintTop_toBottomOf="@+id/tvShortDesc">
 
-                <Button
-                    android:id="@+id/btnRecipeInfoPrepTimeHashtag"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/timehashtag"
-                    android:text="90 MIN"
-                    android:textColor="@color/common_google_signin_btn_text_dark_default"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/btnRecipeInfoDifficultyHashtag"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/btnRecipeInfoRemoveServing"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@drawable/quantitybuttons"
+            android:text="-"
+            android:textAlignment="center"
+            android:textColor="#F3534A"
+            android:textSize="16sp" />
 
-                <Button
-                    android:id="@+id/btnRecipeInfoMealType"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/mealtypehashtag"
-                    android:text="VEGAN"
-                    android:textColor="@color/common_google_signin_btn_text_dark_default"
-                    app:layout_constraintBottom_toBottomOf="@+id/btnRecipeInfoDifficultyHashtag"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/btnRecipeInfoDifficultyHashtag" />
-            </android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvServingQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="4"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/constraintUserActions"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                app:layout_constraintEnd_toEndOf="@+id/constraintHashtagButtons"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/constraintHashtagButtons"
-                app:layout_constraintTop_toBottomOf="@+id/constraintHashtagButtons"
-                android:layout_gravity="center_horizontal">
+        <Button
+            android:id="@+id/btnRecipeInfoAddServing"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@drawable/quantitybuttons"
+            android:text="+"
+            android:textAlignment="center"
+            android:textColor="#F3534A"
+            android:textSize="16sp" />
 
-                <ImageButton
-                    android:id="@+id/btnFav"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/heart_fav_inactive"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
 
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="Add to Favourites"
-                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
-                    app:layout_constraintBottom_toBottomOf="@+id/btnFav"
-                    app:layout_constraintStart_toEndOf="@+id/btnFav"
-                    app:layout_constraintTop_toTopOf="@+id/btnFav" />
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#FFCA74"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-                <ImageButton
-                    android:id="@+id/imageButton2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:background="@android:color/transparent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/textView4"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/add_recipe_btn" />
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="SERVING"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout6"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout6"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout6" />
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="Add to Recipes"
-                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
-                    app:layout_constraintStart_toEndOf="@+id/imageButton2"
-                    app:layout_constraintTop_toTopOf="@+id/imageButton2" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvIngredients"
+        android:layout_width="368dp"
+        android:layout_height="115dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6" />
 
-            </android.support.constraint.ConstraintLayout>
-
-            <TextView
-                android:id="@+id/tvDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="8dp"
-                android:text="Though kale probably originated in the dry heat of the Mediterranean, it became a fixture in the kitchens of northern Europe."
-                android:textAlignment="center"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintUserActions" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp">
-
-                <TextView
-                    android:id="@+id/tvRecipeInfoServing"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="10dp"
-                    android:text="SERVING"
-                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
-                    android:textStyle="bold" />
-
-                <LinearLayout
-                    android:id="@+id/linearLayout6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="25dp"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/btnRecipeInfoRemoveServing"
-                        android:layout_width="40dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_weight="1"
-                        android:background="@drawable/quantitybuttons"
-                        android:text="-"
-                        android:textAlignment="center"
-                        android:textColor="#F3534A"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/tvServingQuantity"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:text="4"
-                        android:textColor="@color/common_google_signin_btn_text_dark_focused"
-                        android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
-
-                    <Button
-                        android:id="@+id/btnRecipeInfoAddServing"
-                        android:layout_width="40dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_weight="1"
-                        android:background="@drawable/quantitybuttons"
-                        android:text="+"
-                        android:textAlignment="center"
-                        android:textColor="#F3534A"
-                        android:textSize="16sp" />
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp">
-
-                <Button
-                    android:id="@+id/btnReicpeInfoIngredients"
-                    android:layout_width="110dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="8dp"
-                    android:background="@drawable/recipe_info_btm_btn_active"
-                    android:text="INGREDIENTS"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <Button
-                    android:id="@+id/btnRecipeInfoSteps"
-                    android:layout_width="110dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/recipe_info_btm_btn_inactive"
-                    android:text="STEPS"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/btnRecipeInfoNutrition"
-                    app:layout_constraintHorizontal_bias="0.444"
-                    app:layout_constraintStart_toEndOf="@+id/btnReicpeInfoIngredients"
-                    app:layout_constraintTop_toTopOf="@+id/btnReicpeInfoIngredients"
-                    app:layout_constraintVertical_bias="1.0" />
-
-                <Button
-                    android:id="@+id/btnRecipeInfoNutrition"
-                    android:layout_width="110dp"
-                    android:layout_height="40dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/recipe_info_btm_btn_inactive"
-                    android:text="NUTRITION"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/btnRecipeInfoSteps" />
-            </LinearLayout>
-            <View
-                android:id="@+id/view"
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:background="#FFCA74"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/rvIngredients"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginEnd="32dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"></android.support.v7.widget.RecyclerView>
-            </android.support.constraint.ConstraintLayout>
-        </LinearLayout>
-    </ScrollView>
 </android.support.constraint.ConstraintLayout>
