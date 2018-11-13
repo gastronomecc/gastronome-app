@@ -12,10 +12,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="240dp"
         android:text="@string/registrationTitle"
+        android:textColor="#323643"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="92dp" />
+        tools:layout_editor_absoluteX="72dp"
+        tools:text="Register for Gastronome" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -93,7 +95,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@drawable/peach_rounded_button"
+        android:background="#0AC4BA"
         android:text="@string/registrationRegisterButton"
         android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
