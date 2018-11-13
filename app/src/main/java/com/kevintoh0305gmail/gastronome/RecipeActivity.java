@@ -22,7 +22,7 @@ public class RecipeActivity extends AppCompatActivity {
 
         rvRecipe = findViewById(R.id.rvRecipes);
 
-        Recipe r = new Recipe();
+        /*Recipe r = new Recipe();
         r.setTitle("TEST1");
         r.setShortDesc("TEST2");
         recipes.add(r);
@@ -45,7 +45,9 @@ public class RecipeActivity extends AppCompatActivity {
         r = new Recipe();
         r.setTitle("TEST1");
         r.setShortDesc("TEST2");
-        recipes.add(r);
+        recipes.add(r);*/
+
+        
 
         recipeAdapter = new RecipeAdapter();
         recipeAdapter.recipes = recipes;
