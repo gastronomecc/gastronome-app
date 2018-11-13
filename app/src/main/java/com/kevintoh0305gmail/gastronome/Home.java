@@ -27,6 +27,7 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseDatabase.setPersistenceEnabled(true);
         user = FirebaseAuth.getInstance().getCurrentUser();
         text = findViewById(R.id.tvHomePlaceHolder);
         bottomNavigationView = findViewById(R.id.bottom_nav_bar);

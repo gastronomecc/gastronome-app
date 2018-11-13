@@ -11,16 +11,20 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
+import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 
 public class StatisticsFragment extends Fragment {
     private BarChart chart;
-    private SeekBar seekBarX;
     private TextView tvX, tvY;
     @Nullable
     @Override
@@ -35,77 +39,44 @@ public class StatisticsFragment extends Fragment {
         chart.setDrawBarShadow(false);
         chart.setDrawValueAboveBar(true);
         chart.setMaxVisibleValueCount(50);
-        chart.setDrawGridBackground(true);
+        chart.setDrawGridBackground(false);
 
         ArrayList<BarEntry> barEntries = new ArrayList<>();
-        barEntries.add(new BarEntry(1, 40f));
-        barEntries.add(new BarEntry(2, 44f));
+        barEntries.add(new BarEntry(1, 2040f));
+        barEntries.add(new BarEntry(2, 2144f));
+        barEntries.add(new BarEntry(3, 0f));
+        barEntries.add(new BarEntry(4, 0f));
+        barEntries.add(new BarEntry(5, 0f));
+        barEntries.add(new BarEntry(6, 0f));
+        barEntries.add(new BarEntry(7, 0f));
 
+        BarDataSet barDataSet = new BarDataSet(barEntries, "Days");
+        barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
 
+        BarData data = new BarData(barDataSet);
+        data.setBarWidth(1.0f);
+        chart.setData(data);
 
-//        seekBarX = view.findViewById(R.id.seekBarX);
-//        seekBarX.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-//            @Override
-//            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-//                tvX.setText(String.valueOf(seekBarX.getProgress()));
-//            }
-//
-//            @Override
-//            public void onStartTrackingTouch(SeekBar seekBar) {
-//
-//            }
-//
-//            @Override
-//            public void onStopTrackingTouch(SeekBar seekBar) {
-//
-//            }
-//        });
-//
-//        chart = view.findViewById(R.id.profileBarChart);
-//        chart.setDrawBarShadow(false);
-//        chart.setDrawValueAboveBar(true);
-//
-//        chart.getDescription().setEnabled(false);
-//
-//        // if more than 7 entries are displayed in the chart, no values will be
-//        // drawn
-//        chart.setMaxVisibleValueCount(7);
-//
-//        // scaling can now only be done on x- and y-axis separately
-//        chart.setPinchZoom(false);
-//
-//        chart.setDrawGridBackground(false);
-//        // chart.setDrawYLabels(false);
-//
-//        XAxis xAxis = chart.getXAxis();
-//        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-//        xAxis.setDrawGridLines(false);
-//        xAxis.setGranularity(1f); // only intervals of 1 day
-//        xAxis.setLabelCount(7);
-//
-//        YAxis leftAxis = chart.getAxisLeft();
-//        leftAxis.setLabelCount(8, false);
-//        leftAxis.setPosition(YAxis.YAxisLabelPosition.OUTSIDE_CHART);
-//        leftAxis.setSpaceTop(15f);
-//        leftAxis.setAxisMinimum(0f); // this replaces setStartAtZero(true)
-//
-//        YAxis rightAxis = chart.getAxisRight();
-//        rightAxis.setDrawGridLines(false);
-//        rightAxis.setLabelCount(8, false);
-//        rightAxis.setSpaceTop(15f);
-//        rightAxis.setAxisMinimum(0f); // this replaces setStartAtZero(true)
-//
-//        Legend l = chart.getLegend();
-//        l.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
-//        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.LEFT);
-//        l.setOrientation(Legend.LegendOrientation.HORIZONTAL);
-//        l.setDrawInside(false);
-//        l.setForm(Legend.LegendForm.SQUARE);
-//        l.setFormSize(9f);
-//        l.setTextSize(11f);
-//        l.setXEntrySpace(4f);
-//
-//        seekBarX.setProgress(12);
-//        // chart.setDrawLegend(false);
+        String[] days = new String[] {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+        XAxis xAxis = chart.getXAxis();
+        xAxis.setValueFormatter(new MyXAxisValueFormatter(days));
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        //xAxis.setGranularity(1);
+        //xAxis.setCenterAxisLabels(true);
+        //xAxis.setAxisMinimum(1);
+        //YAxis yAxis = chart.getAxisRight();
+        //yAxis.setPosition(YAxis.YAxisLabelPosition.INSIDE_CHART);
     }
+
+    public class MyXAxisValueFormatter implements IAxisValueFormatter{
+        private String[] mValues;
+        public MyXAxisValueFormatter(String[] values){
+            this.mValues = values;
+        }
+        @Override
+        public String getFormattedValue(float value, AxisBase axis) {
+            return mValues[(int)value - 1];
+        }
+    }
+
 }
