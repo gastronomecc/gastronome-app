@@ -20,7 +20,7 @@ public class RecipeActivity extends AppCompatActivity {
 
     RecyclerView rvRecipe;
     RecipeAdapter recipeAdapter;
-    List<Recipe> recipes = new ArrayList<>();
+    ArrayList<Recipe> recipes = new ArrayList<>();
 
     FirebaseDatabase database;
     DatabaseReference ref;
@@ -40,8 +40,7 @@ public class RecipeActivity extends AppCompatActivity {
                                               Recipe recipe = ds.getValue(Recipe.class);
                                               recipes.add(recipe);
                                           }
-                                          recipeAdapter = new RecipeAdapter();
-                                          recipeAdapter.recipes = recipes;
+                                          recipeAdapter = new RecipeAdapter(RecipeActivity.this, recipes);
                                           rvRecipe.setAdapter(recipeAdapter);
                                           LinearLayoutManager manager = new LinearLayoutManager(RecipeActivity.this);
                                           rvRecipe.setLayoutManager(manager);
