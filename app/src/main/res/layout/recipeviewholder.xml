@@ -9,11 +9,12 @@
         android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:fontFamily="sans-serif"
         android:text="TextView"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="94dp"
-        tools:layout_editor_absoluteY="12dp" />
+        app:layout_constraintStart_toEndOf="@+id/wvPic"
+        app:layout_constraintTop_toTopOf="@+id/wvPic" />
 
     <TextView
         android:id="@+id/txtShortDesc"

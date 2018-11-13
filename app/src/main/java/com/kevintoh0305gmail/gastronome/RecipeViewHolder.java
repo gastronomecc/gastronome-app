@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 public class RecipeViewHolder extends RecyclerView.ViewHolder{
 
-    public WebView wv;
     public TextView txtTitle;
     public TextView txtShortDesc;
     public View view;
@@ -20,7 +19,6 @@ public class RecipeViewHolder extends RecyclerView.ViewHolder{
     {
         super(v);
         view = v;
-        wv = v.findViewById(R.id.wvPic);
         txtTitle = v.findViewById(R.id.txtTitle);
         txtShortDesc = v.findViewById(R.id.txtShortDesc);
         context = c;
