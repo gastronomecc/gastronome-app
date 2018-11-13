@@ -30,8 +30,6 @@ public class Registration extends AppCompatActivity {
         txtCfmPassword = findViewById(R.id.etRegistrationCfmPW);
         btnRegister = findViewById(R.id.btnRegisterAccount);
         firebaseDatabase = FirebaseDatabase.getInstance();
-
-
         mAuth = FirebaseAuth.getInstance();
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
@@ -111,5 +109,4 @@ public class Registration extends AppCompatActivity {
         double bmi = weight / ((height/100) * (height/100));
         return bmi;
     }
-
 }
