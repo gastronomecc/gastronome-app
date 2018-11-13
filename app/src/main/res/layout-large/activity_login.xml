@@ -7,52 +7,36 @@
     tools:context=".Login"
     >
 
-    <ImageView
-        android:id="@+id/imgGastronomeLogo"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="120dp"
-        android:contentDescription="Gastronome logo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/temp_icon" />
-
     <TextView
-        android:id="@+id/tvWelcomeSign"
+        android:id="@+id/Healthy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginEnd="109dp"
+        android:layout_marginStart="109dp"
+        android:layout_marginTop="240dp"
         android:fontFamily="sans-serif"
-        android:text="@string/loginWelcome"
-        android:textSize="30sp"
+        android:text="Login to Gastronome."
+        android:textAlignment="textStart"
+        android:textColor="#03312E"
+        android:textSize="32dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/imgGastronomeLogo"
-        app:layout_constraintTop_toBottomOf="@+id/imgGastronomeLogo" />
-
-    <TextView
-        android:id="@+id/tvPleaseSignIn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="@string/loginPrompt"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvWelcomeSign"
-        app:layout_constraintStart_toStartOf="@+id/tvWelcomeSign"
-        app:layout_constraintTop_toBottomOf="@+id/tvWelcomeSign" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="100dp"
         android:layout_marginEnd="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/white_rectangle"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPleaseSignIn">
+        app:layout_constraintTop_toBottomOf="@+id/Healthy">
 
         <EditText
             android:id="@+id/etUserEmail"
@@ -63,7 +47,7 @@
             android:ems="10"
             android:hint="@string/loginEmail"
             android:inputType="textEmailAddress"
-            android:textSize="20sp"
+            android:textSize="16sp"
             tools:layout_editor_absoluteX="50dp"
             tools:layout_editor_absoluteY="382dp" />
 
@@ -81,7 +65,7 @@
             android:ems="10"
             android:hint="@string/loginPassword"
             android:inputType="textPassword"
-            android:textSize="20sp"
+            android:textSize="16sp"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp" />
 
@@ -91,11 +75,10 @@
         android:id="@+id/btnLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/peach_rounded_button"
+        android:layout_marginTop="8dp"
+        android:background="#0AC4BA"
         android:text="@string/loginButton"
         android:textColor="#ffffff"
-        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/tvError" />
@@ -106,40 +89,42 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/loginHelpForgotPassword"
-        android:textColor="#ff0544"
-        android:textSize="20sp"
+        android:textColor="#737373"
+        android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/btnLogin"
         app:layout_constraintStart_toStartOf="@+id/btnLogin"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
-    <TextView
-        android:id="@+id/tvNoAccount"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/loginHelpSignUp1"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/safeArea1"
-        app:layout_constraintEnd_toStartOf="@+id/tvPromptSignUp"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toStartOf="@+id/tvForgotPassword"
-        app:layout_constraintTop_toBottomOf="@+id/tvForgotPassword" />
-
-    <TextView
-        android:id="@+id/tvPromptSignUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onRegistrationClick"
-        android:text="@string/loginHelpSignUp2"
-        android:textColor="#ff0544"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvNoAccount"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="@+id/tvForgotPassword"
-        app:layout_constraintStart_toEndOf="@+id/tvNoAccount"
-        app:layout_constraintTop_toTopOf="@+id/tvNoAccount" />
+        app:layout_constraintStart_toStartOf="@+id/tvForgotPassword"
+        app:layout_constraintTop_toBottomOf="@+id/tvForgotPassword">
+
+        <TextView
+            android:id="@+id/tvNoAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/loginHelpSignUp1"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvPromptSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onRegistrationClick"
+            android:text="@string/loginHelpSignUp2"
+            android:textColor="#037171"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/safeArea1"
@@ -148,18 +133,17 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNoAccount"></LinearLayout>
+        app:layout_constraintStart_toStartOf="parent"></LinearLayout>
 
     <TextView
         android:id="@+id/tvError"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="3dp"
         android:textColor="@android:color/holo_red_dark"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
 </android.support.constraint.ConstraintLayout>
