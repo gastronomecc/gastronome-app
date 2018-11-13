@@ -12,14 +12,8 @@ public class Recipe {
     String servSize;
     int calories;
     String type;
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
+    String shortDesc;
+    List<String> tag;
 
     public String getTitle() {
         return title;
@@ -75,6 +69,30 @@ public class Recipe {
 
     public void setCalories(int calories) {
         this.calories = calories;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getShortDesc() {
+        return shortDesc;
+    }
+
+    public void setShortDesc(String shortDesc) {
+        this.shortDesc = shortDesc;
+    }
+
+    public List<String> getTag() {
+        return tag;
+    }
+
+    public void setTag(List<String> tag) {
+        this.tag = tag;
     }
 }
 
