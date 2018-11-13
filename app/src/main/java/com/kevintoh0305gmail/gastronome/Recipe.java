@@ -13,10 +13,24 @@ public class Recipe {
     int calories;
     String type;
     String shortDesc;
-    List<String> tag;
+    String difficulty;
+    String dietary;
 
     public Recipe() {}
 
+    public Recipe(String title, List<String> ingredients, int prepTime, int readyTime, List<String> instructions, String servSize, int calories, String type, String shortDesc, String difficulty, String dietary) {
+        this.title = title;
+        this.ingredients = ingredients;
+        this.prepTime = prepTime;
+        this.readyTime = readyTime;
+        this.instructions = instructions;
+        this.servSize = servSize;
+        this.calories = calories;
+        this.type = type;
+        this.shortDesc = shortDesc;
+        this.difficulty = difficulty;
+        this.dietary = dietary;
+    }
 
     public String getTitle() {
         return title;
@@ -90,12 +104,20 @@ public class Recipe {
         this.shortDesc = shortDesc;
     }
 
-    public List<String> getTag() {
-        return tag;
+    public String getDifficulty() {
+        return difficulty;
     }
 
-    public void setTag(List<String> tag) {
-        this.tag = tag;
+    public void setDifficulty(String difficulty) {
+        this.difficulty = difficulty;
+    }
+
+    public String getDietary() {
+        return dietary;
+    }
+
+    public void setDietary(String dietary) {
+        this.dietary = dietary;
     }
 }
 
