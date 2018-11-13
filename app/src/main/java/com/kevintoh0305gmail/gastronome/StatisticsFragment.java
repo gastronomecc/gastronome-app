@@ -94,6 +94,6 @@ public class StatisticsFragment extends Fragment {
 //
 //        seekBarX.setProgress(12);
 //        // chart.setDrawLegend(false);
-        
+
     }
 }
