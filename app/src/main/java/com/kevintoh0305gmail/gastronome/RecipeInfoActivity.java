@@ -44,7 +44,7 @@ public class RecipeInfoActivity extends AppCompatActivity {
         String dietary = selectedRecipe.getDietary();
         long servSize = selectedRecipe.getServSize();
         final ArrayList<String> ingredients = selectedRecipe.getIngredients();
-        List<String> instructions = selectedRecipe.getInstructions();
+        final ArrayList<String> instructions = selectedRecipe.getInstructions();
 
         tvTitle.setText(title);
         tvShortDesc.setText(shortDesc);
@@ -63,7 +63,35 @@ public class RecipeInfoActivity extends AppCompatActivity {
 
 
 
+        btnIngredients.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ingredientsAdapter = new IngredientsAdapter(RecipeInfoActivity.this, ingredients);
+                rvIngredients.setAdapter(ingredientsAdapter);
+                LinearLayoutManager manager = new LinearLayoutManager(RecipeInfoActivity.this);
+                rvIngredients.setLayoutManager(manager);
+                rvIngredients.setItemAnimator(new DefaultItemAnimator());
+                ingredientsAdapter.notifyDataSetChanged();
+                btnIngredients.setBackgroundResource(R.drawable.recipe_info_btm_btn_active);
+                btnSteps.setBackgroundResource(R.drawable.recipe_info_btm_btn_inactive);
+                btnNutrition.setBackgroundResource(R.drawable.recipe_info_btm_btn_inactive);
+            }
+        });
 
+        btnSteps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ingredientsAdapter = new IngredientsAdapter(RecipeInfoActivity.this, instructions);
+                rvIngredients.setAdapter(ingredientsAdapter);
+                LinearLayoutManager manager = new LinearLayoutManager(RecipeInfoActivity.this);
+                rvIngredients.setLayoutManager(manager);
+                rvIngredients.setItemAnimator(new DefaultItemAnimator());
+                ingredientsAdapter.notifyDataSetChanged();
+                btnSteps.setBackgroundResource(R.drawable.recipe_info_btm_btn_active);
+                btnIngredients.setBackgroundResource(R.drawable.recipe_info_btm_btn_inactive);
+                btnNutrition.setBackgroundResource(R.drawable.recipe_info_btm_btn_inactive);
+            }
+        });
 
         ingredientsAdapter = new IngredientsAdapter(this, ingredients);
         rvIngredients.setAdapter(ingredientsAdapter);
