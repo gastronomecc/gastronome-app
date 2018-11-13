@@ -24,6 +24,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         btnLogin = findViewById(R.id.btnLogin);
         txtEmail = findViewById(R.id.etUserEmail);
         txtPassword = findViewById(R.id.etUserPassword);
@@ -33,6 +34,8 @@ public class Login extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Intent in = new Intent(Login.this, RecipeActivity.class);
+                //startActivity(in);
                 String email = txtEmail.getText().toString().trim();
                 String password = txtPassword.getText().toString().trim();
 

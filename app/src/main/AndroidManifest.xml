@@ -26,11 +26,13 @@
         <activity android:name=".InputWeight" />
         <activity android:name=".InputHeight" />
         <activity android:name=".ChooseGoal" />
-        <activity android:name=".ContinueToSignUp"/>
+        <activity android:name=".ContinueToSignUp" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".RecipeActivity"></activity>
     </application>
 
 </manifest>

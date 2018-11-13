@@ -29,75 +29,71 @@ public class StatisticsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        chart = view.findViewById(R.id.profileBarChart);
-        seekBarX = view.findViewById(R.id.seekBarX);
-        seekBarX.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                tvX.setText(String.valueOf(seekBarX.getProgress()));
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
-
-        chart = view.findViewById(R.id.profileBarChart);
-        chart.setDrawBarShadow(false);
-        chart.setDrawValueAboveBar(true);
-
-        chart.getDescription().setEnabled(false);
-
-        // if more than 7 entries are displayed in the chart, no values will be
-        // drawn
-        chart.setMaxVisibleValueCount(7);
-
-        // scaling can now only be done on x- and y-axis separately
-        chart.setPinchZoom(false);
-
-        chart.setDrawGridBackground(false);
-        // chart.setDrawYLabels(false);
-
-        XAxis xAxis = chart.getXAxis();
-        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        xAxis.setDrawGridLines(false);
-        xAxis.setGranularity(1f); // only intervals of 1 day
-        xAxis.setLabelCount(7);
-
-        YAxis leftAxis = chart.getAxisLeft();
-        leftAxis.setLabelCount(8, false);
-        leftAxis.setPosition(YAxis.YAxisLabelPosition.OUTSIDE_CHART);
-        leftAxis.setSpaceTop(15f);
-        leftAxis.setAxisMinimum(0f); // this replaces setStartAtZero(true)
-
-        YAxis rightAxis = chart.getAxisRight();
-        rightAxis.setDrawGridLines(false);
-        rightAxis.setLabelCount(8, false);
-        rightAxis.setSpaceTop(15f);
-        rightAxis.setAxisMinimum(0f); // this replaces setStartAtZero(true)
-
-        Legend l = chart.getLegend();
-        l.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
-        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.LEFT);
-        l.setOrientation(Legend.LegendOrientation.HORIZONTAL);
-        l.setDrawInside(false);
-        l.setForm(Legend.LegendForm.SQUARE);
-        l.setFormSize(9f);
-        l.setTextSize(11f);
-        l.setXEntrySpace(4f);
-
-        seekBarX.setProgress(12);
-        // chart.setDrawLegend(false);
-
-
-
-
-
+//        chart = view.findViewById(R.id.profileBarChart);
+//        seekBarX = view.findViewById(R.id.seekBarX);
+//        seekBarX.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+//            @Override
+//            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+//                tvX.setText(String.valueOf(seekBarX.getProgress()));
+//            }
+//
+//            @Override
+//            public void onStartTrackingTouch(SeekBar seekBar) {
+//
+//            }
+//
+//            @Override
+//            public void onStopTrackingTouch(SeekBar seekBar) {
+//
+//            }
+//        });
+//
+//        chart = view.findViewById(R.id.profileBarChart);
+//        chart.setDrawBarShadow(false);
+//        chart.setDrawValueAboveBar(true);
+//
+//        chart.getDescription().setEnabled(false);
+//
+//        // if more than 7 entries are displayed in the chart, no values will be
+//        // drawn
+//        chart.setMaxVisibleValueCount(7);
+//
+//        // scaling can now only be done on x- and y-axis separately
+//        chart.setPinchZoom(false);
+//
+//        chart.setDrawGridBackground(false);
+//        // chart.setDrawYLabels(false);
+//
+//        XAxis xAxis = chart.getXAxis();
+//        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+//        xAxis.setDrawGridLines(false);
+//        xAxis.setGranularity(1f); // only intervals of 1 day
+//        xAxis.setLabelCount(7);
+//
+//        YAxis leftAxis = chart.getAxisLeft();
+//        leftAxis.setLabelCount(8, false);
+//        leftAxis.setPosition(YAxis.YAxisLabelPosition.OUTSIDE_CHART);
+//        leftAxis.setSpaceTop(15f);
+//        leftAxis.setAxisMinimum(0f); // this replaces setStartAtZero(true)
+//
+//        YAxis rightAxis = chart.getAxisRight();
+//        rightAxis.setDrawGridLines(false);
+//        rightAxis.setLabelCount(8, false);
+//        rightAxis.setSpaceTop(15f);
+//        rightAxis.setAxisMinimum(0f); // this replaces setStartAtZero(true)
+//
+//        Legend l = chart.getLegend();
+//        l.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
+//        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.LEFT);
+//        l.setOrientation(Legend.LegendOrientation.HORIZONTAL);
+//        l.setDrawInside(false);
+//        l.setForm(Legend.LegendForm.SQUARE);
+//        l.setFormSize(9f);
+//        l.setTextSize(11f);
+//        l.setXEntrySpace(4f);
+//
+//        seekBarX.setProgress(12);
+//        // chart.setDrawLegend(false);
+        
     }
 }
