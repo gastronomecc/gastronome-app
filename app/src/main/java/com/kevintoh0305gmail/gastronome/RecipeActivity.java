@@ -37,6 +37,7 @@ public class RecipeActivity extends AppCompatActivity {
                                           for (DataSnapshot ds : dataSnapshot.getChildren()) {
                                               Recipe recipe = ds.getValue(Recipe.class);
                                               recipes.add(recipe);
+                                              Log.d("TEST", "TEST");
                                           }
                                           recipeAdapter = new RecipeAdapter(RecipeActivity.this, recipes);
                                           rvRecipe.setAdapter(recipeAdapter);
