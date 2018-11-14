@@ -29,7 +29,7 @@ public class WeekyLog extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weeky_log);
 
-        rvToday = findViewById(R.id.rvToday);
+        //rvToday = findViewById(R.id.rvToday);
 
         database = FirebaseDatabase.getInstance();
         ref = database.getReference("Recipes");
