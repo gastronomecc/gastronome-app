@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".WeekyLog">
-
+<!--
     <TextView
         android:id="@+id/textView6"
         android:layout_width="424dp"
@@ -42,7 +42,7 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmailPH"
         app:srcCompat="@android:drawable/ic_menu_my_calendar" />
 
     <TextView
@@ -58,7 +58,7 @@
         app:layout_constraintEnd_toStartOf="@+id/textView16"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/tvEmailPH" />
 
     <TextView
         android:id="@+id/textView16"
@@ -68,7 +68,7 @@
         android:layout_marginTop="40dp"
         android:text="Thu 15 Nov"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/tvEmailPH" />
 
     <View
         android:id="@+id/view2"
@@ -168,6 +168,6 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" /> -->
 
 </android.support.constraint.ConstraintLayout>

@@ -107,7 +107,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnChooseSignUp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -122,7 +122,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnChooseLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="11dp"
@@ -130,9 +130,9 @@
         android:fontFamily="@font/cerebri_sans_bold"
         android:text="LOGIN"
         android:textColor="#03312E"
-        app:layout_constraintEnd_toEndOf="@+id/button4"
-        app:layout_constraintStart_toStartOf="@+id/button4"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintEnd_toEndOf="@+id/btnChooseSignUp"
+        app:layout_constraintStart_toStartOf="@+id/btnChooseSignUp"
+        app:layout_constraintTop_toBottomOf="@+id/btnChooseSignUp" />
 
     <TextView
         android:id="@+id/textView14"
@@ -145,7 +145,7 @@
         android:text="Terms of Service"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout7"
         app:layout_constraintStart_toStartOf="@+id/linearLayout7"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/btnChooseLogin" />
 
     <ImageView
         android:id="@+id/imageView"
