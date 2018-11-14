@@ -19,7 +19,7 @@ public class HelloPage extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HelloPage.this, GenderSelection.class));
+                startActivity(new Intent(HelloPage.this, ChooseGoal.class));
             }
         });
         btnBack = findViewById(R.id.btnHelloBack);

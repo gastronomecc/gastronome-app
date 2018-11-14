@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.TextView;
 
 public class ChooseGoal extends AppCompatActivity {
-    TextView login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

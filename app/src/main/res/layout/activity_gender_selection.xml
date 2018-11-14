@@ -2,17 +2,60 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/genderTopBar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GenderSelection"
     tools:layout_editor_absoluteY="25dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnGenderBack"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/black_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/cerebri_sans_regular"
+            android:text="Step 2 of 5"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="180dp"
+            android:layout_height="3dp"
+            android:background="#0AC4BA"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"></View>
+    </android.support.constraint.ConstraintLayout>
 
     <TextView
         android:id="@+id/tvPromptGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/cerebri_sans_bold"
         android:text="@string/genderSelectPrompt"
@@ -21,11 +64,11 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
 
     <Button
         android:id="@+id/btnGenderFemale"
-        android:layout_width="140dp"
+        android:layout_width="145dp"
         android:layout_height="0dp"
         android:layout_marginStart="60dp"
         android:background="@drawable/btn_gender_female"
@@ -37,8 +80,8 @@
 
     <Button
         android:id="@+id/btnGenderMale"
-        android:layout_width="140dp"
-        android:layout_height="150dp"
+        android:layout_width="145dp"
+        android:layout_height="160dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="60dp"
         android:background="@drawable/btn_gender_male"
