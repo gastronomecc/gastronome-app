@@ -33,7 +33,7 @@ def ResetDatabase():
      "2":"Bake the egg whites until starting to lightly brown, about 3 minutes. Remove from oven. If the well has filled in during baking, use the spoon to recreate it. Gently slip a yolk into each well. Bake until the yolks are cooked but still runny, 3 to 5 minutes more. Sprinkle with pepper. Serve immediately."},
     "prepTime":25, "readyTime":25, "servSize":4, "shortDesc":"These light and fluffy eggs are loaded with Parmesan and scallions for tons of flavor, plus there's a luscious runny yolk on top. And don't worry, this impressive brunch recipe is easy enough for anyone to master.",
     "title": "Parmesan Cloud Eggs", "type": "Get Fit", "fats":"6g","carbs":"1g","sugar":"0g","salt":"198mg","protein":"8g"})
-    
+
     #recipe 2, avocado & kale omelet 
     firebase.put("/Recipes","Avocado & Kale Omelet",{"calories":339,"dietary":"None","difficulty":"Medium",
     "ingredients":{"0":"2 Large eggs","1":"1 teaspoon low-fat milk","2":"Pinch of salt","3":"2 teaspoons extra-virgin olive oil, divided","4":"1 Cup of chopped kale","5":"1 Tablespoon lime juice","6":"1 tablespoon chopped fresh cilantro","7":"1 teaspoon unsalted sunflower seeds","8":"Pinch of crushed red pepper","9":"Pinch of salt","10":"1/4 Avocado, sliced"},"instructions":
@@ -54,7 +54,7 @@ def ResetDatabase():
 
     #recipe 4, Egg-in-a-Hole with Spinach & Bacon
     firebase.put("/Recipes","Egg-in-a-Hole with Spinach & Bacon",{"calories":302,"dietary":"None","difficulty":"Medium",
-    "ingredients":{"0":"3 slices center-cut bacon","1":"1 tablespoon extra-virgin olive oil, plus more if needed","2":"3 large cloves garlic, minced","3":"1 pound spinach (about 16 cups), tough stems removed","4":"1 teaspoon red-wine vinegar","5":"½ teaspoon ground pepper, divided","6":"¼ teaspoon salt","7":"4 large slices country-style whole-wheat bread ( ¾-1 inch thick)","9":"4 large eggs"},"instructions":
+    "ingredients":{"0":"3 slices center-cut bacon","1":"1 tablespoon extra-virgin olive oil, plus more if needed","2":"3 large cloves garlic, minced","3":"1 pound spinach (about 16 cups), tough stems removed","4":"1 teaspoon red-wine vinegar","5":"½ teaspoon ground pepper, divided","6":"¼ teaspoon salt","7":"4 large slices country-style whole-wheat bread ( ¾-1 inch thick)","8":"4 large eggs"},"instructions":
     {"0":"Preheat oven to 425°F. Coat a large baking sheet with cooking spray.",
      "1":"Cook bacon in a large cast-iron skillet over medium heat until crisp, 7 to 9 minutes. Drain on paper towels. Pour the bacon fat into a small heatproof bowl. If necessary, add oil to make 2 tablespoons.",
      "2":"Meanwhile, heat 1 tablespoon oil in a large saucepan over medium heat. Add garlic and cook, stirring, about 30 seconds. Add spinach by the handful and cook, stirring, until wilted, about 5 minutes. Transfer to a colander; press out excess liquid. Return the spinach to the pan and season with vinegar, ¼ teaspoon pepper and salt.",
@@ -296,4 +296,3 @@ while True:
         break
 
     print()
- 
