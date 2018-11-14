@@ -15,15 +15,15 @@ public class ChooseGoal extends AppCompatActivity {
     }
     public void onLoseWeightClick(View view){
         HelloPage.profile.setGoal("Lose weight");
-        startActivity(new Intent(ChooseGoal.this, ContinueToSignUp.class));
+        startActivity(new Intent(ChooseGoal.this, GenderSelection.class));
     }
     public void onGetFitterClick(View view){
         HelloPage.profile.setGoal("Get fitter");
-        startActivity(new Intent(ChooseGoal.this, ContinueToSignUp.class));
+        startActivity(new Intent(ChooseGoal.this, GenderSelection.class));
     }
     public void onGainMuscle(View view){
         HelloPage.profile.setGoal("Gain muscle");
-        startActivity(new Intent(ChooseGoal.this, ContinueToSignUp.class));
+        startActivity(new Intent(ChooseGoal.this, GenderSelection.class));
     }
 
 }

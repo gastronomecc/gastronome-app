@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="160dp"
         android:layout_marginEnd="8dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,7 +33,7 @@
                 android:text="Eat "
                 android:textAlignment="textEnd"
                 android:textColor="#000000"
-                android:textSize="32sp"
+                android:textSize="36sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.067"
@@ -64,7 +64,7 @@
                 android:text="healthy."
                 android:textAlignment="viewStart"
                 android:textColor="#000000"
-                android:textSize="32sp"
+                android:textSize="36sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -85,7 +85,7 @@
         android:fontFamily="@font/cerebri_sans_bold"
         android:text="Gastronome."
         android:textColor="#037171"
-        android:textSize="32sp"
+        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout7" />
@@ -100,7 +100,7 @@
         android:fontFamily="@font/cerebri_sans_regular"
         android:text="Eat Well. Live Well."
         android:textColor="#000000"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -117,6 +117,7 @@
         android:fontFamily="@font/cerebri_sans_bold"
         android:text="SIGN UP"
         android:textColor="#ffffff"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
@@ -130,6 +131,7 @@
         android:fontFamily="@font/cerebri_sans_bold"
         android:text="LOGIN"
         android:textColor="#03312E"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/btnChooseSignUp"
         app:layout_constraintStart_toStartOf="@+id/btnChooseSignUp"
         app:layout_constraintTop_toBottomOf="@+id/btnChooseSignUp" />
@@ -143,6 +145,7 @@
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/cerebri_sans_regular"
         android:text="Terms of Service"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout7"
         app:layout_constraintStart_toStartOf="@+id/linearLayout7"
         app:layout_constraintTop_toBottomOf="@+id/btnChooseLogin" />
@@ -151,10 +154,41 @@
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="0dp"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14"
         app:srcCompat="@drawable/background" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="90dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="52dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/sparkle" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="90dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView12"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout7"
+        app:srcCompat="@drawable/sparkle" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="90dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/sparkle" />
 
 </android.support.constraint.ConstraintLayout>
