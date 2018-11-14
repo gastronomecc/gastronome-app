@@ -16,7 +16,6 @@ public class GenderSelection extends AppCompatActivity {
         setContentView(R.layout.activity_gender_selection);
         female = findViewById(R.id.btnGenderFemale);
         male = findViewById(R.id.btnGenderMale);
-        login = findViewById(R.id.tvGenderText2);
         female.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -29,12 +28,6 @@ public class GenderSelection extends AppCompatActivity {
             public void onClick(View view) {
                 HelloPage.profile.setGender("M");
                 startActivity(new Intent(GenderSelection.this, InputAge.class));
-            }
-        });
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(GenderSelection.this, Login.class));
             }
         });
     }

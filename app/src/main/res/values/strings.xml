@@ -48,6 +48,10 @@
     <!--Terms and Conditions-->
     <string name="tos">When you "Continue", you agree to Gastronome\'s <u>Terms of Service</u>. We will manage information about you as described in our <u>Privacy Policy</u>, and <u>Cookie Policy</u>,</string>
 
+
+    <!--Feed-->
+    <string name="FeedIntroNotification">Here you’ll find: \n All the amazing recipes you can find \n in Gastronome!</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
