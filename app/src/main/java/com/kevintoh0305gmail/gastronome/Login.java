@@ -32,7 +32,7 @@ public class Login extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(Login.this, RecipeActivity.class);
+                Intent in = new Intent(Login.this, WeekyLog.class);
                 startActivity(in);
                 String email = txtEmail.getText().toString().trim();
                 String password = txtPassword.getText().toString().trim();
