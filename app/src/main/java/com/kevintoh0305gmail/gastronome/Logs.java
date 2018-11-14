@@ -1,27 +1,27 @@
 package com.kevintoh0305gmail.gastronome;
 
-import java.util.Date;
 
 public class Logs {
 
-    Date date;
+    String day;
     String title;
-    String uid;
+    String email;
 
-    public Logs () {}
+    public Logs() {
+    }
 
-    public Logs(Date date, String title, String uid) {
-        this.date = date;
+    public Logs(String day, String title, String email) {
+        this.day = day;
         this.title = title;
-        this.uid = uid;
+        this.email = email;
     }
 
-    public Date getDate() {
-        return date;
+    public String getDay() {
+        return day;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDay(String day) {
+        this.day = day;
     }
 
     public String getTitle() {
@@ -32,11 +32,11 @@ public class Logs {
         this.title = title;
     }
 
-    public String getUid() {
-        return uid;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUid(String uid) {
-        this.uid = uid;
+    public void setEmail(String uid) {
+        this.email = email;
     }
 }
