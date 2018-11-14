@@ -20,10 +20,10 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        profileDetails = view.findViewById(R.id.tvProfileInfo);
-        profileDetails.setText("Height : "+Home.globals.getCurrentUser().getHeight()+"cm\n"
-                + "Weight : " + Home.globals.getCurrentUser().getWeight()+"kg\n"
-                + "BMI : " + Home.globals.getCurrentUser().getBMI()+"\n"
-                + "Goal : " + Home.globals.getCurrentUser().getGoal());
+//        profileDetails = view.findViewById(R.id.tvProfileInfo);
+//        profileDetails.setText("Height : "+Home.globals.getCurrentUser().getHeight()+"cm\n"
+//                + "Weight : " + Home.globals.getCurrentUser().getWeight()+"kg\n"
+//                + "BMI : " + Home.globals.getCurrentUser().getBMI()+"\n"
+//                + "Goal : " + Home.globals.getCurrentUser().getGoal());
     }
 }
