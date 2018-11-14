@@ -18,7 +18,6 @@ public class InputWeight extends AppCompatActivity {
         setContentView(R.layout.activity_input_weight);
         txtWeight = findViewById(R.id.etWeight);
         fab = findViewById(R.id.fabnextpage5);
-        login = findViewById(R.id.tvWeightText2);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,12 +36,6 @@ public class InputWeight extends AppCompatActivity {
                         txtWeight.requestFocus();
                     }
                 }
-            }
-        });
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(InputWeight.this, Login.class));
             }
         });
     }
