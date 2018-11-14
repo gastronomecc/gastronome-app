@@ -6,29 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".Registration">
 
-    <ImageView
-        android:id="@+id/imgRegistrationIcon"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/temp_icon" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="240dp"
         android:text="@string/registrationTitle"
+        android:textColor="#323643"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/imgRegistrationIcon"
-        app:layout_constraintStart_toStartOf="@+id/imgRegistrationIcon"
-        app:layout_constraintTop_toBottomOf="@+id/imgRegistrationIcon" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="72dp"
+        tools:text="Register for Gastronome" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -106,7 +95,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@drawable/peach_rounded_button"
+        android:background="#0AC4BA"
         android:text="@string/registrationRegisterButton"
         android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout3"

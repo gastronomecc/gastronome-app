@@ -19,5 +19,4 @@ public class IngredientsViewHolder extends RecyclerView.ViewHolder {
         txtIngredients = v.findViewById(R.id.txtIngredients);
         context = c;
     }
-
 }

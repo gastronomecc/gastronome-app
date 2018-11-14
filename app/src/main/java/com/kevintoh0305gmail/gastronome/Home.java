@@ -26,28 +26,27 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        firebaseDatabase.setPersistenceEnabled(true);
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        text = findViewById(R.id.tvHomePlaceHolder);
+        //firebaseDatabase = FirebaseDatabase.getInstance();
+        //firebaseDatabase.setPersistenceEnabled(true);
+        //user = FirebaseAuth.getInstance().getCurrentUser();
+        //text = findViewById(R.id.tvHomePlaceHolder);
         bottomNavigationView = findViewById(R.id.bottom_nav_bar);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
         //The home fragment is the default fragment shown when the activity is first loaded.
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
         //Retrieving user information from Firebase
-        DatabaseReference reference = firebaseDatabase.getReference("Users/"+user.getUid());
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                globals.setCurrentUser(dataSnapshot.getValue(User.class));
-                text.setText(text.getText()+globals.getCurrentUser().getName());
-            }
+        //DatabaseReference reference = firebaseDatabase.getReference("Users/"+user.getUid());
+        //reference.addValueEventListener(new ValueEventListener() {
+        //   @Override
+        //    public void onDataChange(DataSnapshot dataSnapshot) {
+        //        globals.setCurrentUser(dataSnapshot.getValue(User.class));
+        //    }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.d("onCancelled error","Retrieval of user data failed");
-            }
-        });
+        //   @Override
+        //   public void onCancelled(DatabaseError databaseError) {
+        //        Log.d("onCancelled error","Retrieval of user data failed");
+        //    }
+        //});
     }
 
     //Handles the transition of fragments when a navigation item is selected from the bottom navigation bar.

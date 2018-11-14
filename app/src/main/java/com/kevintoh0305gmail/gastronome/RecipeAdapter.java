@@ -4,13 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
     Context context;
@@ -40,8 +38,6 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
         } else {
             recipeViewHolder.btnMealType.setText(recipes.get(i).getDietary());
         }
-        //recipeViewHolder.wv.loadUrl("https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/01e1ef88-be15-483b-93b9-b5964a756969.jpg?alt=media&token=c719f0ee-7e6e-4505-9ab9-295440d808fb");
-
         recipeViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,7 +48,6 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
 
             }
         });
-        //recipeViewHolder.imgRecipe.setImageURI(recipes.get(i).getShortDesc());
     }
 
     @Override

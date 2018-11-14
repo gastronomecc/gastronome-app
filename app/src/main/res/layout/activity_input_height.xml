@@ -6,29 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".InputHeight">
 
-    <ImageView
-        android:id="@+id/imgHeightPageLogo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/temp_icon" />
-
     <TextView
         android:id="@+id/tvPromptHeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="240dp"
         android:text="@string/promptHeight"
+        android:textColor="#323643"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/imgHeightPageLogo"
-        app:layout_constraintStart_toStartOf="@+id/imgHeightPageLogo"
-        app:layout_constraintTop_toBottomOf="@+id/imgHeightPageLogo" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="113dp" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -80,35 +68,5 @@
         app:layout_constraintStart_toEndOf="@+id/linearLayout3"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
         app:srcCompat="@drawable/peach_rounded_button" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="90dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/tvHeightText1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/alreadyhaveaccount1"
-            android:textColor="#000000"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tvHeightText2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/alreadyhaveaccount2"
-            android:textColor="#ff0544"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
