@@ -34,7 +34,8 @@
 
         <activity android:name=".RecipeActivity" />
         <activity android:name=".RecipeInfoActivity" />
-        <activity android:name=".ChooseLoginRegister"></activity>
+        <activity android:name=".ChooseLoginRegister" />
+        <activity android:name=".WeekyLog"></activity>
     </application>
 
 </manifest>
