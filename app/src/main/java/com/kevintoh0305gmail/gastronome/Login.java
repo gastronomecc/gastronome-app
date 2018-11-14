@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Login extends AppCompatActivity {
     Button btnLogin;
     EditText txtEmail, txtPassword;
-    TextView tvError;
+    //TextView tvError;
     FirebaseAuth mAuth;
 
     @Override
@@ -32,7 +32,7 @@ public class Login extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(Login.this, RecipeActivity.class);
+                Intent in = new Intent(Login.this, Home.class);
                 startActivity(in);
                 String email = txtEmail.getText().toString().trim();
                 String password = txtPassword.getText().toString().trim();
@@ -61,7 +61,7 @@ public class Login extends AppCompatActivity {
                         {
                             Toast.makeText(Login.this, "Authentication failed", Toast.LENGTH_SHORT).show();
                             txtPassword.setText("");
-                            tvError.setText("Invalid email or password :-(");
+                            //tvError.setText("Invalid email or password :-(");
 
                         }
                     }
