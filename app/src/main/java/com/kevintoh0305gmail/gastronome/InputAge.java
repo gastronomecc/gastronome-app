@@ -18,7 +18,6 @@ public class InputAge extends AppCompatActivity {
         setContentView(R.layout.activity_input_age);
         txtAge = findViewById(R.id.etAge);
         fab = findViewById(R.id.fabnextpage3);
-        login = findViewById(R.id.tvAgeText2);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,12 +39,5 @@ public class InputAge extends AppCompatActivity {
                 }
             }
         });
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(InputAge.this, Login.class));
-            }
-        });
-
     }
 }

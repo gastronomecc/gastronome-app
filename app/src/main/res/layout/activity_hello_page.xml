@@ -38,7 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvHelloPageText1" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnNext"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#0AC4BA"

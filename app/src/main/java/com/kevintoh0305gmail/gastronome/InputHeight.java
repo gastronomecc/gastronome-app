@@ -18,7 +18,6 @@ public class InputHeight extends AppCompatActivity {
         setContentView(R.layout.activity_input_height);
         txtHeight = findViewById(R.id.etHeight);
         fab = findViewById(R.id.fabnextpage4);
-        login = findViewById(R.id.tvHeightText2);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,12 +37,6 @@ public class InputHeight extends AppCompatActivity {
                         txtHeight.requestFocus();
                     }
                 }
-            }
-        });
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(InputHeight.this, Login.class));
             }
         });
     }

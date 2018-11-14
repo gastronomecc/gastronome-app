@@ -12,13 +12,6 @@ public class ChooseGoal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_goal);
-        login = findViewById(R.id.tvGoalText3);
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(ChooseGoal.this, Login.class));
-            }
-        });
     }
     public void onLoseWeightClick(View view){
         HelloPage.profile.setGoal("Lose weight");
