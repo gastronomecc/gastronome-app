@@ -11,7 +11,6 @@ import android.widget.TextView;
 public class InputWeight extends AppCompatActivity {
     EditText txtWeight;
     FloatingActionButton fab;
-    TextView login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +28,7 @@ public class InputWeight extends AppCompatActivity {
                     double weight = Double.parseDouble(txtWeight.getText().toString().trim());
                     if (weight>0 && weight< 500) {
                         HelloPage.profile.setWeight(weight);
-                        startActivity(new Intent(InputWeight.this, ChooseGoal.class));
+                        startActivity(new Intent(InputWeight.this, ContinueToSignUp.class));
                     }
                     else{
                         txtWeight.setError("Invalid weight entered");
