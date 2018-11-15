@@ -52,7 +52,7 @@ public class Home extends AppCompatActivity {
                     Fragment selectedFragment = null;
                     switch(menuItem.getItemId()){
                         case R.id.nav_today:
-                            selectedFragment = new FeedFragment();
+                            selectedFragment = new LogFragment();
                             break;
                         case R.id.nav_feed:
                             selectedFragment = new FeedFragment();
