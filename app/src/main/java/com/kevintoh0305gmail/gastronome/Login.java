@@ -15,7 +15,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity {
-    Button btnLogin;
+    Button btnLogin, btnBack;
     EditText txtEmail, txtPassword;
     TextView tvError;
     FirebaseAuth mAuth;
@@ -25,6 +25,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         btnLogin = findViewById(R.id.btnLogin);
+        btnBack = findViewById(R.id.btnLoginBack);
         txtEmail = findViewById(R.id.etUserEmail);
         txtPassword = findViewById(R.id.etUserPassword);
         mAuth = FirebaseAuth.getInstance();
@@ -66,6 +67,15 @@ public class Login extends AppCompatActivity {
                         }
                     }
                 });
+            }
+        });
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(Login.this, ChooseLoginRegister.class);
+                //Clear activity stack
+                in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(in);
             }
         });
     }
