@@ -28,7 +28,7 @@ public class RecipeInfoActivity extends AppCompatActivity {
     ImageButton imgBtnAdd;
     RecyclerView rvIngredients;
     IngredientsAdapter ingredientsAdapter;
-    Button btnSun, btnMon, btnTues, btnWed, btnThurs, btnFri, btnSat;
+    Button btnSun, btnMon, btnTues, btnWed, btnThurs, btnFri, btnSat, btnCancel, btnAddtoRecipe;
     Boolean sunSelect, monSelect, tuesSelect, wedSelect, thursSelect, friSelect, satSelect;
     ArrayList<String> days = new ArrayList<>();
     FirebaseDatabase database;
@@ -188,113 +188,161 @@ public class RecipeInfoActivity extends AppCompatActivity {
         btnFri = view.findViewById(R.id.btnFri);
         btnSat = view.findViewById(R.id.btnSat);
         btnSun = view.findViewById(R.id.btnSun);
+        btnAddtoRecipe = view.findViewById(R.id.btnDialogAdd);
+        btnCancel = view.findViewById(R.id.btnDialogCancel);
         btnSun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (sunSelect)
+                if (sunSelect) {
                     sunSelect = false;
-                else
+                    btnSun.setBackgroundResource(R.drawable.dialog_button_sun_inactive);
+                }
+                else {
                     sunSelect = true;
+                    btnSun.setBackgroundResource(R.drawable.dialog_button_sun_active);
+                }
 
-            }
+                }
         });
         btnMon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (monSelect)
+                if (monSelect) {
                     monSelect = false;
-                else
+                    btnMon.setBackgroundResource(R.drawable.dialog_button_mon_inactive);
+                }
+                else {
                     monSelect = true;
+                    btnMon.setBackgroundResource(R.drawable.dialog_button_mon_active);
+                }
             }
         });
 
         btnTues.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (tuesSelect)
+                if (tuesSelect) {
                     tuesSelect = false;
-                else
+                    btnTues.setBackgroundResource(R.drawable.dialog_button_tue_inactive);
+                }
+                else {
                     tuesSelect = true;
+                    btnTues.setBackgroundResource(R.drawable.dialog_button_tue_active);
+                }
             }
         });
 
         btnWed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (wedSelect)
+                if (wedSelect) {
                     wedSelect = false;
-                else
+                    btnWed.setBackgroundResource(R.drawable.dialog_button_wed_inactive);
+                }
+                else {
                     wedSelect = true;
+                    btnWed.setBackgroundResource(R.drawable.dialog_button_wed_active);
+                }
             }
         });
 
         btnThurs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (thursSelect)
+                if (thursSelect) {
                     thursSelect = false;
-                else
+                    btnThurs.setBackgroundResource(R.drawable.dialog_button_thurs_inactive);
+                }
+                else {
                     thursSelect = true;
+                    btnThurs.setBackgroundResource(R.drawable.dialog_button_thurs_active);
+                }
             }
         });
 
         btnFri.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (friSelect)
+                if (friSelect) {
                     friSelect = false;
-                else
+                    btnFri.setBackgroundResource(R.drawable.dialog_button_fri_inactive);
+                }
+                else {
                     friSelect = true;
+                    btnFri.setBackgroundResource(R.drawable.dialog_button_fri_active);
+                }
             }
         });
 
         btnSat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (satSelect)
+                if (satSelect) {
                     satSelect = false;
-                else
+                    btnSat.setBackgroundResource(R.drawable.dialog_button_sat_inactive);
+                }
+                else {
                     satSelect = true;
+                    btnSat.setBackgroundResource(R.drawable.dialog_button_sat_active);
+                }
             }
         });
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(RecipeInfoActivity.this);
+
+        final AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(RecipeInfoActivity.this);
         dialogBuilder.setView(view);
-        dialogBuilder.setCancelable(false)
-                .setPositiveButton("Add to Weekly Recipe", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        days = new ArrayList<>();
-                        if (sunSelect)
-                            days.add("1");
-                        if (monSelect)
-                            days.add("2");
-                        if (tuesSelect)
-                            days.add("3");
-                        if (wedSelect)
-                            days.add("4");
-                        if (thursSelect)
-                            days.add("5");
-                        if (friSelect)
-                            days.add("6");
-                        if (satSelect)
-                            days.add("7");
-                        Log.d("Tester", days.get(0));
-                        for (String d : days)
-                        {
-                            Random random = new Random();
-                            int n = random.nextInt(900000000) + 999999;
-                            Logs addLog = new Logs(d, title, "dom@gmail.com");
-                            database.getReference().child("ZLogs").child("" + n).setValue(addLog);
 
-                        }
-                    }
-                })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
+        final AlertDialog dialog = dialogBuilder.create();
 
-                    }
-                }).create().show();
+        dialog.show();
+
+
+
+        //dialogBuilder.setCancelable(true)
+           //     .create().show();
+
+
+
+        btnAddtoRecipe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                days = new ArrayList<>();
+                if (sunSelect)
+                    days.add("1");
+                if (monSelect)
+                    days.add("2");
+                if (tuesSelect)
+                    days.add("3");
+                if (wedSelect)
+                    days.add("4");
+                if (thursSelect)
+                    days.add("5");
+                if (friSelect)
+                    days.add("6");
+                if (satSelect)
+                    days.add("7");
+                Log.d("Tester", days.get(0));
+                for (String d : days)
+                {
+                    Random random = new Random();
+                    int n = random.nextInt(900000000) + 999999;
+                    Logs addLog = new Logs(d, title, "dom@gmail.com");
+                    database.getReference().child("ZLogs").child("" + n).setValue(addLog);
+
+                }
+                dialog.cancel();
+            }
+        });
+
+
+
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.cancel();
+                }
+        });
+
 
     }
 }
