@@ -47,7 +47,7 @@
     <string name="OAuthGoogle">Continue with Google</string>
     <string name="registerEmail">Continue with email</string>
     <!--Terms and Conditions-->
-    <string name="tos">When you "Continue", you agree to Gastronome\'s <u>Terms of Service</u>. We will manage information about you as described in our <u>Privacy Policy</u>, and <u>Cookie Policy</u>,</string>
+    <string name="tos">When you \"Continue\", you agree to Gastronome\'s <u>Terms of Service</u>. We will manage information about you as described in our <u>Privacy Policy</u>, and <u>Cookie Policy</u>,</string>
 
 
     <!--Feed-->
