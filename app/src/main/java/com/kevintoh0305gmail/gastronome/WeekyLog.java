@@ -71,7 +71,6 @@ public class WeekyLog extends AppCompatActivity {
                                 logRecipes.add(r);
                             }
                         }
-                        //}
                     }
                     if (log.getDay().equals("" + (cal.get(Calendar.DAY_OF_WEEK) + 1))) {
                         for (Recipe r : recipes) {
