@@ -11,71 +11,43 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="32dp"
-        android:text="@string/app_name"
+        android:fontFamily="@font/cerebri_sans_bold"
+        android:text="@string/signupmotivation"
         android:textAlignment="center"
-        android:textSize="30sp"
+        android:textColor="#333333"
+        android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnContinueGoogle"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/gender_card"
-        android:paddingLeft="70dp"
-        android:paddingRight="70dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:text="@string/OAuthGoogle"
-        android:textAllCaps="false"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvContinueToRegisterPageTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/btnContinueSignUpBack" />
 
     <Button
         android:id="@+id/btnContinueEmail"
-        android:layout_width="0dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="#0AC4BA"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/signupbutton"
+        android:fontFamily="@font/cerebri_sans_bold"
         android:text="@string/registerEmail"
         android:textAllCaps="false"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/btnContinueGoogle"
-        app:layout_constraintStart_toStartOf="@+id/btnContinueGoogle"
-        app:layout_constraintTop_toBottomOf="@+id/btnContinueGoogle" />
-
-    <ImageView
-        android:id="@+id/imgRecipe"
-        android:layout_width="36dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btnContinueGoogle"
-        app:layout_constraintStart_toStartOf="@+id/btnContinueGoogle"
-        app:layout_constraintTop_toTopOf="@+id/btnContinueGoogle"
-        app:srcCompat="@drawable/common_google_signin_btn_icon_light_focused" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
     <LinearLayout
         android:id="@+id/linearLayout5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnContinueEmail"
+        app:layout_constraintStart_toStartOf="@+id/btnContinueEmail"
         app:layout_constraintTop_toBottomOf="@+id/btnContinueEmail">
 
         <TextView
@@ -83,6 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/cerebri_sans_regular"
             android:text="@string/alreadyhaveaccount1"
             android:textColor="#000000"
             android:textSize="16sp" />
@@ -92,51 +65,45 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/cerebri_sans_bold"
             android:text="@string/alreadyhaveaccount2"
             android:textColor="#037171"
             android:textSize="16sp"
             android:textStyle="bold" />
     </LinearLayout>
 
-    dumpster 🗑, [14.11.18 01:03]
-    <TextView
-        android:id="@+id/tvHelloPageText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="70dp"
-        android:text="@string/alreadyhaveaccount1"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tvHelloPageText4"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/tvHelloPageText4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="@string/alreadyhaveaccount2"
-        android:textColor="#ff0544"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvHelloPageText3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvHelloPageText3"
-        app:layout_constraintTop_toTopOf="@+id/tvHelloPageText3" />
-
     <TextView
         android:id="@+id/tvTOS"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/cerebri_sans_regular"
         android:text="@string/tos"
         android:textAlignment="center"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/btnContinueEmail"
         app:layout_constraintStart_toStartOf="@+id/btnContinueEmail"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvContinueToRegisterPageTitle"
+        app:srcCompat="@drawable/undraw_wishes_icyp" />
+
+    <Button
+        android:id="@+id/btnContinueSignUpBack"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/black_arrow" />
 </android.support.constraint.ConstraintLayout>

@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".Login"
-            android:screenOrientation="portrait">
-        </activity>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <activity android:name=".Login" />
         <activity android:name=".HelloPage" />
         <activity android:name=".Registration" />
         <activity android:name=".Home" />
@@ -22,19 +22,15 @@
         <activity android:name=".InputHeight" />
         <activity android:name=".ChooseGoal" />
         <activity android:name=".ContinueToSignUp" />
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
         <activity android:name=".RecipeActivity" />
         <activity android:name=".RecipeInfoActivity" />
+        <activity android:name=".WeekyLog" />
         <activity android:name=".ChooseLoginRegister">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".WeekyLog"></activity>
     </application>
 
 </manifest>

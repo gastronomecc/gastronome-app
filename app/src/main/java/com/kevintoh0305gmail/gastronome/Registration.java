@@ -4,10 +4,12 @@ package com.kevintoh0305gmail.gastronome;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -16,7 +18,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Registration extends AppCompatActivity {
 
     EditText txtName, txtEmail, txtPassword, txtCfmPassword;
-    Button btnRegister;
+    TextView tvLogin;
+    Button btnRegister, btnBack;
     FirebaseAuth mAuth;
     FirebaseDatabase firebaseDatabase;
 
@@ -30,6 +33,8 @@ public class Registration extends AppCompatActivity {
         txtPassword = findViewById(R.id.etRegistrationPW);
         txtCfmPassword = findViewById(R.id.etRegistrationCfmPW);
         btnRegister = findViewById(R.id.btnRegisterAccount);
+        tvLogin = findViewById(R.id.tvRegisterText2);
+        btnBack = findViewById(R.id.btnRegisterBack);
         firebaseDatabase = FirebaseDatabase.getInstance();
         mAuth = FirebaseAuth.getInstance();
 
@@ -54,6 +59,20 @@ public class Registration extends AppCompatActivity {
                 } else {
                     Toast.makeText(Registration.this, "Authentication failed", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        tvLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Registration.this, Login.class));
+            }
+        });
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Registration.this, ContinueToSignUp.class));
             }
         });
     }

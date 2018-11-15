@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class HelloPage extends AppCompatActivity {
     static RegisteringAccountProfile profile;
-    Button btnNext;
+    Button btnNext, btnBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +19,17 @@ public class HelloPage extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HelloPage.this, InputAge.class));
+                startActivity(new Intent(HelloPage.this, ChooseGoal.class));
+            }
+        });
+        btnBack = findViewById(R.id.btnHelloBack);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(HelloPage.this, Login.class);
+                //Clear activity stack
+                in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(in);
             }
         });
     }
