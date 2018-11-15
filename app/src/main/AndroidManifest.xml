@@ -14,6 +14,12 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <activity android:name=".ChooseLoginRegister">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Login" />
         <activity android:name=".HelloPage" />
         <activity android:name=".Registration" />
@@ -27,12 +33,6 @@
         <activity android:name=".RecipeActivity" />
         <activity android:name=".RecipeInfoActivity" />
         <activity android:name=".WeekyLog" />
-        <activity android:name=".ChooseLoginRegister">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
