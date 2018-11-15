@@ -4,31 +4,45 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FF0000">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tvProfileTitle"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView36"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/cerebri_sans_bold"
+            android:text="Profile and Settings"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btnProfileSignOut"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="34dp"
         android:layout_marginEnd="32dp"
-        android:text="Profile Fragment"
-        android:textSize="30sp"
+        android:background="@drawable/signupbutton"
+        android:text="Sign Out"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvProfileInfo"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="10dp"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/tvProfileTitle"
-        app:layout_constraintStart_toStartOf="@+id/tvProfileTitle"
-        app:layout_constraintTop_toBottomOf="@+id/tvProfileTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout9" />
 </android.support.constraint.ConstraintLayout>
