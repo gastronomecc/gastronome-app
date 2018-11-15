@@ -28,7 +28,7 @@ public class Home extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottom_nav_bar);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
         //The home fragment is the default fragment shown when the activity is first loaded.
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FeedFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new LogFragment()).commit();
         //Retrieving user information from Firebase
         //DatabaseReference reference = firebaseDatabase.getReference("Users/"+user.getUid());
         //reference.addValueEventListener(new ValueEventListener() {
