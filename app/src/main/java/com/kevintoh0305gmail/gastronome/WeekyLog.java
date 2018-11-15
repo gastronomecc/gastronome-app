@@ -6,6 +6,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -14,17 +15,19 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
 public class WeekyLog extends AppCompatActivity {
 
-
+    private static DecimalFormat df2 = new DecimalFormat(".##");
     RecyclerView rvToday, rvTmr, rvSat, rvSun;
     FirebaseDatabase database;
     DatabaseReference logRef, ref;
     RecipeNoAddAdapter recipeAdapter, recipeAdapter2, recipeAdapter3, recipeAdapter4;
+    TextView tvEstWeight;
     ArrayList<Recipe> recipes = new ArrayList<>();
     ArrayList<Recipe> logRecipes = new ArrayList<>();
     ArrayList<Recipe> tmrRecipes = new ArrayList<>();
@@ -32,13 +35,15 @@ public class WeekyLog extends AppCompatActivity {
     ArrayList<Recipe> sunRecipes = new ArrayList<>();
     FirebaseAuth mAuth;
     Calendar cal;
+    double totalCal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weeky_log);
         cal = Calendar.getInstance();
-
+        totalCal = 0;
+        tvEstWeight = findViewById(R.id.tvEstWeight);
 
         //Wed is 4
         Log.d("Day", ""+ cal.get(Calendar.DAY_OF_WEEK));
@@ -58,10 +63,15 @@ public class WeekyLog extends AppCompatActivity {
         GetRecipes();
 
 
+
         logRef = database.getReference("ZLogs");
         logRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                ArrayList<Recipe> logRecipes = new ArrayList<>();
+                ArrayList<Recipe> tmrRecipes = new ArrayList<>();
+                ArrayList<Recipe> satRecipes = new ArrayList<>();
+                ArrayList<Recipe> sunRecipes = new ArrayList<>();
                 for (DataSnapshot ds: dataSnapshot.getChildren()) {
                     Logs log = ds.getValue(Logs.class);
                     //if (log.getEmail().equals("dom@gmail.com")) { //NEED CHANGE
@@ -69,6 +79,7 @@ public class WeekyLog extends AppCompatActivity {
                         for (Recipe r : recipes) {
                             if (log.getTitle().equals(r.getTitle())) {
                                 logRecipes.add(r);
+                                totalCal += r.getCalories();
                             }
                         }
                     }
@@ -76,6 +87,7 @@ public class WeekyLog extends AppCompatActivity {
                         for (Recipe r : recipes) {
                             if (log.getTitle().equals(r.getTitle())) {
                                 tmrRecipes.add(r);
+                                totalCal += r.getCalories();
                             }
                         }
                     }
@@ -84,6 +96,7 @@ public class WeekyLog extends AppCompatActivity {
                             if (log.getTitle().equals(r.getTitle())){
                                 Log.d("SAT", "SAT");
                                 satRecipes.add(r);
+                                totalCal += r.getCalories();
                             }
                         }
                     }
@@ -91,11 +104,31 @@ public class WeekyLog extends AppCompatActivity {
                         for (Recipe r : recipes) {
                             if (log.getTitle().equals(r.getTitle())) {
                                 sunRecipes.add(r);
+                                totalCal += r.getCalories();
                             }
 
                         }
                     }
                 }
+
+                Log.d("Total Calories: ", "" + totalCal);
+                double supposedCal = 8800;
+                double excessCal = supposedCal - totalCal;
+
+                double weightChange = excessCal/8;
+                double changeInG = weightChange / 1000;
+
+                Log.d("Weight Changed: ", "" +  changeInG);
+
+                //GET THE USER WEIGHT
+                double userWeight = 60;
+                double newWeight = userWeight - changeInG;
+                Log.d("New Weight: " , "" + df2.format(newWeight));
+
+                tvEstWeight.setText("Estimated Weight after the week: " + df2.format(newWeight) + "kg");
+
+
+
 
                 recipeAdapter = new RecipeNoAddAdapter(WeekyLog.this, logRecipes);
                 rvToday.setAdapter(recipeAdapter);
