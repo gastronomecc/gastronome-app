@@ -15,7 +15,7 @@ public class ContinueToSignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_continue_to_sign_up);
         btnEmailSignUp = findViewById(R.id.btnContinueEmail);
-        btnBack = findViewById(R.id.btnChooseGoalBack);
+        btnBack = findViewById(R.id.btnContinueSignUpBack);
         login = findViewById(R.id.tvContinueText2);
         btnEmailSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
