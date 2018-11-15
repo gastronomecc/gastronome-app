@@ -30,15 +30,15 @@ public class Login extends AppCompatActivity {
         txtEmail = findViewById(R.id.etUserEmail);
         txtPassword = findViewById(R.id.etUserPassword);
         mAuth = FirebaseAuth.getInstance();
-        mAuth.signInWithEmailAndPassword("dom@gmail.com", "password123");
+        //mAuth.signInWithEmailAndPassword("dom@gmail.com", "password123");
         //Log.d("TEST", mAuth.getCurrentUser().getEmail());
 
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(Login.this, Home.class);
-                startActivity(in);
+                //Intent in = new Intent(Login.this, Home.class);
+                //startActivity(in);
                 String email = txtEmail.getText().toString().trim();
                 String password = txtPassword.getText().toString().trim();
 
