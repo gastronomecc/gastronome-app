@@ -58,7 +58,7 @@ public class Home extends AppCompatActivity {
                             selectedFragment = new FeedFragment();
                             break;
                         case R.id.nav_add:
-                            selectedFragment = new FeedFragment();
+                            selectedFragment = new AddCustomRecipeFragment();
                             break;
                         case R.id.nav_profile:
                             selectedFragment = new ProfileFragment();
