@@ -118,7 +118,7 @@ android:fillViewport="true">
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rvToday"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -195,7 +195,7 @@ android:fillViewport="true">
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rvTmr"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -251,7 +251,7 @@ android:fillViewport="true">
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rvSat"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -304,7 +304,7 @@ android:fillViewport="true">
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rvSun"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
