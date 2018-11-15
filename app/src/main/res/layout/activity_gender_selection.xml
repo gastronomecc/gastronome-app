@@ -43,7 +43,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <View
-            android:layout_width="180dp"
+            android:layout_width="170dp"
             android:layout_height="3dp"
             android:background="#0AC4BA"
             app:layout_constraintBottom_toBottomOf="parent"

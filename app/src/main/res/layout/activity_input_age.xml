@@ -9,7 +9,8 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_rectangle">
 
         <Button
             android:id="@+id/btnAgeBack"
@@ -40,7 +41,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
         <View
-            android:layout_width="270dp"
+            android:layout_width="255dp"
             android:layout_height="3dp"
             android:background="#0AC4BA"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -52,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="70dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/cerebri_sans_regular"
         android:text="@string/promptAge"
@@ -82,18 +83,6 @@
         app:layout_constraintStart_toStartOf="@+id/tvPromptAge"
         app:layout_constraintTop_toBottomOf="@+id/tvPromptAge" />
 
-    <Button
-        android:id="@+id/btnAgeNext"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="64dp"
-        android:background="@drawable/next_button_active"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/etAge"
-        app:layout_constraintTop_toBottomOf="@+id/tvAgeError" />
-
     <TextView
         android:id="@+id/tvAgeError"
         android:layout_width="wrap_content"
@@ -107,5 +96,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etAge" />
+
+    <Button
+        android:id="@+id/btnAgeNext"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="64dp"
+        android:background="@drawable/next_button_active"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etAge"
+        app:layout_constraintTop_toBottomOf="@+id/tvAgeError" />
 
 </android.support.constraint.ConstraintLayout>

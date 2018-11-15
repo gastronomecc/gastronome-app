@@ -18,12 +18,12 @@
     <string name="alreadyhaveaccount1">Already have an account?</string>
     <string name="alreadyhaveaccount2">\tLog in.</string>
     <!--Account Registration -->
-    <string name="registrationTitle">Account Registration</string>
-    <string name="registrationName">name</string>
-    <string name="registrationEmail">email</string>
-    <string name="registrationPassword">password</string>
-    <string name="registrationConfirmPassword">confirm password</string>
-    <string name="registrationRegisterButton">register</string>
+    <string name="registrationTitle">Register for Gastronome</string>
+    <string name="registrationName">Full Name</string>
+    <string name="registrationEmail">Email</string>
+    <string name="registrationPassword">Password</string>
+    <string name="registrationConfirmPassword">Confirm Password</string>
+    <string name="registrationRegisterButton">Register</string>
     <!--Gender Selection-->
     <string name="genderSelectPrompt">What\'s your gender?</string>
     <string name="genderFemale">Female</string>
@@ -43,6 +43,7 @@
     <string name="gainMuscle">Gain muscle</string>
     <string name="gainMuscleDescription">Build mass &amp; gain strength</string>
     <!--Continue with account registration-->
+    <string name="signupmotivation">You\'re almost done.</string>
     <string name="OAuthGoogle">Continue with Google</string>
     <string name="registerEmail">Continue with email</string>
     <!--Terms and Conditions-->
@@ -52,6 +53,5 @@
     <!--Feed-->
     <string name="FeedIntroNotification">Here you’ll find: \n All the amazing recipes you can find \n in Gastronome!</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
