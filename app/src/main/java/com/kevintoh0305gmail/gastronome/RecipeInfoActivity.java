@@ -1,13 +1,18 @@
 package com.kevintoh0305gmail.gastronome;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -16,6 +21,7 @@ public class RecipeInfoActivity extends AppCompatActivity {
 
     TextView tvTitle, tvShortDesc, tvServSize;
     Button btnPrepTime, btnDifficulty, btnDietary, btnIngredients, btnSteps, btnNutrition, btnIncrease, btnDecrease;
+    ImageButton imgBtnAdd;
     RecyclerView rvIngredients;
     IngredientsAdapter ingredientsAdapter;
 
@@ -36,6 +42,7 @@ public class RecipeInfoActivity extends AppCompatActivity {
         btnNutrition = findViewById(R.id.btnRecipeInfoNutrition);
         btnIncrease = findViewById(R.id.btnRecipeInfoAddServing);
         btnDecrease = findViewById(R.id.btnRecipeInfoRemoveServing);
+        imgBtnAdd = findViewById(R.id.imgBtnAdd);
 
         Recipe selectedRecipe = RecipeAdapter.selectedRecipe;
         String title = selectedRecipe.getTitle();
@@ -71,6 +78,15 @@ public class RecipeInfoActivity extends AppCompatActivity {
         }
 
         tvServSize.setText("" + servSize);
+
+        imgBtnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                imgBtnAddClick();
+            }
+        });
+
+
 
         btnIngredients.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -143,5 +159,25 @@ public class RecipeInfoActivity extends AppCompatActivity {
         rvIngredients.setLayoutManager(manager);
         rvIngredients.setItemAnimator(new DefaultItemAnimator());
         ingredientsAdapter.notifyDataSetChanged();
+    }
+
+    public void imgBtnAddClick() {
+        LayoutInflater layoutInflater = LayoutInflater.from(getApplicationContext());
+        final View view = layoutInflater.inflate(R.layout.logdialog, null);
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(RecipeInfoActivity.this);
+        dialogBuilder.setView(view);
+        dialogBuilder.setCancelable(false)
+                .setPositiveButton("Add to Weekly Recipe", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                }).create().show();
+
     }
 }

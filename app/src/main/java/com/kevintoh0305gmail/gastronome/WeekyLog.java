@@ -9,6 +9,7 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -54,6 +55,10 @@ public class WeekyLog extends AppCompatActivity {
         rvSat = findViewById(R.id.rvSat);
         rvSun = findViewById(R.id.rvSun);
         //final String Uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        mAuth = FirebaseAuth.getInstance();
+
+        //String userName = mAuth.getCurrentUser().get
 
         database = FirebaseDatabase.getInstance();
         //String userEmail = mAuth.getCurrentUser().getEmail();
