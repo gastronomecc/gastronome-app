@@ -21,6 +21,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class FeedFragment extends Fragment {
+    public static final String SHOW_NOTIFICATION = "showNotification";
+    
     RecyclerView rvFeedRecipe;
     RecipeAdapter recipeAdapter;
     ArrayList<Recipe> recipes = new ArrayList<>();
@@ -37,6 +39,8 @@ public class FeedFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         rvFeedRecipe = view.findViewById(R.id.rvFeedRecipes);
 
+        setNotificationVisibility();
+        
         database = FirebaseDatabase.getInstance();
         ref = database.getReference("Recipes");
         ref.addValueEventListener(new ValueEventListener() {
@@ -59,5 +63,30 @@ public class FeedFragment extends Fragment {
                 Log.d("The read failed: " , "" + databaseError.getCode());
             }
         });
+    }
+        private void setNotificationVisibility() {
+        FragmentActivity activity = getActivity();
+
+        TextView tvNotification = activity.findViewById(R.id.tvNotification);
+        TextView tvDismissNotification = activity.findViewById(R.id.textView6);
+
+        final SharedPreferences prefs = activity.getPreferences(MODE_PRIVATE);
+
+        if (!prefs.getBoolean(SHOW_NOTIFICATION, true)) {
+            tvNotification.setVisibility(View.GONE);
+            tvDismissNotification.setVisibility(View.GONE);
+        }
+        else {
+            tvDismissNotification.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putBoolean(SHOW_NOTIFICATION, false);
+                    editor.commit();
+
+                    setNotificationVisibility();
+                }
+            });
+        }
     }
 }
