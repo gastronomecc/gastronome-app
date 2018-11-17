@@ -1,9 +1,12 @@
 package com.kevintoh0305gmail.gastronome;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,9 +24,9 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+
 public class FeedFragment extends Fragment {
-    public static final String SHOW_NOTIFICATION = "showNotification";
-    
+
     RecyclerView rvFeedRecipe;
     RecipeAdapter recipeAdapter;
     ArrayList<Recipe> recipes = new ArrayList<>();
@@ -40,7 +44,7 @@ public class FeedFragment extends Fragment {
         rvFeedRecipe = view.findViewById(R.id.rvFeedRecipes);
 
         setNotificationVisibility();
-        
+
         database = FirebaseDatabase.getInstance();
         ref = database.getReference("Recipes");
         ref.addValueEventListener(new ValueEventListener() {
@@ -64,13 +68,14 @@ public class FeedFragment extends Fragment {
             }
         });
     }
-        private void setNotificationVisibility() {
+    private void setNotificationVisibility() {
+        final String SHOW_NOTIFICATION = "showNotification";
         FragmentActivity activity = getActivity();
 
         TextView tvNotification = activity.findViewById(R.id.tvNotification);
-        TextView tvDismissNotification = activity.findViewById(R.id.textView6);
+        TextView tvDismissNotification = activity.findViewById(R.id.tvDismissNotification);
 
-        final SharedPreferences prefs = activity.getPreferences(MODE_PRIVATE);
+        final SharedPreferences prefs = activity.getPreferences(Context.MODE_PRIVATE);
 
         if (!prefs.getBoolean(SHOW_NOTIFICATION, true)) {
             tvNotification.setVisibility(View.GONE);
