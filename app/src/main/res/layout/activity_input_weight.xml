@@ -9,8 +9,7 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout5"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/white_rectangle">
+        android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/btnWeightBack"
