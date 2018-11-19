@@ -1,5 +1,7 @@
 package com.kevintoh0305gmail.gastronome;
 
+import com.kevintoh0305gmail.gastronome.model.User;
+
 public class SharedGlobals {
     private static User currentUser;
 

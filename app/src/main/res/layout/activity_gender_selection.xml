@@ -5,7 +5,7 @@
     android:id="@+id/genderTopBar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GenderSelection"
+    tools:context=".signup.GenderSelection"
     tools:layout_editor_absoluteY="25dp">
 
     <android.support.constraint.ConstraintLayout

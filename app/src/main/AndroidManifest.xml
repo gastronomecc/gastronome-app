@@ -26,17 +26,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HelloPage" />
-        <activity android:name=".Registration" />
-        <activity android:name=".Home" />
-        <activity android:name=".GenderSelection" />
-        <activity android:name=".InputAge" />
-        <activity android:name=".InputWeight" />
-        <activity android:name=".InputHeight" />
-        <activity android:name=".ChooseGoal" />
-        <activity android:name=".ContinueToSignUp" />
-        <activity android:name=".RecipeActivity" />
-        <activity android:name=".RecipeInfoActivity" />
-        <activity android:name=".WeekyLog" />
+        <activity android:name=".signup.HelloPage" />
+        <activity android:name=".signup.Registration" />
+        <activity android:name=".home.Home" />
+        <activity android:name=".signup.GenderSelection" />
+        <activity android:name=".signup.InputAge" />
+        <activity android:name=".signup.InputWeight" />
+        <activity android:name=".signup.InputHeight" />
+        <activity android:name=".signup.ChooseGoal" />
+        <activity android:name=".signup.ContinueToSignUp" />
+        <activity android:name=".recipe.RecipeActivity" />
+        <activity android:name=".recipe.RecipeInfoActivity" />
+        <activity android:name=".log.WeekyLog" />
     </application>
 </manifest>

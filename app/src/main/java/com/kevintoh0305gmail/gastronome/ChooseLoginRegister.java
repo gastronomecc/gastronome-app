@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.kevintoh0305gmail.gastronome.signup.HelloPage;
+
 public class ChooseLoginRegister extends AppCompatActivity {
     Button btnSignUp, btnLogIn;
     @Override
