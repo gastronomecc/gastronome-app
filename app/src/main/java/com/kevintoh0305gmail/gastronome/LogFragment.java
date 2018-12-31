@@ -26,7 +26,6 @@ import java.util.Calendar;
 
 public class LogFragment extends Fragment {
     private static DecimalFormat df2 = new DecimalFormat(".##");
-    static SharedGlobals globals;
     RecyclerView rvToday, rvTmr, rvSat, rvSun;
     FirebaseDatabase database;
     DatabaseReference logRef, ref;
@@ -50,6 +49,7 @@ public class LogFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         cal = Calendar.getInstance();
+        database = FirebaseDatabase.getInstance();
         totalCal = 0;
         tvEstWeight = view.findViewById(R.id.tvEstWeight);
         tvWelcomeUser = view.findViewById(R.id.tvWelcomeUser);
@@ -64,16 +64,13 @@ public class LogFragment extends Fragment {
         rvSun = view.findViewById(R.id.rvSun);
         //final String Uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-        database = FirebaseDatabase.getInstance();
         //mAuth.getCurrentUser().getEmail();
-        //tvWelcomeUser.setText("Welcome "+ globals.getCurrentUser().getName());
+
         //Log.d("Email:", userEmail);
         //Log.d("UID", mAuth.getCurrentUser().getUid() );
 
         GetRecipes();
-
-
-
+        GetUserName();
         logRef = database.getReference("ZLogs");
         logRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -190,4 +187,22 @@ public class LogFragment extends Fragment {
             }
         });
     }
+
+    public void GetUserName()
+    {
+        DatabaseReference reference = database.getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("name");
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String name = dataSnapshot.getValue(String.class);
+                tvWelcomeUser.setText("Welcome, "+ name);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.d("Retrieval failed: " , "" + databaseError.getCode());
+            }
+        });
+    }
+
 }

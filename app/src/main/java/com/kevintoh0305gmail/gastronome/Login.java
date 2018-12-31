@@ -68,19 +68,6 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            /*
-                            DatabaseReference reference = database.getReference("Users/"+FirebaseAuth.getInstance().getCurrentUser().getUid());
-                            reference.addValueEventListener(new ValueEventListener() {
-                               @Override
-                               public void onDataChange(DataSnapshot dataSnapshot) {
-                                    globals.setCurrentUser(dataSnapshot.getValue(User.class));
-                               }
-                               @Override
-                               public void onCancelled(DatabaseError databaseError) {
-                                    Log.d("onCancelled error","Retrieval of user data failed");
-                                }
-                            });
-                            */
                             Intent in = new Intent(Login.this, Home.class);
                             in.setFlags(in.FLAG_ACTIVITY_NEW_TASK | in.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(in);
