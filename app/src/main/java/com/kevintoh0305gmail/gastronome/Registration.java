@@ -2,6 +2,7 @@ package com.kevintoh0305gmail.gastronome;
 
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +12,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
@@ -41,21 +46,25 @@ public class Registration extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String user_name = txtName.getText().toString().trim();
-                String user_email = txtEmail.getText().toString().trim();
+                final String user_name = txtName.getText().toString().trim();
+                final String user_email = txtEmail.getText().toString().trim();
                 String user_password = txtPassword.getText().toString().trim();
                 String user_cfmPassword = txtCfmPassword.getText().toString().trim();
 
                 if (isValid(user_name, user_email, user_password, user_cfmPassword)) {
                     mAuth.createUserWithEmailAndPassword(user_email, user_password);
-                    mAuth.signInWithEmailAndPassword(user_email, user_password);
-                    User newUser = new User(FirebaseAuth.getInstance().getCurrentUser().getUid(), user_name, user_email, HelloPage.profile.getGoal(), HelloPage.profile.getGender(), HelloPage.profile.getAge(), HelloPage.profile.getHeight(), HelloPage.profile.getWeight(), calculateBMI(HelloPage.profile.getHeight(), HelloPage.profile.getWeight()));
-                    firebaseDatabase.getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(newUser);
-                    mAuth.signOut();
-                    Intent in = new Intent(Registration.this, Login.class);
-                    //Clear activity stack
-                    in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(in);
+                    mAuth.signInWithEmailAndPassword(user_email, user_password).addOnCompleteListener(Registration.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            User newUser = new User(FirebaseAuth.getInstance().getCurrentUser().getUid(), user_name, user_email, HelloPage.profile.getGoal(), HelloPage.profile.getGender(), HelloPage.profile.getAge(), HelloPage.profile.getHeight(), HelloPage.profile.getWeight(), calculateBMI(HelloPage.profile.getHeight(), HelloPage.profile.getWeight()));
+                            firebaseDatabase.getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(newUser);
+                            mAuth.signOut();
+                            Intent in = new Intent(Registration.this, Login.class);
+                            //Clear activity stack
+                            in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(in);
+                        }
+                    });
                 } else {
                     Toast.makeText(Registration.this, "Authentication failed", Toast.LENGTH_SHORT).show();
                 }

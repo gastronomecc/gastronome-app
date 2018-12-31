@@ -26,11 +26,12 @@ import java.util.Calendar;
 
 public class LogFragment extends Fragment {
     private static DecimalFormat df2 = new DecimalFormat(".##");
+    static SharedGlobals globals;
     RecyclerView rvToday, rvTmr, rvSat, rvSun;
     FirebaseDatabase database;
     DatabaseReference logRef, ref;
     RecipeNoAddAdapter recipeAdapter, recipeAdapter2, recipeAdapter3, recipeAdapter4;
-    TextView tvEstWeight;
+    TextView tvWelcomeUser, tvEstWeight;
     ArrayList<Recipe> recipes = new ArrayList<>();
     ArrayList<Recipe> logRecipes = new ArrayList<>();
     ArrayList<Recipe> tmrRecipes = new ArrayList<>();
@@ -51,6 +52,7 @@ public class LogFragment extends Fragment {
         cal = Calendar.getInstance();
         totalCal = 0;
         tvEstWeight = view.findViewById(R.id.tvEstWeight);
+        tvWelcomeUser = view.findViewById(R.id.tvWelcomeUser);
 
         //Wed is 4
         Log.d("Day", ""+ cal.get(Calendar.DAY_OF_WEEK));
@@ -63,7 +65,8 @@ public class LogFragment extends Fragment {
         //final String Uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         database = FirebaseDatabase.getInstance();
-        //String userEmail = mAuth.getCurrentUser().getEmail();
+        //mAuth.getCurrentUser().getEmail();
+        //tvWelcomeUser.setText("Welcome "+ globals.getCurrentUser().getName());
         //Log.d("Email:", userEmail);
         //Log.d("UID", mAuth.getCurrentUser().getUid() );
 

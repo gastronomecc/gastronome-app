@@ -14,12 +14,19 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Login extends AppCompatActivity {
     Button btnLogin, btnBack;
     EditText txtEmail, txtPassword;
     TextView tvError;
     FirebaseAuth mAuth;
+    FirebaseDatabase database;
+    static SharedGlobals globals;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +36,8 @@ public class Login extends AppCompatActivity {
         btnBack = findViewById(R.id.btnLoginBack);
         txtEmail = findViewById(R.id.etUserEmail);
         txtPassword = findViewById(R.id.etUserPassword);
+        tvError = findViewById(R.id.tvError);
+        database = FirebaseDatabase.getInstance();
         mAuth = FirebaseAuth.getInstance();
         //mAuth.signInWithEmailAndPassword("dom@gmail.com", "password123");
         //Log.d("TEST", mAuth.getCurrentUser().getEmail());
@@ -37,6 +46,7 @@ public class Login extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                database.setPersistenceEnabled(true);
                 //Intent in = new Intent(Login.this, Home.class);
                 //startActivity(in);
                 String email = txtEmail.getText().toString().trim();
@@ -58,6 +68,19 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            /*
+                            DatabaseReference reference = database.getReference("Users/"+FirebaseAuth.getInstance().getCurrentUser().getUid());
+                            reference.addValueEventListener(new ValueEventListener() {
+                               @Override
+                               public void onDataChange(DataSnapshot dataSnapshot) {
+                                    globals.setCurrentUser(dataSnapshot.getValue(User.class));
+                               }
+                               @Override
+                               public void onCancelled(DatabaseError databaseError) {
+                                    Log.d("onCancelled error","Retrieval of user data failed");
+                                }
+                            });
+                            */
                             Intent in = new Intent(Login.this, Home.class);
                             in.setFlags(in.FLAG_ACTIVITY_NEW_TASK | in.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(in);
@@ -67,7 +90,6 @@ public class Login extends AppCompatActivity {
                             Toast.makeText(Login.this, "Authentication failed", Toast.LENGTH_SHORT).show();
                             txtPassword.setText("");
                             tvError.setText("Invalid email or password :-(");
-
                         }
                     }
                 });
