@@ -15,7 +15,7 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         bottomNavigationView = findViewById(R.id.bottom_nav_bar);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
-        //The home fragment is the default fragment shown when the activity is first loaded.
+        //The log fragment is the default fragment shown when the activity is first loaded.
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new LogFragment()).commit();
     }
 

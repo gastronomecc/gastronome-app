@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class RecipeViewHolder extends RecyclerView.ViewHolder{
@@ -16,6 +17,7 @@ public class RecipeViewHolder extends RecyclerView.ViewHolder{
     public Button btnPrepTime;
     public Button btnDifficulty;
     public Button btnMealType;
+    public ImageView imgRecipe;
     private Context context;
 
     public RecipeViewHolder(View v, Context c)
@@ -27,6 +29,7 @@ public class RecipeViewHolder extends RecyclerView.ViewHolder{
         btnPrepTime = v.findViewById(R.id.btnPrepTimeTag);
         btnMealType = v.findViewById(R.id.btnMealTypeTag);
         btnDifficulty = v.findViewById(R.id.btnDifficultyTag);
+        imgRecipe = v.findViewById(R.id.imgIndex);
         context = c;
     }
 }

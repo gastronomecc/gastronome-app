@@ -333,16 +333,12 @@ public class RecipeInfoActivity extends AppCompatActivity {
             }
         });
 
-
-
-
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dialog.cancel();
                 }
         });
-
 
     }
 }
