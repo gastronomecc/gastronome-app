@@ -263,7 +263,7 @@ def ResetDatabase():
      "2":"Meanwhile, use a swivel peeler to peel strips of carrot and cucumber into a bowl. Toss with the vinegar and sugar until the sugar has dissolved, then toss through the coriander leaves.",
      "3":"Divide the salad between 4 plates. Serve with the burgers and rice."},
     "prepTime":20, "readyTime":10, "servSize":4, "shortDesc":"If you're after something a bit lighter than potato-packed fishcakes, try these simple oriental-style burgers",
-    "title": "Superhealthy salmon burgers", "type": "Gain Muscle", "fats":"","carbs":"","sugar":"","salt":"","protein":""})
+    "title": "Superhealthy salmon burgers", "type": "Gain Muscle", "fats":"17g","carbs":"7g","sugar":"6g","salt":"830mg","protein":"29g"})
 
     #recipe 23 Asian Tofu with stir-fried noodles, pak choi & sugar snap peas
     firebase.put("/Recipes","Asian Tofu with Stir-Fried Noodles, Pak Choi & Sugar Snap Pea",{"calories":328,"dietary":"None","difficulty":"Medium",
