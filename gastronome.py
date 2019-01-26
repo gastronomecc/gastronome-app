@@ -287,7 +287,7 @@ def ResetDatabase():
      "4":"Add the dry macaroni and two cups of beef broth to the pot and stir to combine. Place a lid on top, turn the heat up to high, and let the pot come to a boil. Once it reaches a boil, give it a quick stir to loosen any pasta stuck to the bottom of the pot, replace the lid, and turn the heat down to medium-low.",
      "5":"Let the pot simmer on medium-low for about 15 minutes, or until the pasta is soft and has absorbed most of the liquid. Stir the pot one or two times during the 15 minutes to loosen any pasta stuck to the bottom.",
      "6":"Once the pasta is fully cooked, turn the heat off and add the cheese. Stir the cheese into the pasta until it has melted in and become slightly creamy. Serve hot."},
-    "prepTime":10, "readyTime":30, "servSize":2, "shortDesc":"A vegetarian stir-fry packed with spice and flavour. Marinate tofu in ginger, garlic and sesame and serve with a vermicelli noodle mix",
+    "prepTime":10, "readyTime":30, "servSize":2, "shortDesc":"This super hearty One Pot Chili Pasta is bursting with southwest chili flavor, protein, and fiber. It's a meal in a bowl that the whole family will love.",
     "title": "One-Pot Chili Pasta", "type": "Gain Muscles", "fats":"15g","carbs":"85g","sugar":"0g","salt":"0g","protein":"44g"})
 
     #recipe 25 Lamb of Gains
@@ -296,7 +296,7 @@ def ResetDatabase():
     {"0":"Heat a large skillet over medium-high heat. Season lamb with salt and pepper and add to skillet. Sear one side, then cook for 2 minutes on each side.",
      "1":"While the lamb cooks, add carrots to a running food processor, using chopper to push carrots through. Or grate the carrots on the large holes of a box grater.",
      "2":"In a large mixing bowl, whisk together Dijon mustard, olive oil, cilantro, scallions, vinegar, and orange zest. Add carrots and, with clean hands, toss with the dressing until carrots are well coated. Season with pepper. Let carrots marinate for 10 minutes. Serve with the lamb."},
-    "prepTime":10, "readyTime":30, "servSize":2, "shortDesc":"A vegetarian stir-fry packed with spice and flavour. Marinate tofu in ginger, garlic and sesame and serve with a vermicelli noodle mix",
+    "prepTime":10, "readyTime":30, "servSize":2, "shortDesc":"An easy and healthy meal to help keep you on track and makes great for meal prep throughout the week.",
     "title": "Lamb of Gains", "type": "Gain Muscles", "fats":"21g","carbs":"50g","sugar":"0g","salt":"0g","protein":"86g"})
 
     #recipe 26 Vanilla Almond Butter Protein Granola
