@@ -1,5 +1,6 @@
 package com.kevintoh0305gmail.gastronome;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -7,10 +8,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.Button;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class ProfileFragment extends Fragment {
-    TextView profileDetails;
+    Button btnLogout;
+    FirebaseAuth mAuth;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -20,10 +24,16 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-//        profileDetails = view.findViewById(R.id.tvProfileInfo);
-//        profileDetails.setText("Height : "+Home.globals.getCurrentUser().getHeight()+"cm\n"
-//                + "Weight : " + Home.globals.getCurrentUser().getWeight()+"kg\n"
-//                + "BMI : " + Home.globals.getCurrentUser().getBMI()+"\n"
-//                + "Goal : " + Home.globals.getCurrentUser().getGoal());
+        btnLogout = view.findViewById(R.id.btnProfileSignOut);
+        mAuth = FirebaseAuth.getInstance();
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuth.signOut();
+                Intent intent = new Intent(getContext(), ChooseLoginRegister.class);
+                intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK | intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+            }
+        });
     }
 }

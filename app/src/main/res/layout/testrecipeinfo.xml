@@ -134,7 +134,7 @@
                     app:layout_constraintTop_toTopOf="@+id/btnFav" />
 
                 <ImageButton
-                    android:id="@+id/imageButton2"
+                    android:id="@+id/imgBtnAdd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -151,9 +151,9 @@
                     android:layout_marginStart="8dp"
                     android:text="Add to Recipes"
                     android:textColor="@color/common_google_signin_btn_text_dark_focused"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
-                    app:layout_constraintStart_toEndOf="@+id/imageButton2"
-                    app:layout_constraintTop_toTopOf="@+id/imageButton2" />
+                    app:layout_constraintBottom_toBottomOf="@+id/imgBtnAdd"
+                    app:layout_constraintStart_toEndOf="@+id/imgBtnAdd"
+                    app:layout_constraintTop_toTopOf="@+id/imgBtnAdd" />
 
             </android.support.constraint.ConstraintLayout>
 

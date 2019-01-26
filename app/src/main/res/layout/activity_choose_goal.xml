@@ -6,13 +6,59 @@
     android:layout_height="match_parent"
     tools:context=".ChooseGoal">
 
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/goalTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btnChooseGoalBack"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/black_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/cerebri_sans_regular"
+            android:text="Step 1 of 5"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="85dp"
+            android:layout_height="3dp"
+            android:background="#0AC4BA"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"></View>
+    </android.support.constraint.ConstraintLayout>
+
     <TextView
         android:id="@+id/tvGoalText1"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/cerebri_sans_bold"
         android:text="@string/chooseGoal"
         android:textColor="#323643"
         android:textSize="24sp"
@@ -20,15 +66,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/goalTopBar" />
 
     <LinearLayout
         android:id="@+id/goalOptions"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,139 +84,27 @@
             android:id="@+id/goalLoseWeight"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/gender_card"
-            android:orientation="horizontal"
-            android:onClick="onLoseWeightClick">
-
-            <LinearLayout
-                android:layout_width="170dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/tvLoseWeight"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/loseWeight"
-                    android:textColor="#323643"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tvLoseWeightDescription"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/loseWeightDescription"
-                    android:textColor="#323643" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:id="@+id/imgRightArrow1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="90dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/select_goal_arrow" />
-
-        </LinearLayout>
+            android:background="@drawable/goal_lose_weight"
+            android:onClick="onLoseWeightClick"
+            android:orientation="horizontal"></LinearLayout>
 
         <LinearLayout
             android:id="@+id/goalGetFitter"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/gender_card"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/goal_be_healthier"
             android:onClick="onGetFitterClick"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="170dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/tvGetFitter"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/getFitter"
-                    android:textColor="#323643"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tvGetFitterDescription"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/getFitterDescription"
-                    android:textColor="#323643" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:id="@+id/imgRightArrow2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="90dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/select_goal_arrow" />
-
-        </LinearLayout>
+            android:orientation="horizontal"></LinearLayout>
 
         <LinearLayout
             android:id="@+id/goalGainMuscle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/gender_card"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/goal_gain_weight"
             android:onClick="onGainMuscle"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="170dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/tvGainMuscle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/gainMuscle"
-                    android:textColor="#323643"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tvGainMuscleDescription"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/gainMuscleDescription"
-                    android:textColor="#323643" />
-            </LinearLayout>
-
-            <ImageView
-                android:id="@+id/imgRightArrow3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="90dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/select_goal_arrow" />
-        </LinearLayout>
+            android:orientation="horizontal"></LinearLayout>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

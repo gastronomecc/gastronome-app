@@ -6,40 +6,85 @@
     android:layout_height="match_parent"
     tools:context=".InputWeight">
 
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnWeightBack"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/black_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/cerebri_sans_regular"
+            android:text="Step 5 of 5"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0AC4BA"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"></View>
+    </android.support.constraint.ConstraintLayout>
+
     <TextView
         android:id="@+id/tvPromptWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="240dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/cerebri_sans_bold"
         android:text="@string/promptWeight"
         android:textColor="#323643"
-        android:textSize="24sp"
+        android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="69dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="48dp"
-        android:layout_marginEnd="8dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvPromptWeight"
+        app:layout_constraintStart_toStartOf="@+id/tvPromptWeight"
         app:layout_constraintTop_toBottomOf="@+id/tvPromptWeight">
 
         <EditText
             android:id="@+id/etWeight"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:ems="10"
+            android:fontFamily="@font/cerebri_sans_regular"
             android:hint="Eg: 70"
             android:inputType="numberDecimal"
             android:textAlignment="center"
-            android:textSize="30sp"
+            android:textColor="#000000"
+            android:textSize="36sp"
             app:layout_constraintStart_toStartOf="@+id/tvPromptWeight"
             app:layout_constraintTop_toBottomOf="@+id/tvPromptWeight" />
 
@@ -47,9 +92,11 @@
             android:id="@+id/tvWeightUnit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="KG"
-            android:textSize="16sp"
             android:layout_gravity="center"
+            android:fontFamily="@font/cerebri_sans_bold"
+            android:text="KG"
+            android:textColor="#000000"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/etWeight"
             app:layout_constraintEnd_toEndOf="@+id/tvPromptWeight"
             app:layout_constraintStart_toEndOf="@+id/etWeight"
@@ -57,17 +104,30 @@
 
     </LinearLayout>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fabnextpage5"
+    <Button
+        android:id="@+id/btnWeightNext"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="64dp"
+        android:background="@drawable/next_button_active"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/tvWeightError" />
+
+    <TextView
+        android:id="@+id/tvWeightError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        android:clickable="true"
-        app:backgroundTint="#ff0544"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:srcCompat="@drawable/peach_rounded_button" />
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="5dp"
+        android:fontFamily="@font/cerebri_sans_regular"
+        android:textColor="#FF0000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
 
 </android.support.constraint.ConstraintLayout>
