@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class GenderSelection extends AppCompatActivity {
-    Button female, male;
+    Button female, male, btnback;
     TextView login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +16,7 @@ public class GenderSelection extends AppCompatActivity {
         setContentView(R.layout.activity_gender_selection);
         female = findViewById(R.id.btnGenderFemale);
         male = findViewById(R.id.btnGenderMale);
-        login = findViewById(R.id.tvGenderText2);
+        btnback = findViewById(R.id.btnGenderBack);
         female.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -31,10 +31,10 @@ public class GenderSelection extends AppCompatActivity {
                 startActivity(new Intent(GenderSelection.this, InputAge.class));
             }
         });
-        login.setOnClickListener(new View.OnClickListener() {
+        btnback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(GenderSelection.this, Login.class));
+                startActivity(new Intent(GenderSelection.this, ChooseGoal.class));
             }
         });
     }

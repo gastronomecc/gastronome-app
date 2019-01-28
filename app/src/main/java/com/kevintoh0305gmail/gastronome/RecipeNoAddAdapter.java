@@ -6,7 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class RecipeNoAddAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
@@ -38,6 +38,7 @@ public class RecipeNoAddAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
         } else {
             recipeViewHolder.btnMealType.setText(recipes.get(i).getDietary());
         }
+        Picasso.get().load(recipes.get(i).getImageURL()).resize(120,80).centerCrop().into(recipeViewHolder.imgRecipe);
     }
 
     @Override

@@ -6,6 +6,7 @@ import java.util.List;
 public class Recipe {
 
     String title;
+    String imageURL;
     ArrayList<String> ingredients;
     int prepTime;
     int readyTime;
@@ -64,9 +65,10 @@ public class Recipe {
         this.sugar = sugar;
     }
 
-    public Recipe(String title, ArrayList<String> ingredients, int prepTime, int readyTime, ArrayList<String> instructions, Long servSize, int calories, String type, String shortDesc, String difficulty, String dietary, String fats, String carbs, String protein, String salt, String sugar) {
+    public Recipe(String title, String imageURL, ArrayList<String> ingredients, int prepTime, int readyTime, ArrayList<String> instructions, Long servSize, int calories, String type, String shortDesc, String difficulty, String dietary, String fats, String carbs, String protein, String salt, String sugar) {
 
         this.title = title;
+        this.imageURL = imageURL;
         this.ingredients = ingredients;
         this.prepTime = prepTime;
         this.readyTime = readyTime;
@@ -90,6 +92,14 @@ public class Recipe {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 
     public ArrayList<String> getIngredients() {

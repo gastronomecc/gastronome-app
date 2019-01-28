@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/cerebri_sans_bold"
+        android:text="This Week"
+        android:textColor="#48A888"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/cerebri_sans_regular"
+        android:text="11 Nov - 17 Nov"
+        android:textColor="#737373"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+    <Button
+        android:id="@+id/btnDialogNext"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/btn_dialog_next"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout7"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout7"
+        app:layout_constraintTop_toTopOf="@+id/textView21" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView31">
+
+        <Button
+            android:id="@+id/btnMon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/dialog_button_mon_inactive"
+            app:layout_constraintBottom_toBottomOf="@+id/btnSun"
+            app:layout_constraintStart_toEndOf="@+id/btnSun"
+            app:layout_constraintTop_toTopOf="@+id/btnSun" />
+
+        <Button
+            android:id="@+id/btnTues"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/dialog_button_tue_inactive"
+            app:layout_constraintBottom_toBottomOf="@+id/btnMon"
+            app:layout_constraintStart_toEndOf="@+id/btnMon"
+            app:layout_constraintTop_toTopOf="@+id/btnMon" />
+
+        <Button
+            android:id="@+id/btnWed"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/dialog_button_wed_inactive"
+            app:layout_constraintBottom_toBottomOf="@+id/btnTues"
+            app:layout_constraintStart_toEndOf="@+id/btnTues"
+            app:layout_constraintTop_toTopOf="@+id/btnTues" />
+
+        <Button
+            android:id="@+id/btnThurs"
+            android:layout_width="40dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/dialog_button_thurs_inactive"
+            app:layout_constraintBottom_toBottomOf="@+id/btnWed"
+            app:layout_constraintStart_toEndOf="@+id/btnWed"
+            app:layout_constraintTop_toTopOf="@+id/btnWed" />
+
+        <Button
+            android:id="@+id/btnFri"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/dialog_button_fri_inactive"
+            app:layout_constraintBottom_toBottomOf="@+id/btnThurs"
+            app:layout_constraintStart_toEndOf="@+id/btnThurs"
+            app:layout_constraintTop_toTopOf="@+id/btnThurs" />
+
+        <Button
+            android:id="@+id/btnSat"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/dialog_button_sat_inactive"
+            app:layout_constraintBottom_toBottomOf="@+id/btnFri"
+            app:layout_constraintStart_toEndOf="@+id/btnFri"
+            app:layout_constraintTop_toTopOf="@+id/btnFri" />
+
+        <Button
+            android:id="@+id/btnSun"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/dialog_button_sun_inactive"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout7">
+
+        <Button
+            android:id="@+id/btnDialogCancel"
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="13dp"
+            android:background="@drawable/dialog_btn_inactive"
+            android:fontFamily="@font/cerebri_sans_bold"
+            android:text="Cancel"
+            android:textColor="#FFBA49"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnDialogAdd"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/dialog_btn_active"
+            android:fontFamily="@font/cerebri_sans_bold"
+            android:text="Add To Weekly Recipes"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/btnDialogCancel"
+            app:layout_constraintStart_toEndOf="@+id/btnDialogCancel"
+            app:layout_constraintTop_toTopOf="@+id/btnDialogCancel" />
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
@@ -48,6 +48,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
 
             }
         });
+        Picasso.get().load(recipes.get(i).getImageURL()).resize(120,80).centerCrop().into(recipeViewHolder.imgRecipe);
     }
 
     @Override

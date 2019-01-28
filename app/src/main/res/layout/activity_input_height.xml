@@ -6,40 +6,86 @@
     android:layout_height="match_parent"
     tools:context=".InputHeight">
 
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btnHeightBack"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/black_arrow"/>
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/cerebri_sans_regular"
+            android:text="Step 4 of 5"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <View
+            android:layout_width="340dp"
+            android:layout_height="3dp"
+            android:background="#0AC4BA"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"></View>
+    </android.support.constraint.ConstraintLayout>
+
     <TextView
         android:id="@+id/tvPromptHeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/cerebri_sans_bold"
         android:text="@string/promptHeight"
         android:textColor="#323643"
-        android:textSize="24sp"
+        android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="113dp" />
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout4"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout4"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="48dp"
-        android:layout_marginEnd="8dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvPromptHeight"
+        app:layout_constraintStart_toStartOf="@+id/tvPromptHeight"
         app:layout_constraintTop_toBottomOf="@+id/tvPromptHeight">
 
         <EditText
             android:id="@+id/etHeight"
-            android:layout_width="120dp"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:ems="10"
-            android:hint="Eg: 160"
+            android:fontFamily="@font/cerebri_sans_regular"
+            android:hint="Eg: 160 "
             android:inputType="numberDecimal"
             android:textAlignment="center"
-            android:textSize="30sp"
+            android:textColor="#000000"
+            android:textSize="36sp"
             app:layout_constraintStart_toStartOf="@+id/tvPromptHeight"
             app:layout_constraintTop_toBottomOf="@+id/tvPromptHeight" />
 
@@ -47,9 +93,11 @@
             android:id="@+id/tvHeightUnit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CM"
-            android:textSize="16sp"
             android:layout_gravity="center"
+            android:fontFamily="@font/cerebri_sans_bold"
+            android:text="CM"
+            android:textColor="#000000"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/etHeight"
             app:layout_constraintEnd_toEndOf="@+id/tvPromptHeight"
             app:layout_constraintStart_toEndOf="@+id/etHeight"
@@ -57,16 +105,28 @@
 
     </LinearLayout>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fabnextpage4"
+    <Button
+        android:id="@+id/btnHeightNext"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="64dp"
+        android:background="@drawable/next_button_active"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeightError" />
+
+    <TextView
+        android:id="@+id/tvHeightError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        android:clickable="true"
-        app:backgroundTint="#ff0544"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout3"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        app:srcCompat="@drawable/peach_rounded_button" />
+        android:layout_marginTop="29dp"
+        android:fontFamily="@font/cerebri_sans_regular"
+        android:textColor="#FF0000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
 </android.support.constraint.ConstraintLayout>

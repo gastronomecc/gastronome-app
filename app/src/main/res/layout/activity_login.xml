@@ -9,140 +9,117 @@
 
     <TextView
         android:id="@+id/Healthy"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="109dp"
-        android:layout_marginStart="109dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="48dp"
         android:fontFamily="sans-serif"
-        android:text="Login to Gastronome."
+        android:text="Login to Gastronome"
         android:textAlignment="textStart"
         android:textColor="#03312E"
-        android:textSize="32dp"
+        android:textSize="28dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+
+    <EditText
+        android:id="@+id/etUserEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="50dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/white_rectangle"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Healthy">
+        android:ems="10"
+        android:fontFamily="@font/cerebri_sans_regular"
+        android:inputType="textEmailAddress"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/Healthy"
+        app:layout_constraintStart_toStartOf="@+id/tvEmailPH"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmailPH" />
 
-        <EditText
-            android:id="@+id/etUserEmail"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="15dp"
-            android:background="@android:color/transparent"
-            android:ems="10"
-            android:hint="@string/loginEmail"
-            android:inputType="textEmailAddress"
-            android:textSize="16sp"
-            tools:layout_editor_absoluteX="50dp"
-            tools:layout_editor_absoluteY="382dp" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray" />
-
-        <EditText
-            android:id="@+id/etUserPassword"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="15dp"
-            android:background="@android:color/transparent"
-            android:ems="10"
-            android:hint="@string/loginPassword"
-            android:inputType="textPassword"
-            android:textSize="16sp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp" />
-
-    </LinearLayout>
+    <EditText
+        android:id="@+id/etUserPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:fontFamily="@font/cerebri_sans_regular"
+        android:inputType="textPassword"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/etUserEmail"
+        app:layout_constraintStart_toStartOf="@+id/tvPasswordPH"
+        app:layout_constraintTop_toBottomOf="@+id/tvPasswordPH" />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:background="#0AC4BA"
+        android:fontFamily="@font/cerebri_sans_bold"
         android:text="@string/loginButton"
         android:textColor="#ffffff"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@+id/tvError"
+        app:layout_constraintStart_toStartOf="@+id/tvError"
         app:layout_constraintTop_toBottomOf="@+id/tvError" />
 
     <TextView
         android:id="@+id/tvForgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/cerebri_sans_regular"
         android:text="@string/loginHelpForgotPassword"
         android:textColor="#737373"
         android:textSize="14sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/btnLogin"
         app:layout_constraintStart_toStartOf="@+id/btnLogin"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/tvEmailPH"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/tvForgotPassword"
-        app:layout_constraintStart_toStartOf="@+id/tvForgotPassword"
-        app:layout_constraintTop_toBottomOf="@+id/tvForgotPassword">
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/cerebri_sans_bold"
+        android:text="Email"
+        android:textColor="#C5CCD6"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/Healthy"
+        app:layout_constraintTop_toBottomOf="@+id/Healthy" />
 
-        <TextView
-            android:id="@+id/tvNoAccount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/loginHelpSignUp1"
-            android:textColor="#000000"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/tvPromptSignUp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/loginHelpSignUp2"
-            android:textColor="#037171"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/safeArea1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"></LinearLayout>
+    <TextView
+        android:id="@+id/tvPasswordPH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/cerebri_sans_bold"
+        android:text="Password"
+        android:textColor="#C5CCD6"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/etUserEmail"
+        app:layout_constraintTop_toBottomOf="@+id/etUserEmail" />
 
     <TextView
         android:id="@+id/tvError"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        android:textColor="#FF0000"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/etUserPassword"
+        app:layout_constraintStart_toStartOf="@+id/etUserPassword"
+        app:layout_constraintTop_toBottomOf="@+id/etUserPassword" />
+
+    <Button
+        android:id="@+id/btnLoginBack"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/black_arrow"/>
 
 </android.support.constraint.ConstraintLayout>
