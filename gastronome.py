@@ -206,8 +206,8 @@ def ResetDatabase():
     "prepTime":10, "readyTime":25, "servSize":4, "shortDesc":"This storecupboard fish stew is bulked out with bread and is full of fresh, summer flavours",
     "title": "Summer fish stew", "type": "Lose Weight", "fats":"7g","carbs":"26g","sugar":"8g","salt":"700mg","protein":"34g"})
 
-    #recipe 17 Asian pulled chicken salad
-    firebase.put("/Recipes","Asian pulled chicken salad",{"calories":352,"dietary":"None","difficulty":"Easy",
+    #recipe 17 Asian Pulled Chicken Salad
+    firebase.put("/Recipes","Asian Pulled Chicken Salad",{"calories":352,"dietary":"None","difficulty":"Easy",
     "ingredients":{"0":"1 small roasted chicken, about 1kg","1":"½ red cabbage, cored and finely sliced","2":"3 carrots, coarsley grated or finely shredded","3":"5 spring onions, finely sliced on the diagonal","4":"2 red chillies, halved and thinly sliced","5":"small bunch coriander, roughly chopped, including stalks","6":"2 heaped tbsp roasted salted peanuts, roughly crushed","7":"3½ tbsp hoisin sauce","8":"1½ tbsp toasted sesame oil"},"instructions":
     {"0":"Combine the dressing ingredients in a small bowl and set aside.",
      "1":"Remove all the meat from the chicken, shred into large chunks and pop in a large bowl. Add the cabbage, carrots, spring onions, chillies and half the coriander.",
@@ -215,8 +215,8 @@ def ResetDatabase():
     "prepTime":45, "readyTime":45, "servSize":1, "shortDesc":"Pull apart a ready-roasted chicken to whip up this healthy, vibrant, low-calorie dish in just 20 minutes",
     "title": "Asian pulled chicken salad", "type": "Lose Weight", "fats":"19g","carbs":"14g","sugar":"11g","salt":"800mg","protein":"29g"})
 
-    #recipe 18 Prawn & tomato stew with gremolata topping
-    firebase.put("/Recipes","Prawn & tomato stew with gremolata topping",{"calories":308,"dietary":"None","difficulty":"Easy",
+    #recipe 18 Prawn & Tomato Stew with Gremolata Topping
+    firebase.put("/Recipes","Prawn & Tomato Stew with Gremolata Topping",{"calories":308,"dietary":"None","difficulty":"Easy",
     "ingredients":{"0":"500g new potato","1":"2 tbsp olive oil","2":"1 large onion, sliced","3":"4 celery sticks, cut into pieces","4":"2 garlic cloves, chopped","5":"2 anchovy fillets, chopped","6":"pinch chilli flakes","7":"400g can chopped tomato","8":"250ml white wine","9":"200ml vegetable stock","10":"400g raw king prawn, peeled","11":"zest and juice 1 lemon","12":"1 tsp salted baby caper, rinsed","13":"large handful parsley, chopped","14":"toasted bread, to serve"},"instructions":
     {"0":"Put the potatoes in a saucepan of cold salted water and bring to the boil. Reduce the heat to medium and simmer for 15-20 mins or until cooked but still firm.",
      "1":"Drain and, when cool enough to handle, thickly slice.",
@@ -226,16 +226,16 @@ def ResetDatabase():
     "prepTime":10, "readyTime":35, "servSize":4, "shortDesc":"A fish casserole with healthy prawns, topped with an Italian garnish of parsley and lemon zest - it's low in fat and calories too",
     "title": "Prawn & tomato stew with gremolata topping", "type": "Lose Weight", "fats":"7g","carbs":"29g","sugar":"10g","salt":"1g","protein":"22g"})
 
-    #recipe 19 Greek-style roast fish
-    firebase.put("/Recipes","Greek-style roast fish",{"calories":388,"dietary":"None","difficulty":"Easy",
+    #recipe 19 Greek-Style Roast Fish
+    firebase.put("/Recipes","Greek-Style Roast Fish",{"calories":388,"dietary":"None","difficulty":"Easy",
     "ingredients":{"0":"5 small potatoes(about 400g), scrubbed and cut into wedges","1":"1 onion, halved and sliced","2":"2 garlic cloves, roughly chopped","3":"½ tsp dried oregano or ½ tbsp chopped fresh oregano","4":"2 tbsp olive oil","5":"½ lemon, cut into wedges","6":"2 large tomatoes, cut into wedges","7":"2 fresh skinless pollock fillets (about 200g)","8":"small handful parsley, roughly chopped"},"instructions":
     {"0":"Heat oven to 200C/180C fan/gas 6. Tip the potatoes, onion, garlic, oregano and olive oil into a roasting tin, season, then mix together with your hands to coat everything in the oil. Roast for 15 mins, turn everything over and bake for 15 mins more.",
      "1":"Add the lemon and tomatoes, and roast for 10 mins, then top with the fish fillets and cook for 10 mins more. Serve with parsley scattered over."},
     "prepTime":10, "readyTime":50, "servSize":2, "shortDesc":"Oven-bake white fish fillets with potatoes, tomatoes and herbs for a healthy and gluten-free weeknight dinner",
     "title": "Greek-style roast fish", "type": "Lose Weight", "fats":"13g","carbs":"42g","sugar":"11g","salt":"400mg","protein":"23g"})
 
-    #recipe 20 Prawn, fennel & rocket risotto
-    firebase.put("/Recipes","Prawn, fennel & rocket risotto",{"calories":391,"dietary":"None","difficulty":"Easy",
+    #recipe 20 Prawn, Fennel & Rocket Risotto
+    firebase.put("/Recipes","Prawn, Fennel & Rocket Risotto",{"calories":391,"dietary":"None","difficulty":"Easy",
     "ingredients":{"0":"1.2l vegetable stock","1":"1 tbsp olive oil","2":"1 onion, finely chopped","3":"1 large garlic clove, finely chopped","4":"1 small fennel bulb, cored and finely chopped","5":"300g risotto rice","6":"300g peeled raw king prawns","7":"1 lemon, ½ zested and 1 tbsp juice","8":"70g bag rocket"},"instructions":
     {"0":"Put the stock in a large saucepan, bring to the boil, then lower to a simmer. Meanwhile, heat the oil in a large saucepan. Add the onion, garlic and fennel, and cook on a low heat for 10 mins until the vegetables have softened but not coloured.",
      "1":"Add the rice and stir for 2 mins until the grains are hot and making crackling sounds. Increase the heat to medium and start adding the stock, a ladleful at a time, stirring constantly and making sure the stock has absorbed into the rice before adding the next ladleful.",
@@ -244,8 +244,8 @@ def ResetDatabase():
     "prepTime":15, "readyTime":35, "servSize":4, "shortDesc":"This prawn and fennel risotto gets a little extra kick from lemon zest and and rocket - perfect for a dinner party",
     "title": "Prawn, fennel & rocket risotto", "type": "Get Fit", "fats":"5g","carbs":"64g","sugar":"5g","salt":"1200mg","protein":"21g"})
 
-    #recipe 21 Paillard of chicken with lemon & herbs
-    firebase.put("/Recipes","Paillard of chicken with lemon & herbs",{"calories":240,"dietary":"None","difficulty":"Easy",
+    #recipe 21 Paillard of Chicken with Lemon & Herbs
+    firebase.put("/Recipes","Paillard of Chicken with Lemon & Herbs",{"calories":240,"dietary":"None","difficulty":"Easy",
     "ingredients":{"0":"6 skinless chicken breasts","1":"2 tbsp olive oil","2":"1⁄2 tbsp balsamic vinegar","3":"140g bag rocket","4":"25g parmesan","5":"lemon wedges","6":"2 garlic cloves","7":"3 rosemary sprigs, leaves finely chopped","8":"6 sage leaves, finely shredded","9":"zest 1 lemon and juice of ½","10":"3 tbsp olive oil"},"instructions":
     {"0":"Place each chicken breast between 2 sheets of cling film or baking parchment. Use a meat mallet or rolling pin to bash each piece of chicken – flatten out to an even layer about 0.5cm thick. Transfer to a dish.",
      "1":"To make the marinade, crush the garlic with a good pinch of salt using a pestle and mortar. Add the rosemary and sage, and give everything a good pounding.",
@@ -255,18 +255,18 @@ def ResetDatabase():
     "prepTime":15, "readyTime":5, "servSize":6, "shortDesc":"Pounding meat until thin and flat is a great technique for barbecued chicken breast, as it ensures it won’t dry out. Try this version with lemon and herbs.",
     "title": "Paillard of chicken with lemon & herbs", "type": "Get Fit", "fats":"12g","carbs":"1g","sugar":"1g","salt":"300mg","protein":"32g"})
 
-    #recipe 22 Superhealthy salmon burger
-    firebase.put("/Recipes","Superhealthy salmon burgers",{"calories":292,"dietary":"None","difficulty":"Easy",
+    #recipe 22 Superhealthy Salmon Burger
+    firebase.put("/Recipes","Superhealthy Salmon Burgers",{"calories":292,"dietary":"None","difficulty":"Easy",
     "ingredients":{"0":"4 boneless, skinless salmon fillets, about 550g/1lb 4oz in total, cut into chunks","1":"2 tbsp Thai red curry paste","2":"thumb-size piece fresh root ginger, grated","3":"1 tsp soy sauce","4":"1 bunch coriander, half chopped, half leaves picked","5":"1 tsp vegetable oil","6":"lemon wedges, to serve","7":"2 carrots","8":"half large or 1 small cucumbe","9":"2 tbsp white wine vinegar","10":"1 tsp golden caster sugar"},"instructions":
     {"0":"Tip the salmon into a food processor with the paste, ginger, soy and chopped coriander. Pulse until roughly minced.",
      "1":"Tip out the mix and shape into 4 burgers. Heat the oil in a non-stick frying pan, then fry the burgers for 4-5 mins on each side, turning until crisp and cooked through.",
      "2":"Meanwhile, use a swivel peeler to peel strips of carrot and cucumber into a bowl. Toss with the vinegar and sugar until the sugar has dissolved, then toss through the coriander leaves.",
      "3":"Divide the salad between 4 plates. Serve with the burgers and rice."},
     "prepTime":20, "readyTime":10, "servSize":4, "shortDesc":"If you're after something a bit lighter than potato-packed fishcakes, try these simple oriental-style burgers",
-    "title": "Superhealthy salmon burgers", "type": "Gain Muscle", "fats":"","carbs":"","sugar":"","salt":"","protein":""})
+    "title": "Superhealthy salmon burgers", "type": "Gain Muscle", "fats":"17g","carbs":"7g","sugar":"6g","salt":"830mg","protein":"29g"})
 
-    #recipe 23 Asian tofu with stir-fried noodles, pak choi & sugar snap peas
-    firebase.put("/Recipes","Asian tofu with stir-fried noodles, pak choi & sugar snap pea",{"calories":328,"dietary":"None","difficulty":"Medium",
+    #recipe 23 Asian Tofu with stir-fried noodles, pak choi & sugar snap peas
+    firebase.put("/Recipes","Asian Tofu with Stir-Fried Noodles, Pak Choi & Sugar Snap Pea",{"calories":328,"dietary":"None","difficulty":"Medium",
     "ingredients":{"0":"195g extra-firm tofu","1":"2 tsp tamari or soy sauce","2":"2cm piece ginger, peeled and finely chopped or grated","3":"1 garlic clove, finely chopped","4":"2 tbsp lemon or lime juice","5":"1 tsp sesame oil","6":"85g vermicelli rice noodle","7":"2 tsp rapeseed oil","8":"1 tsp sesame oil","9":"1 spring onion, trimmed and thinly sliced","10":"1 garlic clove, finely chopped","11":"½ red chilli, deseeded and finely chopped","12":"2cm piece ginger, peeled and finely chopped","13":"100g sugar snap pea","14":"100g pak choi (or spinach)","15":"1 large red pepper, sliced","16":"1 tsp tamari or soy sauce","17":"juice ½ lime","18":"1 tbsp finely chopped coriander"},"instructions":
     {"0":"Make the marinade by mixing together all the ingredients. Drain the tofu by placing on several sheets of kitchen paper on a plate, with several more on top, and a heavy weight (such as a pan) on top of that. Leave for at least 15 mins. Cut the tofu into cubes and put in  a small bowl with the marinade. Cover and leave for 30 mins-1 hr.",
      "1":"Meanwhile, cook the noodles following pack instructions, then drain and sit them in a bowl of cold water.",
@@ -287,7 +287,7 @@ def ResetDatabase():
      "4":"Add the dry macaroni and two cups of beef broth to the pot and stir to combine. Place a lid on top, turn the heat up to high, and let the pot come to a boil. Once it reaches a boil, give it a quick stir to loosen any pasta stuck to the bottom of the pot, replace the lid, and turn the heat down to medium-low.",
      "5":"Let the pot simmer on medium-low for about 15 minutes, or until the pasta is soft and has absorbed most of the liquid. Stir the pot one or two times during the 15 minutes to loosen any pasta stuck to the bottom.",
      "6":"Once the pasta is fully cooked, turn the heat off and add the cheese. Stir the cheese into the pasta until it has melted in and become slightly creamy. Serve hot."},
-    "prepTime":10, "readyTime":30, "servSize":2, "shortDesc":"A vegetarian stir-fry packed with spice and flavour. Marinate tofu in ginger, garlic and sesame and serve with a vermicelli noodle mix",
+    "prepTime":10, "readyTime":30, "servSize":2, "shortDesc":"This super hearty One Pot Chili Pasta is bursting with southwest chili flavor, protein, and fiber. It's a meal in a bowl that the whole family will love.",
     "title": "One-Pot Chili Pasta", "type": "Gain Muscles", "fats":"15g","carbs":"85g","sugar":"0g","salt":"0g","protein":"44g"})
 
     #recipe 25 Lamb of Gains
@@ -296,7 +296,7 @@ def ResetDatabase():
     {"0":"Heat a large skillet over medium-high heat. Season lamb with salt and pepper and add to skillet. Sear one side, then cook for 2 minutes on each side.",
      "1":"While the lamb cooks, add carrots to a running food processor, using chopper to push carrots through. Or grate the carrots on the large holes of a box grater.",
      "2":"In a large mixing bowl, whisk together Dijon mustard, olive oil, cilantro, scallions, vinegar, and orange zest. Add carrots and, with clean hands, toss with the dressing until carrots are well coated. Season with pepper. Let carrots marinate for 10 minutes. Serve with the lamb."},
-    "prepTime":10, "readyTime":30, "servSize":2, "shortDesc":"A vegetarian stir-fry packed with spice and flavour. Marinate tofu in ginger, garlic and sesame and serve with a vermicelli noodle mix",
+    "prepTime":10, "readyTime":30, "servSize":2, "shortDesc":"An easy and healthy meal to help keep you on track and makes great for meal prep throughout the week.",
     "title": "Lamb of Gains", "type": "Gain Muscles", "fats":"21g","carbs":"50g","sugar":"0g","salt":"0g","protein":"86g"})
 
     #recipe 26 Vanilla Almond Butter Protein Granola
@@ -307,7 +307,7 @@ def ResetDatabase():
      "2":"Remove from heat and add oats, protein powder (if using), flax, cinnamon, and salt. Mix well and use a spatula to ensure that all of the oats are well coated.",
      "3":"Spread the granola mixture over a baking sheet, leaving as many clusters as you want, and bake for 8 minutes. Remove from oven, stir, and bake for another 8 minutes, or until lightly golden.",
      "4":"Let cool completely before adding chocolate chips and transferring to a storage container. The granola will still be slightly soft when it comes out of the oven, but it will harden up as it sits at room temperature and cools."},
-     "prepTime":10, "readyTime":16, "servSize":2, "shortDesc":"A vegetarian stir-fry packed with spice and flavour. Marinate tofu in ginger, garlic and sesame and serve with a vermicelli noodle mix",
+     "prepTime":10, "readyTime":16, "servSize":2, "shortDesc":"Crunchy, chewy, nutty, and sweet. This vanilla almond butter protein granola makes a nutritious and delicious breakfast or snack!",
      "title": "Vanilla Almond Butter Protein Granola", "type": "Gain Muscles", "fats":"4g","carbs":"27g","sugar":"0g","salt":"0g","protein":"6g"})
 
 
