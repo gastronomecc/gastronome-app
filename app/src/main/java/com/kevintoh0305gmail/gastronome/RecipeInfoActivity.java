@@ -13,10 +13,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -26,6 +28,7 @@ public class RecipeInfoActivity extends AppCompatActivity {
     TextView tvTitle, tvShortDesc, tvServSize;
     Button btnPrepTime, btnDifficulty, btnDietary, btnIngredients, btnSteps, btnNutrition, btnIncrease, btnDecrease;
     ImageButton imgBtnAdd;
+    ImageView imgRecipeImage;
     RecyclerView rvIngredients;
     IngredientsAdapter ingredientsAdapter;
     Button btnSun, btnMon, btnTues, btnWed, btnThurs, btnFri, btnSat, btnCancel, btnAddtoRecipe;
@@ -52,8 +55,8 @@ public class RecipeInfoActivity extends AppCompatActivity {
         btnIncrease = findViewById(R.id.btnRecipeInfoAddServing);
         btnDecrease = findViewById(R.id.btnRecipeInfoRemoveServing);
         imgBtnAdd = findViewById(R.id.imgBtnAdd);
+        imgRecipeImage = findViewById(R.id.imgRecipeImage);
         database = FirebaseDatabase.getInstance();
-
 
 
         Recipe selectedRecipe = RecipeAdapter.selectedRecipe;
@@ -90,6 +93,8 @@ public class RecipeInfoActivity extends AppCompatActivity {
 
         tvServSize.setText("" + servSize);
 
+        Picasso.get().load(selectedRecipe.getImageURL()).into(imgRecipeImage);
+
         imgBtnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -103,7 +108,6 @@ public class RecipeInfoActivity extends AppCompatActivity {
                 imgBtnAddClick();
             }
         });
-
 
         btnIngredients.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -20,7 +20,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DateFormat;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -30,7 +32,7 @@ public class LogFragment extends Fragment {
     FirebaseDatabase database;
     DatabaseReference logRef, ref;
     RecipeNoAddAdapter recipeAdapter, recipeAdapter2, recipeAdapter3, recipeAdapter4;
-    TextView tvWelcomeUser, tvEstWeight;
+    TextView tvWelcomeUser, tvEstWeight, tvTodayDate, tvTodayDateNumber, tvTommorowDate, tvTommorowDateNumber;
     ArrayList<Recipe> recipes = new ArrayList<>();
     ArrayList<Recipe> logRecipes = new ArrayList<>();
     ArrayList<Recipe> tmrRecipes = new ArrayList<>();
@@ -53,7 +55,10 @@ public class LogFragment extends Fragment {
         totalCal = 0;
         tvEstWeight = view.findViewById(R.id.tvEstWeight);
         tvWelcomeUser = view.findViewById(R.id.tvWelcomeUser);
-
+        tvTodayDate = view.findViewById(R.id.tvTodayDate);
+        tvTodayDateNumber = view.findViewById(R.id.tvTodayDateNumber);
+        tvTommorowDate = view.findViewById(R.id.tvTommorowDate);
+        tvTommorowDateNumber = view.findViewById(R.id.tvTommorowDateNumber);
         //Wed is 4
         Log.d("Day", ""+ cal.get(Calendar.DAY_OF_WEEK));
 
@@ -203,6 +208,11 @@ public class LogFragment extends Fragment {
                 Log.d("Retrieval failed: " , "" + databaseError.getCode());
             }
         });
+    }
+
+    public void GetDates()
+    {
+        //tvTommorowDate.setText(cal.setWeekDate());
     }
 
 }
