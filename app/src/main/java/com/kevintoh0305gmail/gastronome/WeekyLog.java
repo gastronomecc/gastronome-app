@@ -50,9 +50,7 @@ public class WeekyLog extends AppCompatActivity {
         Log.d("Day", ""+ cal.get(Calendar.DAY_OF_WEEK));
 
 
-<<<<<<< HEAD
         //rvToday = findViewById(R.id.rvToday);
-=======
         rvToday = findViewById(R.id.rvToday);
         rvTmr = findViewById(R.id.rvTmr);
         rvSat = findViewById(R.id.rvSat);
@@ -62,7 +60,6 @@ public class WeekyLog extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         //String userName = mAuth.getCurrentUser().get
->>>>>>> fe4e8217bdce999c6cf26890022fdbed29038e80
 
         database = FirebaseDatabase.getInstance();
         //String userEmail = mAuth.getCurrentUser().getEmail();

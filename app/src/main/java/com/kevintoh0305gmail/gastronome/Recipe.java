@@ -11,7 +11,7 @@ public class Recipe {
     int prepTime;
     int readyTime;
     ArrayList<String> instructions;
-    Long servSize;
+    int servSize;
     int calories;
     String type;
     String shortDesc;
@@ -65,7 +65,7 @@ public class Recipe {
         this.sugar = sugar;
     }
 
-    public Recipe(String title, String imageURL, ArrayList<String> ingredients, int prepTime, int readyTime, ArrayList<String> instructions, Long servSize, int calories, String type, String shortDesc, String difficulty, String dietary, String fats, String carbs, String protein, String salt, String sugar) {
+    public Recipe(String title, String imageURL, ArrayList<String> ingredients, int prepTime, int readyTime, ArrayList<String> instructions, int servSize, int calories, String type, String shortDesc, String difficulty, String dietary, String fats, String carbs, String protein, String salt, String sugar) {
 
         this.title = title;
         this.imageURL = imageURL;
@@ -134,11 +134,11 @@ public class Recipe {
         this.instructions = instructions;
     }
 
-    public Long getServSize() {
+    public int getServSize() {
         return servSize;
     }
 
-    public void setServSize(Long servSize) {
+    public void setServSize(int servSize) {
         this.servSize = servSize;
     }
 
