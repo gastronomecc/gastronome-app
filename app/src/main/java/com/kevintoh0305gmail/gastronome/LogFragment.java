@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -39,6 +40,7 @@ public class LogFragment extends Fragment {
     FirebaseAuth mAuth;
     Calendar cal;
     double totalCal;
+    double userWeight;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -62,6 +64,32 @@ public class LogFragment extends Fragment {
         rvTmr = view.findViewById(R.id.rvTmr);
         rvSat = view.findViewById(R.id.rvSat);
         rvSun = view.findViewById(R.id.rvSun);
+
+        //GET THE USER WEIGHT
+        final String email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+        DatabaseReference dataRef = database.getReference("Users");
+        dataRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds: dataSnapshot.getChildren())
+                {
+                    User user = ds.getValue(User.class);
+                    Log.d("1st Email: ", user.getEmail());
+                    Log.d("2nd Email: ", email);
+                    if (user.getEmail().equals(email))
+                    {
+                        userWeight =  user.getWeight();
+                    }
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
         //final String Uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         //mAuth.getCurrentUser().getEmail();
@@ -119,7 +147,7 @@ public class LogFragment extends Fragment {
                 }
 
                 Log.d("Total Calories: ", "" + totalCal);
-                double supposedCal = 8800;
+                double supposedCal = 12250;
                 double excessCal = supposedCal - totalCal;
 
                 double weightChange = excessCal/8;
@@ -127,8 +155,8 @@ public class LogFragment extends Fragment {
 
                 Log.d("Weight Changed: ", "" +  changeInG);
 
-                //GET THE USER WEIGHT
-                double userWeight = 60;
+
+
                 double newWeight = userWeight - changeInG;
                 Log.d("New Weight: " , "" + df2.format(newWeight));
 
