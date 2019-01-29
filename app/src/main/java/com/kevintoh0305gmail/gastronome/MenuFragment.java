@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -33,6 +34,7 @@ public class MenuFragment extends Fragment {
     DatabaseReference logRef, ref;
     RecipeNoAddAdapter recipeAdapter, recipeAdapter2, recipeAdapter3, recipeAdapter4, recipeAdapter5, recipeAdapter6, recipeAdapter7, recipeAdapter8;
     TextView tvTodayDate, tvTomorrowDate,tvDay3Date, tvDay3Day, tvDay4Date, tvDay4Day, tvDay5Date, tvDay5Day, tvDay6Date, tvDay6Day, tvDay7Date, tvDay7Day, tvDay8Date, tvDay8Day;
+    Button btnAddFoodLog, btnAddDrinkLog;
     ArrayList<Recipe> recipes = new ArrayList<>();
     ArrayList<Recipe> todayRecipes = new ArrayList<>();
     ArrayList<Recipe> tmrRecipes = new ArrayList<>();
@@ -63,6 +65,9 @@ public class MenuFragment extends Fragment {
         totalCal = 0;
         //tvEstWeight = view.findViewById(R.id.tvEstWeight);
         //tvWelcomeUser = view.findViewById(R.id.tvWelcomeUser);
+
+        btnAddFoodLog = view.findViewById(R.id.btnLogFood);
+        btnAddDrinkLog = view.findViewById(R.id.btnLogWater);
 
         //Day Text View
         //Today
@@ -106,6 +111,21 @@ public class MenuFragment extends Fragment {
         rvDay6 = view.findViewById(R.id.rvDay6);
         rvDay7 = view.findViewById(R.id.rvDay7);
         rvDay8 = view.findViewById(R.id.rvDay8);
+
+        btnAddFoodLog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showBottomSheetFoodLogDialogFragment();
+            }
+        });
+
+        btnAddDrinkLog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showBottomSheetDrinkLogDialogFragment();
+            }
+        });
+
 
         GetDates();
         GetRecipes();
@@ -366,6 +386,16 @@ public class MenuFragment extends Fragment {
         else {
             return day;
         }
+    }
+
+    public void showBottomSheetFoodLogDialogFragment() {
+        BottomSheetFoodLogFragment bottomSheetFragment = new BottomSheetFoodLogFragment();
+        bottomSheetFragment.show(getFragmentManager(), bottomSheetFragment.getTag());
+    }
+
+    public void showBottomSheetDrinkLogDialogFragment() {
+        BottomSheetDrinkLogFragment bottomSheetFragment = new BottomSheetDrinkLogFragment();
+        bottomSheetFragment.show(getFragmentManager(), bottomSheetFragment.getTag());
     }
 
 }
