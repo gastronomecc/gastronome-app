@@ -35,8 +35,7 @@ def ResetDatabase():
      "4":"Bake the egg whites until starting to lightly brown, about 3 minutes. Remove from oven. If the well has filled in during baking, use the spoon to recreate it.",
      "5":"Gently slip a yolk into each well. Bake until the yolks are cooked but still runny, 3 to 5 minutes more. Sprinkle with pepper. Serve immediately."},
      "prepTime":25, "readyTime":25, "servSize":4, "shortDesc":"These light and fluffy eggs are loaded with Parmesan and scallions for tons of flavor, plus there's a luscious runny yolk on top. And don't worry, this impressive brunch recipe is easy enough for anyone to master.",
-     "title": "Parmesan Cloud Eggs", "type": "Get Fit", "fats":"6g","carbs":"1g","sugar":"0g","salt":"198mg","protein":"8g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/ParmesanCloudEgg.jpg?alt=media&token=9a29c940-0f7a-4a9d-991b-f22202548f09
-"})
+     "title": "Parmesan Cloud Eggs", "type": "Get Fit", "fats":"6g","carbs":"1g","sugar":"0g","salt":"198mg","protein":"8g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/ParmesanCloudEgg.jpg?alt=media&token=9a29c940-0f7a-4a9d-991b-f22202548f09"})
 
     #recipe 2, avocado & kale omelet 
     firebase.put("/Recipes","Avocado & Kale Omelet",{"calories":339,"dietary":"None","difficulty":"Medium",
