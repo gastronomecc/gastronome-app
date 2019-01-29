@@ -47,6 +47,8 @@ public class MenuFragment extends Fragment {
     double totalCal;
     SimpleDateFormat dayFormat, dateFormat, dateNumberFormat;
     Date currentDay;
+    double userWeight;
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_menu, container, false);
@@ -108,6 +110,32 @@ public class MenuFragment extends Fragment {
         GetDates();
         GetRecipes();
         //GetUserName();
+
+        //GET THE USER WEIGHT
+        final String email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+        DatabaseReference dataRef = database.getReference("Users");
+        dataRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds: dataSnapshot.getChildren())
+                {
+                    User user = ds.getValue(User.class);
+                    Log.d("1st Email: ", user.getEmail());
+                    Log.d("2nd Email: ", email);
+                    if (user.getEmail().equals(email))
+                    {
+                        userWeight =  user.getWeight();
+                    }
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        
         logRef = database.getReference("ZLogs").child(mAuth.getCurrentUser().getUid());
         logRef.addValueEventListener(new ValueEventListener() {
             @Override
