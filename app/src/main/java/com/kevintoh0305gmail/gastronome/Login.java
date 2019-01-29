@@ -46,7 +46,7 @@ public class Login extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                database.setPersistenceEnabled(true);
+                //database.setPersistenceEnabled(true);
                 //Intent in = new Intent(Login.this, Home.class);
                 //startActivity(in);
                 String email = txtEmail.getText().toString().trim();
