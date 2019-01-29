@@ -27,7 +27,7 @@ android:fillViewport="true">
             android:fontFamily="@font/avenir_black"
             android:text="Menu"
             android:textColor="#000000"
-            android:textSize="18sp"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -59,8 +59,8 @@ android:fillViewport="true">
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/avenir_heavy"
             android:text="Today's Recipes"
-            android:textColor="#000000"
-            android:textSize="18sp"
+            android:textColor="#03312E"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -148,9 +148,9 @@ android:fillViewport="true">
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/avenir_heavy"
-            android:text="Tommorow"
-            android:textColor="#000000"
-            android:textSize="18sp"
+            android:text="Tomorrow"
+            android:textColor="#03312E"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -167,6 +167,20 @@ android:fillViewport="true">
             app:layout_constraintBottom_toBottomOf="@+id/textView24"
             app:layout_constraintStart_toEndOf="@+id/textView24" />
 
+        <View
+            android:id="@+id/viewLine3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="8dp"
+            android:background="#C5CCD6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
@@ -179,10 +193,8 @@ android:fillViewport="true">
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
 
 
@@ -199,8 +211,8 @@ android:fillViewport="true">
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/avenir_heavy"
             android:text="Wednesday"
-            android:textColor="#000000"
-            android:textSize="18sp"
+            android:textColor="#03312E"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -211,11 +223,27 @@ android:fillViewport="true">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
+            android:layout_marginBottom="4dp"
             android:fontFamily="@font/avenir_roman"
             android:text="30 Jan"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/tvDay3Day"
             app:layout_constraintStart_toEndOf="@+id/tvDay3Day" />
+
+        <View
+            android:id="@+id/viewLine4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="8dp"
+            android:background="#C5CCD6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDay3Day" />
+
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
@@ -245,8 +273,8 @@ android:fillViewport="true">
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/avenir_heavy"
             android:text="Thursday"
-            android:textColor="#000000"
-            android:textSize="18sp"
+            android:textColor="#03312E"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -256,11 +284,27 @@ android:fillViewport="true">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
+            android:layout_marginBottom="4dp"
             android:fontFamily="@font/avenir_roman"
             android:text="31 Jan"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/tvDay4Day"
             app:layout_constraintStart_toEndOf="@+id/tvDay4Day" />
+
+        <View
+            android:id="@+id/viewLine5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="8dp"
+            android:background="#C5CCD6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDay4Day" />
+
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
@@ -290,8 +334,8 @@ android:fillViewport="true">
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/avenir_heavy"
             android:text="Friday"
-            android:textColor="#000000"
-            android:textSize="18sp"
+            android:textColor="#03312E"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -301,11 +345,27 @@ android:fillViewport="true">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
+            android:layout_marginBottom="4dp"
             android:fontFamily="@font/avenir_roman"
             android:text="1 Feb"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/tvDay5Day"
             app:layout_constraintStart_toEndOf="@+id/tvDay5Day" />
+
+        <View
+            android:id="@+id/viewLine6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="8dp"
+            android:background="#C5CCD6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDay5Day" />
+
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
@@ -335,8 +395,8 @@ android:fillViewport="true">
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/avenir_heavy"
             android:text="Saturday"
-            android:textColor="#000000"
-            android:textSize="18sp"
+            android:textColor="#03312E"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -346,11 +406,27 @@ android:fillViewport="true">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
+            android:layout_marginBottom="4dp"
             android:fontFamily="@font/avenir_roman"
             android:text="2 Feb"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/tvDay6Day"
             app:layout_constraintStart_toEndOf="@+id/tvDay6Day" />
+
+        <View
+            android:id="@+id/viewLine7"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="8dp"
+            android:background="#C5CCD6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDay6Day" />
+
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
@@ -380,8 +456,8 @@ android:fillViewport="true">
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/avenir_heavy"
             android:text="Sunday"
-            android:textColor="#000000"
-            android:textSize="18sp"
+            android:textColor="#03312E"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -391,11 +467,27 @@ android:fillViewport="true">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
+            android:layout_marginBottom="4dp"
             android:fontFamily="@font/avenir_roman"
             android:text="3 Feb"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/tvDay7Day"
             app:layout_constraintStart_toEndOf="@+id/tvDay7Day" />
+
+        <View
+            android:id="@+id/viewLine8"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="8dp"
+            android:background="#C5CCD6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDay7Day" />
+
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
@@ -425,8 +517,8 @@ android:fillViewport="true">
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/avenir_heavy"
             android:text="Monday"
-            android:textColor="#000000"
-            android:textSize="18sp"
+            android:textColor="#03312E"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -436,11 +528,27 @@ android:fillViewport="true">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
+            android:layout_marginBottom="4dp"
             android:fontFamily="@font/avenir_roman"
             android:text="4 Feb"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/tvDay8Day"
             app:layout_constraintStart_toEndOf="@+id/tvDay8Day" />
+
+        <View
+            android:id="@+id/viewLine9"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="8dp"
+            android:background="#C5CCD6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDay8Day" />
+
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
@@ -461,22 +569,103 @@ android:fillViewport="true">
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/tvEstWeight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+        <View
+            android:id="@+id/viewLine10"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="14dp"
-            android:layout_marginBottom="16dp"
-            android:fontFamily="@font/cerebri_sans_bold"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="8dp"
+            android:background="#C5CCD6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvLogOtherFoods"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/avenir_black"
+            android:text="Log other foods"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewLine10" />
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvLogOtherFoods">
+
+            <Button
+                android:id="@+id/btnLogFood"
+                android:layout_width="70dp"
+                android:layout_height="95dp"
+                android:background="@drawable/add_food"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnLogWater"
+                android:layout_width="70dp"
+                android:layout_height="95dp"
+                android:layout_marginStart="60dp"
+                android:background="@drawable/add_water"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnLogFood"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <View
+            android:id="@+id/viewLine11"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="8dp"
+            android:background="#C5CCD6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvMyCalendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/avenir_black"
+            android:text="My Calendar"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewLine11" />
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvMyCalendar" />
+
     </android.support.constraint.ConstraintLayout>
 
 
