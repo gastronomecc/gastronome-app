@@ -135,7 +135,7 @@ public class MenuFragment extends Fragment {
 
             }
         });
-        
+
         logRef = database.getReference("ZLogs").child(mAuth.getCurrentUser().getUid());
         logRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -207,6 +207,20 @@ public class MenuFragment extends Fragment {
                         }
                     }
                 }
+
+                Log.d("Total Calories: ", "" + totalCal);
+                double supposedCal = 12250;
+                double excessCal = supposedCal - totalCal;
+
+                double weightChange = excessCal/8;
+                double changeInG = weightChange / 1000;
+
+                Log.d("Weight Changed: ", "" +  changeInG);
+
+
+
+                double newWeight = userWeight - changeInG;
+                Log.d("New Weight: " , "" + df2.format(newWeight));
 
 //                Log.d("Total Calories: ", "" + totalCal);
 //                double supposedCal = 8800;
