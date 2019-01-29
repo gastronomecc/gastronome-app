@@ -16,7 +16,7 @@ public class Home extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottom_nav_bar);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
         //The log fragment is the default fragment shown when the activity is first loaded.
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new LogFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MenuFragment()).commit();
     }
 
     //Handles the transition of fragments when a navigation item is selected from the bottom navigation bar.
@@ -27,7 +27,7 @@ public class Home extends AppCompatActivity {
                     Fragment selectedFragment = null;
                     switch(menuItem.getItemId()){
                         case R.id.nav_today:
-                            selectedFragment = new LogFragment();
+                            selectedFragment = new MenuFragment();
                             break;
                         case R.id.nav_feed:
                             selectedFragment = new FeedFragment();

@@ -50,6 +50,7 @@ public class WeekyLog extends AppCompatActivity {
         Log.d("Day", ""+ cal.get(Calendar.DAY_OF_WEEK));
 
 
+        //rvToday = findViewById(R.id.rvToday);
         rvToday = findViewById(R.id.rvToday);
         rvTmr = findViewById(R.id.rvTmr);
         rvSat = findViewById(R.id.rvSat);
