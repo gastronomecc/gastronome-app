@@ -27,12 +27,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
 public class ProgressFragment extends Fragment {
+    private static DecimalFormat df2 = new DecimalFormat(".##");
+
 
 
     BarChart chart;
@@ -46,7 +49,7 @@ public class ProgressFragment extends Fragment {
 //    ArrayList<Logs> saturdayList = new ArrayList<>();
 //    ArrayList<Logs> sundayList = new ArrayList<>();
     DatabaseReference reference;
-    TextView tvDate, tvCal;
+    TextView tvDate, tvCal, tvGoal, tvCurrent, tvEstimated;
     ImageButton btnRight, btnLeft;
     FirebaseAuth mAuth;
     //FirebaseDatabase database;
@@ -58,6 +61,7 @@ public class ProgressFragment extends Fragment {
     String day;
     int dayInNo;
     double userWeight;
+    String goal;
 
     @Nullable
     @Override
@@ -69,6 +73,9 @@ public class ProgressFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        tvGoal = view.findViewById(R.id.tvGoalWeight);
+        tvCurrent = view.findViewById(R.id.tvCurrentWeightInput);
+        tvEstimated = view.findViewById(R.id.tvEstimatedWeight);
         cal = Calendar.getInstance();
         currentDay = cal.getTime();
         dayFormat = new SimpleDateFormat("EEEE");
@@ -118,9 +125,12 @@ public class ProgressFragment extends Fragment {
                     if (user.getEmail().equals(email))
                     {
                         userWeight =  user.getWeight();
+                        goal = user.getGoal();
                     }
 
                 }
+                tvCurrent.setText(userWeight + "kg");
+                tvGoal.setText(goal);
             }
 
             @Override
@@ -342,7 +352,8 @@ public class ProgressFragment extends Fragment {
                 double weightChange = excessCal/8;
                 double changeInG = weightChange / 1000;
                 double newWeight = userWeight - changeInG;
-                Log.d("New weight: ", ""+ newWeight);
+                tvEstimated.setText(df2.format(newWeight) + "kg");
+                Log.d("New weight: ", ""+ df2.format(newWeight));
             }
 
             @Override
