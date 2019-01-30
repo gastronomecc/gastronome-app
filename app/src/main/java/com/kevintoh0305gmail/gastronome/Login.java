@@ -39,6 +39,7 @@ public class Login extends AppCompatActivity {
         tvError = findViewById(R.id.tvError);
         database = FirebaseDatabase.getInstance();
         mAuth = FirebaseAuth.getInstance();
+        //mAuth.signInWithEmailAndPassword("dom2@gmail.com", "password1").addOnCompleteListener()
         //mAuth.signInWithEmailAndPassword("dom@gmail.com", "password123");
         //Log.d("TEST", mAuth.getCurrentUser().getEmail());
 
@@ -52,14 +53,13 @@ public class Login extends AppCompatActivity {
                         }
                     }
                 });
-
-
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //database.setPersistenceEnabled(true);
                 //Intent in = new Intent(Login.this, Home.class);
                 //startActivity(in);
+
                 String email = txtEmail.getText().toString().trim();
                 String password = txtPassword.getText().toString().trim();
 
@@ -73,7 +73,7 @@ public class Login extends AppCompatActivity {
                     txtPassword.setError("Password is required");
                     txtPassword.requestFocus();
                     return; //Do not allow user to authenticate
-                }
+ }
 
                 mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -93,6 +93,7 @@ public class Login extends AppCompatActivity {
                 });
             }
         });
+
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
