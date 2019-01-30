@@ -19,7 +19,9 @@ android {
     packagingOptions {
         exclude 'META-INF/proguard/androidx-annotations.pro'
     }
-    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/', 'src/main/java/'] } }
+    sourceSets {
+        main { assets.srcDirs = ['src/main/assets', 'src/main/assets/', 'src/main/java/'] }
+    }
 }
 
 dependencies {

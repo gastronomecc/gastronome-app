@@ -49,6 +49,7 @@ public class Login extends AppCompatActivity {
                 //database.setPersistenceEnabled(true);
                 //Intent in = new Intent(Login.this, Home.class);
                 //startActivity(in);
+
                 String email = txtEmail.getText().toString().trim();
                 String password = txtPassword.getText().toString().trim();
 
@@ -62,7 +63,7 @@ public class Login extends AppCompatActivity {
                     txtPassword.setError("Password is required");
                     txtPassword.requestFocus();
                     return; //Do not allow user to authenticate
-                }
+ }
 
                 mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
                     @Override
