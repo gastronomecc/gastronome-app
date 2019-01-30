@@ -35,13 +35,15 @@ public class RecipeInfoActivity extends AppCompatActivity {
     Boolean sunSelect, monSelect, tuesSelect, wedSelect, thursSelect, friSelect, satSelect;
     ArrayList<String> days = new ArrayList<>();
     FirebaseDatabase database;
+    FirebaseAuth mAuth;
     String title;
+    int servSize;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_info);
-
+        mAuth = FirebaseAuth.getInstance();
         tvTitle = findViewById(R.id.tvTitle);
         tvShortDesc = findViewById(R.id.tvShortDesc);
         tvServSize = findViewById(R.id.tvServingQuantity);
@@ -58,14 +60,14 @@ public class RecipeInfoActivity extends AppCompatActivity {
         imgRecipeImage = findViewById(R.id.imgRecipeImage);
         database = FirebaseDatabase.getInstance();
 
-
+        rvIngredients.setFocusable(false);
         Recipe selectedRecipe = RecipeAdapter.selectedRecipe;
         title = selectedRecipe.getTitle();
         String shortDesc = selectedRecipe.getShortDesc();
         String prepTime = "" + selectedRecipe.getPrepTime();
         String difficulty = selectedRecipe.getDifficulty();
         String dietary = selectedRecipe.getDietary();
-        long servSize = selectedRecipe.getServSize();
+        servSize = selectedRecipe.getServSize();
         final ArrayList<String> ingredients = selectedRecipe.getIngredients();
         final ArrayList<String> instructions = selectedRecipe.getInstructions();
         String fats = selectedRecipe.getFats();
@@ -160,7 +162,11 @@ public class RecipeInfoActivity extends AppCompatActivity {
                 String serving = "" + tvServSize.getText();
                 int newServe = Integer.parseInt(serving);
                 newServe++;
-                tvServSize.setText("" + newServe);
+                if(newServe > 10) {
+                    newServe = 10;
+                }
+                servSize = newServe;
+                tvServSize.setText(""+newServe);
             }
         });
 
@@ -170,7 +176,11 @@ public class RecipeInfoActivity extends AppCompatActivity {
                 String serving = "" + tvServSize.getText();
                 int newServe = Integer.parseInt(serving);
                 newServe--;
-                tvServSize.setText("" + newServe);
+                if(newServe < 1) {
+                    newServe = 1;
+                }
+                servSize = newServe;
+                tvServSize.setText(""+newServe);
             }
         });
 
@@ -310,27 +320,28 @@ public class RecipeInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 days = new ArrayList<>();
-                if (sunSelect)
-                    days.add("1");
                 if (monSelect)
-                    days.add("2");
+                    days.add("1");
                 if (tuesSelect)
-                    days.add("3");
+                    days.add("2");
                 if (wedSelect)
-                    days.add("4");
+                    days.add("3");
                 if (thursSelect)
-                    days.add("5");
+                    days.add("4");
                 if (friSelect)
-                    days.add("6");
+                    days.add("5");
                 if (satSelect)
+                    days.add("6");
+                if (sunSelect)
                     days.add("7");
                 Log.d("Tester", days.get(0));
                 for (String d : days)
                 {
                     Random random = new Random();
                     int n = random.nextInt(900000000) + 999999;
-                    Logs addLog = new Logs(d, title, "dom@gmail.com");
-                    database.getReference().child("ZLogs").child("" + n).setValue(addLog);
+                    Logs addLog;
+                    addLog = new Logs(d, title, mAuth.getCurrentUser().getEmail());
+                    database.getReference().child("ZLogs").child(mAuth.getCurrentUser().getUid()).child(title+"-"+n).setValue(addLog);
 
                 }
                 dialog.cancel();

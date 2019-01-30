@@ -372,7 +372,7 @@
                 app:srcCompat="@drawable/seventeen" />
 
             <TextView
-                android:id="@+id/textView27"
+                android:id="@+id/tvDay3Day"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -392,8 +392,8 @@
                 android:fontFamily="@font/cerebri_sans_regular"
                 android:text="Sat 17 Nov"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView27"
-                app:layout_constraintStart_toEndOf="@+id/textView27" />
+                app:layout_constraintBottom_toBottomOf="@+id/tvDay3Day"
+                app:layout_constraintStart_toEndOf="@+id/tvDay3Day" />
         </android.support.constraint.ConstraintLayout>
 
         <android.support.constraint.ConstraintLayout
@@ -423,7 +423,7 @@
                 app:srcCompat="@drawable/eighteen" />
 
             <TextView
-                android:id="@+id/textView29"
+                android:id="@+id/tvDay4Day"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -441,8 +441,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:text="Sun 18 Nov"
-                app:layout_constraintBottom_toBottomOf="@+id/textView29"
-                app:layout_constraintStart_toEndOf="@+id/textView29" />
+                app:layout_constraintBottom_toBottomOf="@+id/tvDay4Day"
+                app:layout_constraintStart_toEndOf="@+id/tvDay4Day" />
         </android.support.constraint.ConstraintLayout>
 
         <android.support.constraint.ConstraintLayout

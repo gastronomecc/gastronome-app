@@ -60,6 +60,10 @@ public class WeekyLog extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         //String userName = mAuth.getCurrentUser().get
+<<<<<<< HEAD
+=======
+
+>>>>>>> a2dce941fcd07712716854efa054c2b4bb4ab055
         database = FirebaseDatabase.getInstance();
         //String userEmail = mAuth.getCurrentUser().getEmail();
         //Log.d("Email:", userEmail);

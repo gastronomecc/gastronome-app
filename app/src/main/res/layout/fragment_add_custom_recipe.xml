@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView32"
+            android:id="@+id/tvDay5Day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout8" />
 
     <TextView
-        android:id="@+id/textView33"
+        android:id="@+id/tvDay5Date"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -62,9 +62,9 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/textView33"
-        app:layout_constraintStart_toStartOf="@+id/textView33"
-        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+        app:layout_constraintEnd_toEndOf="@+id/tvDay5Date"
+        app:layout_constraintStart_toStartOf="@+id/tvDay5Date"
+        app:layout_constraintTop_toBottomOf="@+id/tvDay5Date" />
 
     <TextView
         android:id="@+id/textView34"
