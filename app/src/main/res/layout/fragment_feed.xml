@@ -6,16 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/SearchConstraint"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <EditText
-            android:id="@+id/txtSearch"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Search for something"/>
-    </android.support.constraint.ConstraintLayout>
-    <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,6 +13,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         android:layout_height="wrap_content">
+
         <TextView
             android:id="@+id/tvHomeTitle"
             android:layout_width="wrap_content"
@@ -31,7 +22,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:fontFamily="@font/cerebri_sans_bold"
+            android:fontFamily="@font/avenir_black"
             android:text="Feed"
             android:textColor="#000000"
             android:textSize="24sp"
@@ -76,12 +67,14 @@
         <android.support.design.widget.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Home" />
+            android:text="Home"
+            android:fontFamily="@font/avenir_black"/>
 
         <android.support.design.widget.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Popular" />
+            android:text="Popular"
+            android:fontFamily="@font/avenir_black"/>
     </android.support.design.widget.TabLayout>
 
     <View

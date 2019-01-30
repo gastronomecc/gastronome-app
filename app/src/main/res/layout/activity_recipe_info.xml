@@ -41,15 +41,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
-                    android:fontFamily="@font/cerebri_sans_bold"
+                    android:fontFamily="@font/avenir_black"
                     android:text="STIR FRY CABBAGE"
                     android:textAlignment="center"
                     android:textColor="@color/common_google_signin_btn_text_dark_focused"
                     android:textSize="22sp"
                     android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.496"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </android.support.constraint.ConstraintLayout>
 
@@ -69,7 +70,7 @@
                     android:layout_height="0dp"
                     android:layout_marginEnd="8dp"
                     android:background="@drawable/difficultyhashtag"
-                    android:fontFamily="@font/cerebri_sans_bold"
+                    android:fontFamily="@font/avenir_black"
                     android:text="EASY"
                     android:textColor="@color/common_google_signin_btn_text_dark_default"
                     app:layout_constraintBottom_toBottomOf="@+id/btnRecipeInfoPrepTimeHashtag"
@@ -98,7 +99,7 @@
                     android:layout_height="0dp"
                     android:layout_marginEnd="8dp"
                     android:background="@drawable/mealtypehashtag"
-                    android:fontFamily="@font/cerebri_sans_bold"
+                    android:fontFamily="@font/avenir_black"
                     android:text="VEGAN"
                     android:textColor="@color/common_google_signin_btn_text_dark_default"
                     app:layout_constraintBottom_toBottomOf="@+id/btnRecipeInfoDifficultyHashtag"
@@ -119,9 +120,10 @@
 
                 <ImageButton
                     android:id="@+id/btnFav"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:background="@android:color/transparent"
+                    android:scaleType="fitXY"
                     android:src="@drawable/heart_fav_inactive"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -129,22 +131,23 @@
 
                 <TextView
                     android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:fontFamily="@font/cerebri_sans_regular"
+                    android:fontFamily="@font/avenir_heavy"
                     android:text="Add to Favourites"
-                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    android:textColor="#333333"
                     app:layout_constraintBottom_toBottomOf="@+id/btnFav"
                     app:layout_constraintStart_toEndOf="@+id/btnFav"
                     app:layout_constraintTop_toTopOf="@+id/btnFav" />
 
                 <ImageButton
                     android:id="@+id/imgBtnAdd"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:layout_marginStart="16dp"
                     android:background="@android:color/transparent"
+                    android:scaleType="fitXY"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/textView4"
                     app:layout_constraintTop_toTopOf="parent"
@@ -152,12 +155,12 @@
 
                 <TextView
                     android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:fontFamily="@font/cerebri_sans_regular"
+                    android:fontFamily="@font/avenir_heavy"
                     android:text="Add to Recipes"
-                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    android:textColor="#333333"
                     app:layout_constraintBottom_toBottomOf="@+id/imgBtnAdd"
                     app:layout_constraintStart_toEndOf="@+id/imgBtnAdd"
                     app:layout_constraintTop_toTopOf="@+id/imgBtnAdd" />
@@ -177,10 +180,10 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="24dp"
                     android:layout_marginBottom="16dp"
-                    android:fontFamily="@font/cerebri_sans_regular"
+                    android:fontFamily="@font/avenir_medium"
                     android:text="Though kale probably originated in the dry heat of the Mediterranean, it became a fixture in the kitchens of northern Europe."
                     android:textAlignment="center"
-                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    android:textColor="#333333"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -201,8 +204,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginRight="10dp"
-                    android:fontFamily="@font/cerebri_sans_bold"
-                    android:text="SERVING"
+                    android:fontFamily="@font/avenir_heavy"
+                    android:text="SERVES"
                     android:textColor="@color/common_google_signin_btn_text_dark_focused"
                     android:textStyle="bold" />
 
@@ -231,7 +234,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
-                        android:fontFamily="@font/cerebri_sans_bold"
+                        android:fontFamily="@font/avenir_heavy"
                         android:text="4"
                         android:textColor="@color/common_google_signin_btn_text_dark_focused"
                         android:textStyle="bold"
@@ -266,8 +269,9 @@
                     android:layout_height="40dp"
                     android:layout_marginStart="8dp"
                     android:background="@drawable/recipe_info_btm_btn_active"
-                    android:fontFamily="@font/cerebri_sans_regular"
+                    android:fontFamily="@font/avenir_black"
                     android:text="INGREDIENTS"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
@@ -278,8 +282,9 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:background="@drawable/recipe_info_btm_btn_inactive"
-                    android:fontFamily="@font/cerebri_sans_regular"
+                    android:fontFamily="@font/avenir_black"
                     android:text="STEPS"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/btnRecipeInfoNutrition"
                     app:layout_constraintHorizontal_bias="0.444"
@@ -293,8 +298,9 @@
                     android:layout_height="40dp"
                     android:layout_marginEnd="8dp"
                     android:background="@drawable/recipe_info_btm_btn_inactive"
-                    android:fontFamily="@font/cerebri_sans_regular"
+                    android:fontFamily="@font/avenir_black"
                     android:text="NUTRITION"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/btnRecipeInfoSteps" />
