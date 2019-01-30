@@ -35,8 +35,13 @@ def sendmail():
                 <p>Dear Valued Customer,<br>
                     Did you know that we have a Gastronome website too?<br>
                     <a href="https://gastronomecc.github.io/gastronome-site/index">
+<<<<<<< HEAD
                      <img width="500" height ="150" src="https://www.waangoo.com/content/images/thumbs/0007442_nutrisoy-fresh-soya-milk-hi-calcium_600.jpeg"/>
+=======
+                     <img width="100" height ="100" src="https://gastronomecc.github.io/gastronome-site/assets/images/background.png"/>
+>>>>>>> 160babad84e4bba5dc0f5e3cacdb95dae6a56487
                      </a>
+                     (click on the image above to find out more!)
                 </p>
             </body>
         </html>
@@ -271,7 +276,7 @@ def UpdateDatabase():
      "2":"Tip in the tomatoes and fish fillets. Cover and simmer for 10 mins until the fish is nearly cooked, then uncover.",
      "3":"Tip in the butter beans, season well, then cook until everything is hot. Serve scattered with the croutons, parsley and lemon."},
     "prepTime":10, "readyTime":25, "servSize":4, "shortDesc":"This storecupboard fish stew is bulked out with bread and is full of fresh, summer flavours.",
-    "title": "Summer fish stew", "type": "Lose Weight", "fats":"7g","carbs":"26g","sugar":"8g","salt":"700mg","protein":"34g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/summer-fish-stew.jpg?alt=media&token=8177223a-937f-499c-91fe-07789c1ac22a"})
+    "title": "Summer Fish Stew", "type": "Lose Weight", "fats":"7g","carbs":"26g","sugar":"8g","salt":"700mg","protein":"34g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/summer-fish-stew.jpg?alt=media&token=8177223a-937f-499c-91fe-07789c1ac22a"})
 
     #recipe 17 Asian Pulled Chicken Salad
     firebase.put("/Recipes","Asian Pulled Chicken Salad",{"calories":352,"dietary":"None","difficulty":"Easy",
@@ -309,7 +314,7 @@ def UpdateDatabase():
      "2":"When the rice is almost cooked, add the prawns, lemon zest and some seasoning. Continue adding stock and cooking for another 3-4 mins until the prawns are pink and the rice is cooked.",
      "3":"Remove from the heat and stir through the rocket and lemon juice. Check the seasoning, leave the risotto to sit in the pan for 2 mins, then serve."},
     "prepTime":15, "readyTime":35, "servSize":4, "shortDesc":"This prawn and fennel risotto gets a little extra kick from lemon zest and and rocket - perfect for a dinner party",
-    "title": "Prawn, fennel & rocket risotto", "type": "Get Fit", "fats":"5g","carbs":"64g","sugar":"5g","salt":"1200mg","protein":"21g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/prawn-fennel-rocket-risotto.jpg?alt=media&token=1c0b6c1c-beb9-431b-a277-9b97acf85831"})
+    "title": "Prawn, Fennel & Rocket Risotto", "type": "Get Fit", "fats":"5g","carbs":"64g","sugar":"5g","salt":"1200mg","protein":"21g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/prawn-fennel-rocket-risotto.jpg?alt=media&token=1c0b6c1c-beb9-431b-a277-9b97acf85831"})
 
     #recipe 21 Paillard of Chicken with Lemon & Herbs
     firebase.put("/Recipes","Paillard of Chicken with Lemon & Herbs",{"calories":240,"dietary":"None","difficulty":"Easy",
@@ -320,7 +325,7 @@ def UpdateDatabase():
      "3":"Heat the barbecue. Once the flames have died down, spread the coals out to an even layer. Cook the chicken for 1-2 mins each side. Transfer to a board and leave to rest for a few mins.",
      "4":"Meanwhile, pour the oil and balsamic vinegar into a large bowl. Add the rocket and some seasoning. Toss together, then shave over the Parmesan. Serve the salad with the chicken, with lemon wedges to squeeze over."},
     "prepTime":15, "readyTime":5, "servSize":6, "shortDesc":"Pounding meat until thin and flat is a great technique for barbecued chicken breast, as it ensures it won’t dry out. Try this version with lemon and herbs.",
-    "title": "Paillard of chicken with lemon & herbs", "type": "Get Fit", "fats":"12g","carbs":"1g","sugar":"1g","salt":"300mg","protein":"32g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/paillardofchicken.jpg?alt=media&token=4edc367f-33b8-44ef-84e8-3edae35610b3"})
+    "title": "Paillard of Chicken with Lemon & hHerbs", "type": "Get Fit", "fats":"12g","carbs":"1g","sugar":"1g","salt":"300mg","protein":"32g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/paillardofchicken.jpg?alt=media&token=4edc367f-33b8-44ef-84e8-3edae35610b3"})
 
     #recipe 22 Superhealthy Salmon Burger
     firebase.put("/Recipes","Superhealthy Salmon Burgers",{"calories":292,"dietary":"None","difficulty":"Easy",
@@ -330,7 +335,7 @@ def UpdateDatabase():
      "2":"Meanwhile, use a swivel peeler to peel strips of carrot and cucumber into a bowl. Toss with the vinegar and sugar until the sugar has dissolved, then toss through the coriander leaves.",
      "3":"Divide the salad between 4 plates. Serve with the burgers and rice."},
     "prepTime":20, "readyTime":10, "servSize":4, "shortDesc":"If you're after something a bit lighter than potato-packed fishcakes, try these simple oriental-style burgers",
-    "title": "Superhealthy salmon burgers", "type": "Gain Muscle", "fats":"17g","carbs":"7g","sugar":"6g","salt":"830mg","protein":"29g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/salmonburger.jpg?alt=media&token=6f6090b1-8d95-415b-9996-21ed3473cd81"})
+    "title": "Superhealthy Salmon Burgers", "type": "Gain Muscle", "fats":"17g","carbs":"7g","sugar":"6g","salt":"830mg","protein":"29g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/salmonburger.jpg?alt=media&token=6f6090b1-8d95-415b-9996-21ed3473cd81"})
 
     #recipe 23 Asian Tofu with stir-fried noodles, pak choi & sugar snap peas
     firebase.put("/Recipes","Asian Tofu with Stir-Fried Noodles, Pak Choi & Sugar Snap Pea",{"calories":328,"dietary":"None","difficulty":"Medium",
@@ -342,7 +347,7 @@ def UpdateDatabase():
      "4":"Add the sugar snap peas, pak choi and pepper, and stir for another 1-2 mins, then add the cooked noodles. Toss well, then add the soy sauce and lime juice, and mix until well combined and the pan is sizzling.",
      "5":"Remove from the heat and divide between 2 bowls. Top each with tofu cubes and drizzle over any juices. Sprinkle with coriander and serve. "},
     "prepTime":10, "readyTime":15, "servSize":2, "shortDesc":"A vegetarian stir-fry packed with spice and flavour. Marinate tofu in ginger, garlic and sesame and serve with a vermicelli noodle mix",
-    "title": "Asian tofu with stir-fried noodles, pak choi & sugar snap pea", "type": "Gain Muscles", "fats":"9g","carbs":"45g","sugar":"9g","salt":"1100mg","protein":"15g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/tofupakchoinoodles.jpg?alt=media&token=6464efdc-3db9-404f-a0e6-8a9ece304b53"})
+    "title": "Asian Tofu with Stir-Fried Noodles, Pak Choi & Sugar Snap Pea", "type": "Gain Muscles", "fats":"9g","carbs":"45g","sugar":"9g","salt":"1100mg","protein":"15g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/tofupakchoinoodles.jpg?alt=media&token=6464efdc-3db9-404f-a0e6-8a9ece304b53"})
 
     #recipe 24 One-Pot Chili Pasta
     firebase.put("/Recipes","One-Pot Chili Pasta",{"calories":646,"dietary":"None","difficulty":"Medium",
@@ -375,7 +380,7 @@ def UpdateDatabase():
      "3":"Spread the granola mixture over a baking sheet, leaving as many clusters as you want, and bake for 8 minutes. Remove from oven, stir, and bake for another 8 minutes, or until lightly golden.",
      "4":"Let cool completely before adding chocolate chips and transferring to a storage container. The granola will still be slightly soft when it comes out of the oven, but it will harden up as it sits at room temperature and cools."},
      "prepTime":10, "readyTime":16, "servSize":2, "shortDesc":"Crunchy, chewy, nutty, and sweet. This vanilla almond butter protein granola makes a nutritious and delicious breakfast or snack!",
-     "title": "Vanilla Almond Butter Protein Granola", "type": "Gain Muscles", "fats":"4g","carbs":"27g","sugar":"0g","salt":"0g","protein":"6g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/Almond-Butter-Protein-Granola6.jpg?alt=media&token=2cf8898f-7ff9-49a6-9b43-c621e1f671fe"})
+     "title": "Vanilla Almond Butter Protein Granola", "type": "Gain Muscles", "fats":"4g","carbs":"27g","sugar":"0g","salt":"0g","protein":"6g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/Almond-Butter-Protein-Granola.jpg?alt=media&token=2f71c48c-8e97-4032-a09b-9475617fd260"})
 
 
     print("Database sucessfully updated!\n")
