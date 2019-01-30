@@ -1,10 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".BottomSheetFragment">
+    android:layout_height="wrap_content">
 
-    <!-- TODO: Update blank fragment layout -->
+    <View
+        android:id="@+id/dismissableLine2"
+        android:layout_width="100dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/dismissable_rectangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tvBottomSheetTitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/avenir_black"
+        android:text="DRINK LOG"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/dismissableLine2"
+        app:layout_constraintStart_toStartOf="@+id/dismissableLine2"
+        app:layout_constraintTop_toBottomOf="@+id/dismissableLine2" />
+
+    <ImageButton
+        android:id="@+id/btnAddImage2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/add_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBottomSheetTitle2" />
+
+    <TextView
+        android:id="@+id/tvDateTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/avenir_black"
+        android:text="Date"
+        android:textColor="#03312E"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddImage2" />
+
+    <TextView
+        android:id="@+id/tvNameOfItemTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textSize="20sp"
+        android:textColor="#03312E"
+        android:fontFamily="@font/avenir_black"
+        android:text="Name of Drink"
+        app:layout_constraintStart_toStartOf="@+id/tvDateTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvDateTitle" />
+
+    <TextView
+        android:id="@+id/tvCaloriesTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/avenir_black"
+        android:text="Calories"
+        android:textColor="#03312E"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvNameOfItemTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvNameOfItemTitle" />
+
+    <TextView
+        android:id="@+id/tvBottomSheetDrinkDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:textSize="20sp"
+        android:textColor="#03312E"
+        android:fontFamily="@font/avenir_medium"
+        android:text="Tuesday, 1 Jan"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDateTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvDateTitle" />
+
+    <EditText
+        android:id="@+id/etLogDrinkName"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:fontFamily="@font/avenir_medium"
+        android:hint="Eg: Plain Water"
+        android:inputType="textPersonName"
+        android:textAlignment="textEnd"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvNameOfItemTitle"
+        app:layout_constraintEnd_toEndOf="@+id/tvBottomSheetDrinkDate"
+        app:layout_constraintTop_toTopOf="@+id/tvNameOfItemTitle" />
+
+    <EditText
+        android:id="@+id/etLogDrinkCalories"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:fontFamily="@font/avenir_medium"
+        android:background="@android:color/transparent"
+        android:hint="Eg: 20"
+        android:inputType="textPersonName"
+        android:textAlignment="textEnd"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCaloriesTitle"
+        app:layout_constraintEnd_toEndOf="@+id/etLogDrinkName"
+        app:layout_constraintStart_toStartOf="@+id/etLogDrinkName"
+        app:layout_constraintTop_toTopOf="@+id/tvCaloriesTitle" />
+
+</android.support.constraint.ConstraintLayout>

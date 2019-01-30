@@ -29,11 +29,11 @@
         app:layout_constraintStart_toStartOf="@+id/dismissableLine"
         app:layout_constraintTop_toBottomOf="@+id/dismissableLine" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnAddImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/add_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,11 +44,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:textSize="20sp"
-        android:textColor="#03312E"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/avenir_black"
         android:text="Date"
+        android:textColor="#03312E"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnAddImage" />
 
@@ -69,7 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="32dp"
         android:fontFamily="@font/avenir_black"
         android:text="Calories"
         android:textColor="#03312E"
@@ -91,28 +91,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView29" />
 
-    <TextView
-        android:id="@+id/tvBottomSheetNameOfFood"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/etLogFoodName"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textColor="#03312E"
+        android:background="@android:color/transparent"
+        android:ems="10"
         android:fontFamily="@font/avenir_medium"
-        android:text="Chicken Rice"
+        android:hint="Eg: Chicken Rice"
+        android:inputType="textPersonName"
+        android:textAlignment="textEnd"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView32"
         app:layout_constraintEnd_toEndOf="@+id/tvBottomSheetDate"
         app:layout_constraintTop_toTopOf="@+id/textView32" />
 
-    <TextView
-        android:id="@+id/tvBottomSheetCalories"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/etLogFoodCalories"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textColor="#03312E"
+        android:background="@android:color/transparent"
+        android:ems="10"
         android:fontFamily="@font/avenir_medium"
-        android:text="450 kCal"
+        android:hint="Eg: 350"
+        android:inputType="textPersonName"
+        android:textAlignment="textEnd"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView33"
-        app:layout_constraintEnd_toEndOf="@+id/tvBottomSheetNameOfFood"
+        app:layout_constraintEnd_toEndOf="@+id/etLogFoodName"
+        app:layout_constraintStart_toStartOf="@+id/etLogFoodName"
         app:layout_constraintTop_toTopOf="@+id/textView33" />
 
 </android.support.constraint.ConstraintLayout>
