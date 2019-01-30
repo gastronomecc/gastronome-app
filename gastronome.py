@@ -35,13 +35,9 @@ def sendmail():
                 <p>Dear Valued Customer,<br>
                     Did you know that we have a Gastronome website too?<br>
                     <a href="https://gastronomecc.github.io/gastronome-site/index">
-<<<<<<< HEAD
-                     <img width="500" height ="150" src="https://www.waangoo.com/content/images/thumbs/0007442_nutrisoy-fresh-soya-milk-hi-calcium_600.jpeg"/>
-=======
-                     <img width="100" height ="100" src="https://gastronomecc.github.io/gastronome-site/assets/images/background.png"/>
->>>>>>> 160babad84e4bba5dc0f5e3cacdb95dae6a56487
+                     <img width="500" height ="150" src="https://gastronomecc.github.io/gastronome-site/assets/images/background.png"/>
                      </a>
-                     (click on the image above to find out more!)
+                     (click on the image above to learn more!)
                 </p>
             </body>
         </html>
@@ -285,7 +281,7 @@ def UpdateDatabase():
      "1":"Remove all the meat from the chicken, shred into large chunks and pop in a large bowl. Add the cabbage, carrots, spring onions, chillies and half the coriander.",
      "2":"Toss together with the dressing and pile onto a serving plate, then scatter over the remaining coriander and peanuts."},
     "prepTime":45, "readyTime":45, "servSize":1, "shortDesc":"Pull apart a ready-roasted chicken to whip up this healthy, vibrant, low-calorie dish in just 20 minutes",
-    "title": "Asian pulled chicken salad", "type": "Lose Weight", "fats":"19g","carbs":"14g","sugar":"11g","salt":"800mg","protein":"29g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/asian-pulled-chicken-salad.jpg?alt=media&token=a7b4fc8a-1e22-42d3-b3cc-7ca133f9103a"})
+    "title": "Asian Pulled Chicken Salad", "type": "Lose Weight", "fats":"19g","carbs":"14g","sugar":"11g","salt":"800mg","protein":"29g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/asian-pulled-chicken-salad.jpg?alt=media&token=a7b4fc8a-1e22-42d3-b3cc-7ca133f9103a"})
 
     #recipe 18 Prawn & Tomato Stew with Gremolata Topping
     firebase.put("/Recipes","Prawn & Tomato Stew with Gremolata Topping",{"calories":308,"dietary":"None","difficulty":"Easy",
@@ -296,7 +292,7 @@ def UpdateDatabase():
      "3":"Increase the heat to medium-high, add the tomatoes, wine and stock, and cook for 15 mins.",
      "4":"Add the prawns, lemon juice, capers and potatoes. Cook for 5 mins more, or until the prawns turn pink and are just cooked. Mix together the parsley and lemon zest, then scatter over the stew, then serve with toasted bread, for dunking."},
     "prepTime":10, "readyTime":35, "servSize":4, "shortDesc":"A fish casserole with healthy prawns, topped with an Italian garnish of parsley and lemon zest - it's low in fat and calories too",
-    "title": "Prawn & tomato stew with gremolata topping", "type": "Lose Weight", "fats":"7g","carbs":"29g","sugar":"10g","salt":"1g","protein":"22g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/Prawn%26TomatoStew.jpg?alt=media&token=b75d4ae0-161c-4205-9816-aa149257392d"})
+    "title": "Prawn & Tomato Stew with Gremolata Topping", "type": "Lose Weight", "fats":"7g","carbs":"29g","sugar":"10g","salt":"1g","protein":"22g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/Prawn%26TomatoStew.jpg?alt=media&token=b75d4ae0-161c-4205-9816-aa149257392d"})
 
     #recipe 19 Greek-Style Roast Fish
     firebase.put("/Recipes","Greek-Style Roast Fish",{"calories":388,"dietary":"None","difficulty":"Easy",
@@ -304,7 +300,7 @@ def UpdateDatabase():
     {"0":"Heat oven to 200C/180C fan/gas 6. Tip the potatoes, onion, garlic, oregano and olive oil into a roasting tin, season, then mix together with your hands to coat everything in the oil. Roast for 15 mins, turn everything over and bake for 15 mins more.",
      "1":"Add the lemon and tomatoes, and roast for 10 mins, then top with the fish fillets and cook for 10 mins more. Serve with parsley scattered over."},
     "prepTime":10, "readyTime":50, "servSize":2, "shortDesc":"Oven-bake white fish fillets with potatoes, tomatoes and herbs for a healthy and gluten-free weeknight dinner",
-    "title": "Greek-style roast fish", "type": "Lose Weight", "fats":"13g","carbs":"42g","sugar":"11g","salt":"400mg","protein":"23g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/greek-style-roast-fish.jpg?alt=media&token=3a4af934-efb7-4a04-9b7f-080b71518902"})
+    "title": "Greek-Style Roast Fish", "type": "Lose Weight", "fats":"13g","carbs":"42g","sugar":"11g","salt":"400mg","protein":"23g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/greek-style-roast-fish.jpg?alt=media&token=3a4af934-efb7-4a04-9b7f-080b71518902"})
 
     #recipe 20 Prawn, Fennel & Rocket Risotto
     firebase.put("/Recipes","Prawn, Fennel & Rocket Risotto",{"calories":391,"dietary":"None","difficulty":"Easy",
@@ -325,7 +321,7 @@ def UpdateDatabase():
      "3":"Heat the barbecue. Once the flames have died down, spread the coals out to an even layer. Cook the chicken for 1-2 mins each side. Transfer to a board and leave to rest for a few mins.",
      "4":"Meanwhile, pour the oil and balsamic vinegar into a large bowl. Add the rocket and some seasoning. Toss together, then shave over the Parmesan. Serve the salad with the chicken, with lemon wedges to squeeze over."},
     "prepTime":15, "readyTime":5, "servSize":6, "shortDesc":"Pounding meat until thin and flat is a great technique for barbecued chicken breast, as it ensures it won’t dry out. Try this version with lemon and herbs.",
-    "title": "Paillard of Chicken with Lemon & hHerbs", "type": "Get Fit", "fats":"12g","carbs":"1g","sugar":"1g","salt":"300mg","protein":"32g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/paillardofchicken.jpg?alt=media&token=4edc367f-33b8-44ef-84e8-3edae35610b3"})
+    "title": "Paillard of Chicken with Lemon & Herbs", "type": "Get Fit", "fats":"12g","carbs":"1g","sugar":"1g","salt":"300mg","protein":"32g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/paillardofchicken.jpg?alt=media&token=4edc367f-33b8-44ef-84e8-3edae35610b3"})
 
     #recipe 22 Superhealthy Salmon Burger
     firebase.put("/Recipes","Superhealthy Salmon Burgers",{"calories":292,"dietary":"None","difficulty":"Easy",
@@ -380,7 +376,7 @@ def UpdateDatabase():
      "3":"Spread the granola mixture over a baking sheet, leaving as many clusters as you want, and bake for 8 minutes. Remove from oven, stir, and bake for another 8 minutes, or until lightly golden.",
      "4":"Let cool completely before adding chocolate chips and transferring to a storage container. The granola will still be slightly soft when it comes out of the oven, but it will harden up as it sits at room temperature and cools."},
      "prepTime":10, "readyTime":16, "servSize":2, "shortDesc":"Crunchy, chewy, nutty, and sweet. This vanilla almond butter protein granola makes a nutritious and delicious breakfast or snack!",
-     "title": "Vanilla Almond Butter Protein Granola", "type": "Gain Muscles", "fats":"4g","carbs":"27g","sugar":"0g","salt":"0g","protein":"6g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/Almond-Butter-Protein-Granola.jpg?alt=media&token=2f71c48c-8e97-4032-a09b-9475617fd260"})
+     "title": "Vanilla Almond Butter Protein Granola", "type": "Gain Muscles", "fats":"4g","carbs":"27g","sugar":"0g","salt":"0g","protein":"6g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/Almond-Butter-Protein-Granola6.jpg?alt=media&token=2cf8898f-7ff9-49a6-9b43-c621e1f671fe"})
 
 
     print("Database sucessfully updated!\n")
