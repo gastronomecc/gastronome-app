@@ -30,7 +30,7 @@ public class RecipeActivity extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
         ref = database.getReference("Recipes");
-       // Log.d("Im here", "HERE");
+        Log.d("Im here", "HEREDom");
         ref.addValueEventListener(new ValueEventListener() {
                                       @Override
                                       public void onDataChange(DataSnapshot dataSnapshot) {
