@@ -49,7 +49,7 @@ public class ProgressFragment extends Fragment {
     TextView tvDate, tvCal;
     ImageButton btnRight, btnLeft;
     FirebaseAuth mAuth;
-    //FirebaseDatabase database;
+    FirebaseDatabase database;
     DatabaseReference ref;
     int totalCal;
     Date currentDay;
@@ -61,115 +61,21 @@ public class ProgressFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_progress, container, false);
+        return inflater.inflate(R.layout.fragment_graph, container, false);
     }
-
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        cal = Calendar.getInstance();
-        currentDay = cal.getTime();
-        dayFormat = new SimpleDateFormat("EEEE");
-        totalCal = 0;
         chart = view.findViewById(R.id.progressPageBarChart);
         database = FirebaseDatabase.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
+        LoadWeeklyLogData();
 
         chart.setDrawBarShadow(false);
         chart.setDrawValueAboveBar(true);
         chart.setMaxVisibleValueCount(50);
         chart.setDrawGridBackground(false);
-
-        Log.d("CurrentDay: ", dayFormat.format(currentDay));
-        Log.d("CurrentDaySub: ", dayFormat.format(currentDay).substring(0,2));
-
-        day = dayFormat.format(currentDay).substring(0,2);
-        if (day.equals("Su")) {
-            dayInNo = 7;
-        } else if (day.equals("Mo")) {
-            dayInNo = 1;
-        } else if (day.equals("Tu")) {
-            dayInNo = 2;
-        } else if (day.equals("We")) {
-            dayInNo = 3;
-        } else if (day.equals("Th")) {
-            dayInNo = 4;
-        } else if (day.equals("Fr")) {
-            dayInNo = 5;
-        } else if (day.equals("Sa")) {
-            dayInNo = 6;
-        } else {
-            dayInNo = 4;
-        }
-
-        tvDate = view.findViewById(R.id.tvDate);
-        tvCal = view.findViewById(R.id.tvTotalCal);
-        btnLeft = view.findViewById(R.id.imgBtnLeft);
-        btnLeft.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                totalCal = 0;
-                if (dayInNo == 1) {
-                    dayInNo = 7;
-                } else {
-                    dayInNo -= 1;
-                }
-                ref = database.getInstance().getReference("ZLogs").child(mAuth.getInstance().getCurrentUser().getUid());
-                ref.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        for (DataSnapshot ds:  dataSnapshot.getChildren()) {
-                            Logs log = ds.getValue(Logs.class);
-                            if (log.day.equals(String.valueOf(dayInNo))) {// MUST GET CURRENT DAY {
-                                totalCal += log.getCalories();
-                            }
-                        }
-                        tvCal.setText("" + totalCal);
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                        Log.d("The read failed: " , "" + databaseError.getCode());
-                    }
-                });
-            }
-        });
-
-        btnRight = view.findViewById(R.id.imgBtnRight);
-        btnRight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                totalCal = 0;
-                if (dayInNo == 7) {
-                    dayInNo = 1;
-                } else {
-                    dayInNo ++;
-                }
-                ref = database.getInstance().getReference("ZLogs").child(mAuth.getInstance().getCurrentUser().getUid());
-                ref.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        for (DataSnapshot ds:  dataSnapshot.getChildren()) {
-                            Logs log = ds.getValue(Logs.class);
-                            if (log.day.equals(String.valueOf(dayInNo))) {// MUST GET CURRENT DAY {
-                                totalCal += log.getCalories();
-                            }
-                        }
-                        tvCal.setText("" + totalCal);
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                        Log.d("The read failed: " , "" + databaseError.getCode());
-                    }
-                });
-            }
-        });
-        callData();
-        LoadWeeklyLogData();
-
-
 
 //        ArrayList<BarEntry> barEntries = new ArrayList<>();
 //        barEntries.add(new BarEntry(1, 2040f));
@@ -353,8 +259,104 @@ public class ProgressFragment extends Fragment {
 //        data.setBarWidth(1.0f);
 //        chart.setData(data);
 //    }
+        return inflater.inflate(R.layout.fragment_progress, container, false);
+    }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable final Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        cal = Calendar.getInstance();
+        currentDay = cal.getTime();
+        dayFormat = new SimpleDateFormat("EEEE");
+        totalCal = 0;
 
+        Log.d("CurrentDay: ", dayFormat.format(currentDay));
+        Log.d("CurrentDaySub: ", dayFormat.format(currentDay).substring(0,2));
+
+        day = dayFormat.format(currentDay).substring(0,2);
+        if (day.equals("Su")) {
+            dayInNo = 7;
+        } else if (day.equals("Mo")) {
+            dayInNo = 1;
+        } else if (day.equals("Tu")) {
+            dayInNo = 2;
+        } else if (day.equals("We")) {
+            dayInNo = 3;
+        } else if (day.equals("Th")) {
+            dayInNo = 4;
+        } else if (day.equals("Fr")) {
+            dayInNo = 5;
+        } else if (day.equals("Sa")) {
+            dayInNo = 6;
+        } else {
+            dayInNo = 4;
+        }
+
+        tvDate = view.findViewById(R.id.tvDate);
+        tvCal = view.findViewById(R.id.tvTotalCal);
+        btnLeft = view.findViewById(R.id.imgBtnLeft);
+        btnLeft.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                totalCal = 0;
+                if (dayInNo == 1) {
+                    dayInNo = 7;
+                } else {
+                    dayInNo -= 1;
+                }
+                ref = database.getInstance().getReference("ZLogs").child(mAuth.getInstance().getCurrentUser().getUid());
+                ref.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot ds:  dataSnapshot.getChildren()) {
+                            Logs log = ds.getValue(Logs.class);
+                            if (log.day.equals(String.valueOf(dayInNo))) {// MUST GET CURRENT DAY {
+                                totalCal += log.getCalories();
+                            }
+                        }
+                        tvCal.setText("" + totalCal);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Log.d("The read failed: " , "" + databaseError.getCode());
+                    }
+                });
+            }
+        });
+
+        btnRight = view.findViewById(R.id.imgBtnRight);
+        btnRight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                totalCal = 0;
+                if (dayInNo == 7) {
+                    dayInNo = 1;
+                } else {
+                    dayInNo ++;
+                }
+                ref = database.getInstance().getReference("ZLogs").child(mAuth.getInstance().getCurrentUser().getUid());
+                ref.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot ds:  dataSnapshot.getChildren()) {
+                            Logs log = ds.getValue(Logs.class);
+                            if (log.day.equals(String.valueOf(dayInNo))) {// MUST GET CURRENT DAY {
+                                totalCal += log.getCalories();
+                            }
+                        }
+                        tvCal.setText("" + totalCal);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Log.d("The read failed: " , "" + databaseError.getCode());
+                    }
+                });
+            }
+        });
+        callData();
+    }
 
     public void callData() {
         ref = database.getInstance().getReference("ZLogs").child(mAuth.getInstance().getCurrentUser().getUid());

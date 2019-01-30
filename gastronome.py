@@ -35,8 +35,9 @@ def sendmail():
                 <p>Dear Valued Customer,<br>
                     Did you know that we have a Gastronome website too?<br>
                     <a href="https://gastronomecc.github.io/gastronome-site/index">
-                     <img width="100" height ="100" src="https://www.waangoo.com/content/images/thumbs/0007442_nutrisoy-fresh-soya-milk-hi-calcium_600.jpeg"/>
+                     <img width="500" height ="150" src="https://gastronomecc.github.io/gastronome-site/assets/images/background.png"/>
                      </a>
+                     (click on the image above to learn more!)
                 </p>
             </body>
         </html>
@@ -271,7 +272,7 @@ def UpdateDatabase():
      "2":"Tip in the tomatoes and fish fillets. Cover and simmer for 10 mins until the fish is nearly cooked, then uncover.",
      "3":"Tip in the butter beans, season well, then cook until everything is hot. Serve scattered with the croutons, parsley and lemon."},
     "prepTime":10, "readyTime":25, "servSize":4, "shortDesc":"This storecupboard fish stew is bulked out with bread and is full of fresh, summer flavours.",
-    "title": "Summer fish stew", "type": "Lose Weight", "fats":"7g","carbs":"26g","sugar":"8g","salt":"700mg","protein":"34g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/summer-fish-stew.jpg?alt=media&token=8177223a-937f-499c-91fe-07789c1ac22a"})
+    "title": "Summer Fish Stew", "type": "Lose Weight", "fats":"7g","carbs":"26g","sugar":"8g","salt":"700mg","protein":"34g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/summer-fish-stew.jpg?alt=media&token=8177223a-937f-499c-91fe-07789c1ac22a"})
 
     #recipe 17 Asian Pulled Chicken Salad
     firebase.put("/Recipes","Asian Pulled Chicken Salad",{"calories":352,"dietary":"None","difficulty":"Easy",
@@ -280,7 +281,7 @@ def UpdateDatabase():
      "1":"Remove all the meat from the chicken, shred into large chunks and pop in a large bowl. Add the cabbage, carrots, spring onions, chillies and half the coriander.",
      "2":"Toss together with the dressing and pile onto a serving plate, then scatter over the remaining coriander and peanuts."},
     "prepTime":45, "readyTime":45, "servSize":1, "shortDesc":"Pull apart a ready-roasted chicken to whip up this healthy, vibrant, low-calorie dish in just 20 minutes",
-    "title": "Asian pulled chicken salad", "type": "Lose Weight", "fats":"19g","carbs":"14g","sugar":"11g","salt":"800mg","protein":"29g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/asian-pulled-chicken-salad.jpg?alt=media&token=a7b4fc8a-1e22-42d3-b3cc-7ca133f9103a"})
+    "title": "Asian Pulled Chicken Salad", "type": "Lose Weight", "fats":"19g","carbs":"14g","sugar":"11g","salt":"800mg","protein":"29g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/asian-pulled-chicken-salad.jpg?alt=media&token=a7b4fc8a-1e22-42d3-b3cc-7ca133f9103a"})
 
     #recipe 18 Prawn & Tomato Stew with Gremolata Topping
     firebase.put("/Recipes","Prawn & Tomato Stew with Gremolata Topping",{"calories":308,"dietary":"None","difficulty":"Easy",
@@ -291,7 +292,7 @@ def UpdateDatabase():
      "3":"Increase the heat to medium-high, add the tomatoes, wine and stock, and cook for 15 mins.",
      "4":"Add the prawns, lemon juice, capers and potatoes. Cook for 5 mins more, or until the prawns turn pink and are just cooked. Mix together the parsley and lemon zest, then scatter over the stew, then serve with toasted bread, for dunking."},
     "prepTime":10, "readyTime":35, "servSize":4, "shortDesc":"A fish casserole with healthy prawns, topped with an Italian garnish of parsley and lemon zest - it's low in fat and calories too",
-    "title": "Prawn & tomato stew with gremolata topping", "type": "Lose Weight", "fats":"7g","carbs":"29g","sugar":"10g","salt":"1g","protein":"22g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/Prawn%26TomatoStew.jpg?alt=media&token=b75d4ae0-161c-4205-9816-aa149257392d"})
+    "title": "Prawn & Tomato Stew with Gremolata Topping", "type": "Lose Weight", "fats":"7g","carbs":"29g","sugar":"10g","salt":"1g","protein":"22g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/Prawn%26TomatoStew.jpg?alt=media&token=b75d4ae0-161c-4205-9816-aa149257392d"})
 
     #recipe 19 Greek-Style Roast Fish
     firebase.put("/Recipes","Greek-Style Roast Fish",{"calories":388,"dietary":"None","difficulty":"Easy",
@@ -299,7 +300,7 @@ def UpdateDatabase():
     {"0":"Heat oven to 200C/180C fan/gas 6. Tip the potatoes, onion, garlic, oregano and olive oil into a roasting tin, season, then mix together with your hands to coat everything in the oil. Roast for 15 mins, turn everything over and bake for 15 mins more.",
      "1":"Add the lemon and tomatoes, and roast for 10 mins, then top with the fish fillets and cook for 10 mins more. Serve with parsley scattered over."},
     "prepTime":10, "readyTime":50, "servSize":2, "shortDesc":"Oven-bake white fish fillets with potatoes, tomatoes and herbs for a healthy and gluten-free weeknight dinner",
-    "title": "Greek-style roast fish", "type": "Lose Weight", "fats":"13g","carbs":"42g","sugar":"11g","salt":"400mg","protein":"23g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/greek-style-roast-fish.jpg?alt=media&token=3a4af934-efb7-4a04-9b7f-080b71518902"})
+    "title": "Greek-Style Roast Fish", "type": "Lose Weight", "fats":"13g","carbs":"42g","sugar":"11g","salt":"400mg","protein":"23g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/greek-style-roast-fish.jpg?alt=media&token=3a4af934-efb7-4a04-9b7f-080b71518902"})
 
     #recipe 20 Prawn, Fennel & Rocket Risotto
     firebase.put("/Recipes","Prawn, Fennel & Rocket Risotto",{"calories":391,"dietary":"None","difficulty":"Easy",
@@ -309,7 +310,7 @@ def UpdateDatabase():
      "2":"When the rice is almost cooked, add the prawns, lemon zest and some seasoning. Continue adding stock and cooking for another 3-4 mins until the prawns are pink and the rice is cooked.",
      "3":"Remove from the heat and stir through the rocket and lemon juice. Check the seasoning, leave the risotto to sit in the pan for 2 mins, then serve."},
     "prepTime":15, "readyTime":35, "servSize":4, "shortDesc":"This prawn and fennel risotto gets a little extra kick from lemon zest and and rocket - perfect for a dinner party",
-    "title": "Prawn, fennel & rocket risotto", "type": "Get Fit", "fats":"5g","carbs":"64g","sugar":"5g","salt":"1200mg","protein":"21g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/prawn-fennel-rocket-risotto.jpg?alt=media&token=1c0b6c1c-beb9-431b-a277-9b97acf85831"})
+    "title": "Prawn, Fennel & Rocket Risotto", "type": "Get Fit", "fats":"5g","carbs":"64g","sugar":"5g","salt":"1200mg","protein":"21g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/prawn-fennel-rocket-risotto.jpg?alt=media&token=1c0b6c1c-beb9-431b-a277-9b97acf85831"})
 
     #recipe 21 Paillard of Chicken with Lemon & Herbs
     firebase.put("/Recipes","Paillard of Chicken with Lemon & Herbs",{"calories":240,"dietary":"None","difficulty":"Easy",
@@ -320,7 +321,7 @@ def UpdateDatabase():
      "3":"Heat the barbecue. Once the flames have died down, spread the coals out to an even layer. Cook the chicken for 1-2 mins each side. Transfer to a board and leave to rest for a few mins.",
      "4":"Meanwhile, pour the oil and balsamic vinegar into a large bowl. Add the rocket and some seasoning. Toss together, then shave over the Parmesan. Serve the salad with the chicken, with lemon wedges to squeeze over."},
     "prepTime":15, "readyTime":5, "servSize":6, "shortDesc":"Pounding meat until thin and flat is a great technique for barbecued chicken breast, as it ensures it won’t dry out. Try this version with lemon and herbs.",
-    "title": "Paillard of chicken with lemon & herbs", "type": "Get Fit", "fats":"12g","carbs":"1g","sugar":"1g","salt":"300mg","protein":"32g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/paillardofchicken.jpg?alt=media&token=4edc367f-33b8-44ef-84e8-3edae35610b3"})
+    "title": "Paillard of Chicken with Lemon & Herbs", "type": "Get Fit", "fats":"12g","carbs":"1g","sugar":"1g","salt":"300mg","protein":"32g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/paillardofchicken.jpg?alt=media&token=4edc367f-33b8-44ef-84e8-3edae35610b3"})
 
     #recipe 22 Superhealthy Salmon Burger
     firebase.put("/Recipes","Superhealthy Salmon Burgers",{"calories":292,"dietary":"None","difficulty":"Easy",
@@ -330,7 +331,7 @@ def UpdateDatabase():
      "2":"Meanwhile, use a swivel peeler to peel strips of carrot and cucumber into a bowl. Toss with the vinegar and sugar until the sugar has dissolved, then toss through the coriander leaves.",
      "3":"Divide the salad between 4 plates. Serve with the burgers and rice."},
     "prepTime":20, "readyTime":10, "servSize":4, "shortDesc":"If you're after something a bit lighter than potato-packed fishcakes, try these simple oriental-style burgers",
-    "title": "Superhealthy salmon burgers", "type": "Gain Muscle", "fats":"17g","carbs":"7g","sugar":"6g","salt":"830mg","protein":"29g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/salmonburger.jpg?alt=media&token=6f6090b1-8d95-415b-9996-21ed3473cd81"})
+    "title": "Superhealthy Salmon Burgers", "type": "Gain Muscle", "fats":"17g","carbs":"7g","sugar":"6g","salt":"830mg","protein":"29g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/salmonburger.jpg?alt=media&token=6f6090b1-8d95-415b-9996-21ed3473cd81"})
 
     #recipe 23 Asian Tofu with stir-fried noodles, pak choi & sugar snap peas
     firebase.put("/Recipes","Asian Tofu with Stir-Fried Noodles, Pak Choi & Sugar Snap Pea",{"calories":328,"dietary":"None","difficulty":"Medium",
@@ -342,7 +343,7 @@ def UpdateDatabase():
      "4":"Add the sugar snap peas, pak choi and pepper, and stir for another 1-2 mins, then add the cooked noodles. Toss well, then add the soy sauce and lime juice, and mix until well combined and the pan is sizzling.",
      "5":"Remove from the heat and divide between 2 bowls. Top each with tofu cubes and drizzle over any juices. Sprinkle with coriander and serve. "},
     "prepTime":10, "readyTime":15, "servSize":2, "shortDesc":"A vegetarian stir-fry packed with spice and flavour. Marinate tofu in ginger, garlic and sesame and serve with a vermicelli noodle mix",
-    "title": "Asian tofu with stir-fried noodles, pak choi & sugar snap pea", "type": "Gain Muscles", "fats":"9g","carbs":"45g","sugar":"9g","salt":"1100mg","protein":"15g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/tofupakchoinoodles.jpg?alt=media&token=6464efdc-3db9-404f-a0e6-8a9ece304b53"})
+    "title": "Asian Tofu with Stir-Fried Noodles, Pak Choi & Sugar Snap Pea", "type": "Gain Muscles", "fats":"9g","carbs":"45g","sugar":"9g","salt":"1100mg","protein":"15g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/tofupakchoinoodles.jpg?alt=media&token=6464efdc-3db9-404f-a0e6-8a9ece304b53"})
 
     #recipe 24 One-Pot Chili Pasta
     firebase.put("/Recipes","One-Pot Chili Pasta",{"calories":646,"dietary":"None","difficulty":"Medium",
