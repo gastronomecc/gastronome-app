@@ -5,9 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout10"
+        android:id="@+id/progressTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,7 +21,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:fontFamily="@font/cerebri_sans_bold"
+            android:fontFamily="@font/avenir_black"
             android:text="Progress"
             android:textColor="#000000"
             android:textSize="24sp"
@@ -41,69 +40,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout10" />
+        app:layout_constraintTop_toBottomOf="@+id/progressTitle" />
 
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/progressPageBarChart"
         android:layout_width="0dp"
         android:layout_height="320dp"
-        app:layout_constraintBottom_toTopOf="@+id/tvStatsTotalCalories"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout10">
-
-    </com.github.mikephil.charting.charts.BarChart>
+        app:layout_constraintTop_toBottomOf="@+id/textView27" />
 
     <TextView
-        android:id="@+id/tvStatsTotalCalories"
+        android:id="@+id/textView27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Total: 2144 calories"
+        android:fontFamily="@font/avenir_black"
+        android:text="CALORIE CHART (WEEK)"
         android:textColor="#000000"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressPageBarChart" />
-
-    <TextView
-        android:id="@+id/tvStatsGoal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/cerebri_sans_bold"
-        android:text="GOAL"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/tvStatsToday"
-        app:layout_constraintTop_toBottomOf="@+id/tvStatsToday" />
-
-    <TextView
-        android:id="@+id/tvStatsToday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/cerebri_sans_regular"
-        android:text="Today"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/tvStatsTotalCalories"
-        app:layout_constraintTop_toBottomOf="@+id/tvStatsTotalCalories" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:fontFamily="@font/cerebri_sans_regular"
-        android:text="Calories per Day : 2000 calories"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/tvStatsGoal"
-        app:layout_constraintTop_toBottomOf="@+id/tvStatsGoal" />
-
+        app:layout_constraintTop_toBottomOf="@+id/progressTitle" />
 </android.support.constraint.ConstraintLayout>

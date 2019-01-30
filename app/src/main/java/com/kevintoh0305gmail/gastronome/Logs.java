@@ -6,14 +6,16 @@ public class Logs {
     String day;
     String title;
     String email;
+    int calories;
 
     public Logs() {
     }
 
-    public Logs(String day, String title, String email) {
+    public Logs(String day, String title, String email, int calories) {
         this.day = day;
         this.title = title;
         this.email = email;
+        this.calories = calories;
     }
 
     public String getDay() {
@@ -38,5 +40,13 @@ public class Logs {
 
     public void setEmail(String uid) {
         this.email = email;
+    }
+
+    public int getCalories() {
+        return calories;
+    }
+
+    public void setCalories(int calories) {
+        this.calories = calories;
     }
 }
