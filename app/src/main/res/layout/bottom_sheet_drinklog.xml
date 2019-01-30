@@ -109,16 +109,27 @@
         android:id="@+id/etLogDrinkCalories"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
         android:ems="10"
         android:fontFamily="@font/avenir_medium"
-        android:background="@android:color/transparent"
         android:hint="Eg: 20"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:textAlignment="textEnd"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/tvCaloriesTitle"
         app:layout_constraintEnd_toEndOf="@+id/etLogDrinkName"
         app:layout_constraintStart_toStartOf="@+id/etLogDrinkName"
         app:layout_constraintTop_toTopOf="@+id/tvCaloriesTitle" />
+
+    <ImageButton
+        android:id="@+id/btnAddDrinkLog"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="32dp"
+        android:scaleType="fitXY"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvBottomSheetTitle2"
+        app:srcCompat="@drawable/add_recipe_btn" />
 
 </android.support.constraint.ConstraintLayout>

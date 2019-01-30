@@ -114,12 +114,23 @@
         android:ems="10"
         android:fontFamily="@font/avenir_medium"
         android:hint="Eg: 350"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:textAlignment="textEnd"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView33"
         app:layout_constraintEnd_toEndOf="@+id/etLogFoodName"
         app:layout_constraintStart_toStartOf="@+id/etLogFoodName"
         app:layout_constraintTop_toTopOf="@+id/textView33" />
+
+    <ImageButton
+        android:id="@+id/btnAddFoodlog"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="32dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvBottomSheetTitle"
+        app:srcCompat="@drawable/add_recipe_btn" />
 
 </android.support.constraint.ConstraintLayout>

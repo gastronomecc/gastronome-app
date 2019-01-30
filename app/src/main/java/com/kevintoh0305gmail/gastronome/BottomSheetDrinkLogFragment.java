@@ -19,6 +19,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.text.DateFormat;
@@ -32,9 +35,11 @@ public class BottomSheetDrinkLogFragment extends BottomSheetDialogFragment {
 
     EditText txtDrinkName, txtCalories;
     TextView tvDate;
-    ImageButton btnAddImage;
+    ImageButton btnAddImage, btnAddDrinkLog;
     Calendar calendar;
     Date currentDay;
+    FirebaseDatabase database;
+    FirebaseAuth firebaseAuth;
 
     final int REQUEST_CODE_GALLERY = 999;
 
@@ -63,8 +68,11 @@ public class BottomSheetDrinkLogFragment extends BottomSheetDialogFragment {
         txtCalories = view.findViewById(R.id.etLogDrinkCalories);
         tvDate = view.findViewById(R.id.tvBottomSheetDrinkDate);
         btnAddImage = view.findViewById(R.id.btnAddImage2);
+        btnAddDrinkLog = view.findViewById(R.id.btnAddDrinkLog);
         calendar = Calendar.getInstance();
         currentDay = calendar.getTime();
+        database = FirebaseDatabase.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
         DateFormat dayFormat = new SimpleDateFormat("EEEE");
         DateFormat dateFormat = new SimpleDateFormat("dd MMM");
         tvDate.setText(dayFormat.format(currentDay)+", "+dateFormat.format(currentDay));
@@ -80,6 +88,27 @@ public class BottomSheetDrinkLogFragment extends BottomSheetDialogFragment {
                 Intent intent = new Intent(Intent.ACTION_PICK);
                 intent.setType("image/*");
                 startActivityForResult(intent, REQUEST_CODE_GALLERY);
+            }
+        });
+
+        btnAddDrinkLog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String drinkname = txtDrinkName.getText().toString();
+                String calories = txtCalories.getText().toString();
+                if (drinkname.isEmpty()) { //Check whether the email textbox is empty
+                    txtDrinkName.setError("Username is required");
+                    txtDrinkName.requestFocus();
+                    return; //Do not allow user to authenticate
+                }
+
+                if (calories.isEmpty()) { //Check whether the password text is empty
+                    txtCalories.setError("Password is required");
+                    txtCalories.requestFocus();
+                    return; //Do not allow user to authenticate
+                }
+                database.getReference("UserDrinkLog").child(firebaseAuth.getCurrentUser().getUid()).child(drinkname).setValue(new DrinkLog(drinkname,Integer.parseInt(calories)));
+                dismiss();
             }
         });
     }
