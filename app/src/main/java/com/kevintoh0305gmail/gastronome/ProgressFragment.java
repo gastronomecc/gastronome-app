@@ -1,5 +1,6 @@
 package com.kevintoh0305gmail.gastronome;
 
+import android.content.Intent;
 import android.icu.util.LocaleData;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -45,11 +46,12 @@ public class ProgressFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable final Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         cal = Calendar.getInstance();
         currentDay = cal.getTime();
         dayFormat = new SimpleDateFormat("EEEE");
+        totalCal = 0;
 
         Log.d("CurrentDay: ", dayFormat.format(currentDay));
         Log.d("CurrentDaySub: ", dayFormat.format(currentDay).substring(0,2));
@@ -79,12 +81,30 @@ public class ProgressFragment extends Fragment {
         btnLeft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                totalCal = 0;
                 if (dayInNo == 1) {
                     dayInNo = 7;
                 } else {
                     dayInNo -= 1;
                 }
-                callData();
+                ref = database.getInstance().getReference("ZLogs").child(mAuth.getInstance().getCurrentUser().getUid());
+                ref.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot ds:  dataSnapshot.getChildren()) {
+                            Logs log = ds.getValue(Logs.class);
+                            if (log.day.equals(String.valueOf(dayInNo))) {// MUST GET CURRENT DAY {
+                                totalCal += log.getCalories();
+                            }
+                        }
+                        tvCal.setText("" + totalCal);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Log.d("The read failed: " , "" + databaseError.getCode());
+                    }
+                });
             }
         });
 
@@ -92,12 +112,30 @@ public class ProgressFragment extends Fragment {
         btnRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                totalCal = 0;
                 if (dayInNo == 7) {
                     dayInNo = 1;
                 } else {
                     dayInNo ++;
                 }
-                callData();
+                ref = database.getInstance().getReference("ZLogs").child(mAuth.getInstance().getCurrentUser().getUid());
+                ref.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot ds:  dataSnapshot.getChildren()) {
+                            Logs log = ds.getValue(Logs.class);
+                            if (log.day.equals(String.valueOf(dayInNo))) {// MUST GET CURRENT DAY {
+                                totalCal += log.getCalories();
+                            }
+                        }
+                        tvCal.setText("" + totalCal);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Log.d("The read failed: " , "" + databaseError.getCode());
+                    }
+                });
             }
         });
         callData();
