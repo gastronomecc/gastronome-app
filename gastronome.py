@@ -35,7 +35,7 @@ def sendmail():
                 <p>Dear Valued Customer,<br>
                     Did you know that we have a Gastronome website too?<br>
                     <a href="https://gastronomecc.github.io/gastronome-site/index">
-                     <img width="100" height ="100" src="https://www.waangoo.com/content/images/thumbs/0007442_nutrisoy-fresh-soya-milk-hi-calcium_600.jpeg"/>
+                     <img width="500" height ="150" src="https://www.waangoo.com/content/images/thumbs/0007442_nutrisoy-fresh-soya-milk-hi-calcium_600.jpeg"/>
                      </a>
                 </p>
             </body>
