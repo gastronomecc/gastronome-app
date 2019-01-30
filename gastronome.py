@@ -1,4 +1,13 @@
 from firebase.firebase import FirebaseApplication
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import auth 
+
+#cred = credentials.Certificate('path/to/serviceAccountKey.json')
+cred = credentials.Certificate('C:/Users/renkee/Downloads/p2fsdgastro-firebase-adminsdk-83ufa-8eb8366fbf.json')
+
+
+default_app = firebase_admin.initialize_app(cred)
 
 url="https://p2fsdgastro.firebaseio.com/"
 
@@ -15,14 +24,16 @@ def AddRecipe():
     shortdescp = input ("Enter short description of recipe:")
     goaltype = input("Enter type of user recommended to:")
 
-    
+def retrieveRecipeList():
+    firebase = FirebaseApplication(url, None)
+    print (firebase.get("/Recipes","{0}".format()))
 
 def RemoveRecipe():
     removerecipe = input("Enter name of Recipe you wish to remove")
     firebase = FirebaseApplication(url, None)
     firebase.delete("/Recipes","{0}".format())
 
-def ResetDatabase():
+def UpdateDatabase():
     firebase = FirebaseApplication(url, None)
 
     #recipe 1, parmesan cloud egg 
@@ -35,8 +46,7 @@ def ResetDatabase():
      "4":"Bake the egg whites until starting to lightly brown, about 3 minutes. Remove from oven. If the well has filled in during baking, use the spoon to recreate it.",
      "5":"Gently slip a yolk into each well. Bake until the yolks are cooked but still runny, 3 to 5 minutes more. Sprinkle with pepper. Serve immediately."},
      "prepTime":25, "readyTime":25, "servSize":4, "shortDesc":"These light and fluffy eggs are loaded with Parmesan and scallions for tons of flavor, plus there's a luscious runny yolk on top. And don't worry, this impressive brunch recipe is easy enough for anyone to master.",
-     "title": "Parmesan Cloud Eggs", "type": "Get Fit", "fats":"6g","carbs":"1g","sugar":"0g","salt":"198mg","protein":"8g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/ParmesanCloudEgg.jpg?alt=media&token=9a29c940-0f7a-4a9d-991b-f22202548f09
-"})
+     "title": "Parmesan Cloud Eggs", "type": "Get Fit", "fats":"6g","carbs":"1g","sugar":"0g","salt":"198mg","protein":"8g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/ParmesanCloudEgg.jpg?alt=media&token=9a29c940-0f7a-4a9d-991b-f22202548f09"})
 
     #recipe 2, avocado & kale omelet 
     firebase.put("/Recipes","Avocado & Kale Omelet",{"calories":339,"dietary":"None","difficulty":"Medium",
@@ -204,7 +214,7 @@ def ResetDatabase():
      "1":"Meanwhile, heat the rest of the oil in a large flameproof casserole dish over a medium heat. Add the onion and cook until softened for about 10 mins, then add the garlic and chilli flakes and stir for 1 min.",
      "2":"Tip in the tomatoes and fish fillets. Cover and simmer for 10 mins until the fish is nearly cooked, then uncover.",
      "3":"Tip in the butter beans, season well, then cook until everything is hot. Serve scattered with the croutons, parsley and lemon."},
-    "prepTime":10, "readyTime":25, "servSize":4, "shortDesc":"This storecupboard fish stew is bulked out with bread and is full of fresh, summer flavours",
+    "prepTime":10, "readyTime":25, "servSize":4, "shortDesc":"This storecupboard fish stew is bulked out with bread and is full of fresh, summer flavours.",
     "title": "Summer fish stew", "type": "Lose Weight", "fats":"7g","carbs":"26g","sugar":"8g","salt":"700mg","protein":"34g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/summer-fish-stew.jpg?alt=media&token=8177223a-937f-499c-91fe-07789c1ac22a"})
 
     #recipe 17 Asian Pulled Chicken Salad
@@ -312,31 +322,104 @@ def ResetDatabase():
      "title": "Vanilla Almond Butter Protein Granola", "type": "Gain Muscles", "fats":"4g","carbs":"27g","sugar":"0g","salt":"0g","protein":"6g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/Almond-Butter-Protein-Granola6.jpg?alt=media&token=2cf8898f-7ff9-49a6-9b43-c621e1f671fe"})
 
 
-    print("Database sucessfully restarted to default")
+    print("Database sucessfully updated!\n")
+
+def retrieveUserDetail():
+    #cred = credentials.RefreshToken('C:/Users/renkee/Downloads/p2fsdgastro-firebase-adminsdk-83ufa-8eb8366fbf.json')
+    #default_app = firebase_admin.initialize_app(cred)
+    #default_app = firebase_admin.initialize_app()
 
 
+    #firebase = FirebaseApplication(url, None)
+    useremail = input("Enter email for User you wish to retrieve:")
+    user = auth.get_user_by_email(useremail)
+    print('Successfully fetched user data: {0}'.format(user.getPhoneNumber()))
 
+def disableUserAccount():
+    useremail = input("Enter Email of user you wish to disable: ")
+    try:
+        user = auth.get_user_by_email(useremail)
+        auth.update_user(user.uid, disabled = True)
+        print("User successfully disabled.\n")
+    except:
+        print("Invalid Email, please try again.\n")
+
+def deleteUserAccount():
+    try:
+        useremail = input("Enter Email of user you wish to delete: ")
+        user = auth.get_user_by_email(useremail)
+        auth.delete_user(user.uid)
+        print ("User successfully deleted")
+    except:
+        print("Invalid Email, please try again.\n")
+    
+
+def listUsers():
+    i = 1
+    for user in auth.list_users().iterate_all():
+        print("User {0}".format(i) + ": " + user.email)
+        i = i+ 1
 
 while True:
-    print("------MENU------")
-    print("1. Add a new Recipe")
-    print("2. Remove a particular Recipe")
-    print("3. Reset Database")
-    print("4. Exit")
-    print()
-    option = int(input("Choose an option:"))
-    if option == 1:
-        continue
-        #AddRecipe()
-        
-    elif option == 2:
-        continue
-        #RemoveRecipe()
-      
-    elif option == 3:
-        ResetDatabase()
-        
-    elif option ==4:
-        break
+    print("------Hello Admin------\n")
+    print("1. View more about Recipe")
+    print("2. View more about User\n")
+    print("0. Exit")
 
-    print()
+    try:
+        option = int(input("Choose an option:"))
+        if option == 1:
+            print("\n----Would you like to---- \n")
+            print("1. Retrieve Recipe List")
+            print("2. Remove a Recipe")
+            print("3. Update Recipe database")
+            print("4. Go Back\n")
+            print("0. Exit")
+            try: 
+                option = int(input("Choose an option:"))
+                if option == 1:
+                    retrieveRecipeList()
+                elif option == 2:
+                    RemoveRecipe()
+                elif option == 3:
+                    UpdateDatabase()
+                elif option == 4:
+                    continue
+                elif option == 0:
+                    break
+                else:
+                    print("Sorry wrong number")
+            except:
+                print("\nInvalid input :( Please try again\n")
+                    
+        elif option == 2:
+            print("\n----Would you like to----\n")
+            print("1. List all Users")
+            print("2. Retrieve User's Details")
+            print("3. Disable User's Account")
+            print("4. Go Back\n")
+            print("0. Exit")
+            try:
+                option = int(input("Choose an option:"))
+                if option == 1:
+                    listUsers()
+                elif option == 2:
+                    retrieveUserDetail()
+                elif option == 3:
+                    disableUserAccount()
+                elif option == 4:
+                    continue
+                
+                elif option == 0:
+                    break
+                else:
+                    print("Sorry wrong number")
+            except:
+                print("\nInvalid input :( Please try again\n")
+            
+        elif option == 0:
+            break
+        else:
+            print("Sorry wrong number\n")
+    except:
+        print("\nInvalid input :( Please try again\n")
