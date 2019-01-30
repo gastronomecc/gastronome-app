@@ -34,7 +34,7 @@ public class ProgressFragment extends Fragment {
     int totalCal;
     Date currentDay;
     Calendar cal;
-    SimpleDateFormat dayFormat;
+    SimpleDateFormat dayFormat, dateFormat;
     String day;
     int dayInNo;
 
@@ -51,6 +51,7 @@ public class ProgressFragment extends Fragment {
         cal = Calendar.getInstance();
         currentDay = cal.getTime();
         dayFormat = new SimpleDateFormat("EEEE");
+        dateFormat = new SimpleDateFormat("dd MMM");
         totalCal = 0;
 
         Log.d("CurrentDay: ", dayFormat.format(currentDay));
@@ -78,6 +79,7 @@ public class ProgressFragment extends Fragment {
         tvDate = view.findViewById(R.id.tvDate);
         tvCal = view.findViewById(R.id.tvTotalCal);
         btnLeft = view.findViewById(R.id.imgBtnLeft);
+        tvDate.setText(dayFormat.format(cal.getTime()) + " " + dateFormat.format(cal.getTime()));
         btnLeft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,6 +87,8 @@ public class ProgressFragment extends Fragment {
                 if (dayInNo == 1) {
                     dayInNo = 7;
                 } else {
+                    cal.add(Calendar.DAY_OF_YEAR, -1);
+                    tvDate.setText(dayFormat.format(cal.getTime()) + " " + dateFormat.format(cal.getTime()));
                     dayInNo -= 1;
                 }
                 ref = database.getInstance().getReference("ZLogs").child(mAuth.getInstance().getCurrentUser().getUid());
@@ -116,6 +120,8 @@ public class ProgressFragment extends Fragment {
                 if (dayInNo == 7) {
                     dayInNo = 1;
                 } else {
+                    cal.add(Calendar.DAY_OF_YEAR, 1);
+                    tvDate.setText(dayFormat.format(cal.getTime()) + " " + dateFormat.format(cal.getTime()));
                     dayInNo ++;
                 }
                 ref = database.getInstance().getReference("ZLogs").child(mAuth.getInstance().getCurrentUser().getUid());
