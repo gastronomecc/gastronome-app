@@ -9,7 +9,10 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout10"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/tvChartTitle"
@@ -41,7 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout10" />
 
     <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/profileBarChart"
+        android:id="@+id/progressPageBarChart"
         android:layout_width="0dp"
         android:layout_height="320dp"
         app:layout_constraintBottom_toTopOf="@+id/tvStatsTotalCalories"
@@ -65,7 +68,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileBarChart" />
+        app:layout_constraintTop_toBottomOf="@+id/progressPageBarChart" />
 
     <TextView
         android:id="@+id/tvStatsGoal"
