@@ -46,7 +46,7 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Intent in = new Intent(Login.this, Home.class);
+                            Intent in = new Intent(Login.this, Favourites_Activity.class);
                             in.setFlags(in.FLAG_ACTIVITY_NEW_TASK | in.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(in);
                         }

@@ -28,7 +28,7 @@ public class RecipeInfoActivity extends AppCompatActivity {
     TextView tvTitle, tvShortDesc, tvServSize;
     Button btnPrepTime, btnDifficulty, btnDietary, btnIngredients, btnSteps, btnNutrition, btnIncrease, btnDecrease;
     ImageButton imgBtnAdd;
-    ImageView imgRecipeImage;
+    ImageView imgRecipeImage, btnFavourite;
     RecyclerView rvIngredients;
     IngredientsAdapter ingredientsAdapter;
     Button btnSun, btnMon, btnTues, btnWed, btnThurs, btnFri, btnSat, btnCancel, btnAddtoRecipe;
@@ -54,6 +54,7 @@ public class RecipeInfoActivity extends AppCompatActivity {
         btnIngredients = findViewById(R.id.btnReicpeInfoIngredients);
         btnSteps = findViewById(R.id.btnRecipeInfoSteps);
         btnNutrition = findViewById(R.id.btnRecipeInfoNutrition);
+        btnFavourite = findViewById(R.id.btnFav);
         btnIncrease = findViewById(R.id.btnRecipeInfoAddServing);
         btnDecrease = findViewById(R.id.btnRecipeInfoRemoveServing);
         imgBtnAdd = findViewById(R.id.imgBtnAdd);
@@ -61,7 +62,7 @@ public class RecipeInfoActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
 
         rvIngredients.setFocusable(false);
-        Recipe selectedRecipe = RecipeAdapter.selectedRecipe;
+        final Recipe selectedRecipe = RecipeAdapter.selectedRecipe;
         title = selectedRecipe.getTitle();
         String shortDesc = selectedRecipe.getShortDesc();
         String prepTime = "" + selectedRecipe.getPrepTime();
@@ -123,6 +124,18 @@ public class RecipeInfoActivity extends AppCompatActivity {
                 btnIngredients.setBackgroundResource(R.drawable.recipe_info_btm_btn_active);
                 btnSteps.setBackgroundResource(R.drawable.recipe_info_btm_btn_inactive);
                 btnNutrition.setBackgroundResource(R.drawable.recipe_info_btm_btn_inactive);
+            }
+        });
+
+        btnFavourite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("Clicked", "Clicked");
+                Random random = new Random();
+                int n = random.nextInt(900000000) + 999999;
+                Favourites addFav;
+                addFav = new Favourites(mAuth.getCurrentUser().getEmail(), selectedRecipe);
+                database.getReference().child("ZFavs").child(mAuth.getCurrentUser().getUid()).child(title+"-"+n).setValue(addFav);
             }
         });
 
