@@ -39,8 +39,20 @@ public class Login extends AppCompatActivity {
         tvError = findViewById(R.id.tvError);
         database = FirebaseDatabase.getInstance();
         mAuth = FirebaseAuth.getInstance();
+        //mAuth.signInWithEmailAndPassword("dom2@gmail.com", "password1").addOnCompleteListener()
         //mAuth.signInWithEmailAndPassword("dom@gmail.com", "password123");
         //Log.d("TEST", mAuth.getCurrentUser().getEmail());
+        mAuth.signInWithEmailAndPassword("dom2@gmail.com", "password1").addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Intent in = new Intent(Login.this, Home.class);
+                            in.setFlags(in.FLAG_ACTIVITY_NEW_TASK | in.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(in);
+                        }
+                    }
+                });
+
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +94,7 @@ public class Login extends AppCompatActivity {
                 });
             }
         });
+
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

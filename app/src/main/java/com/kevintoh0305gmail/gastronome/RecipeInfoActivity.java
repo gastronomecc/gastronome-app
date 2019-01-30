@@ -38,6 +38,7 @@ public class RecipeInfoActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     String title;
     int servSize;
+    Recipe selectedRecipe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +63,7 @@ public class RecipeInfoActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
 
         rvIngredients.setFocusable(false);
-        final Recipe selectedRecipe = RecipeAdapter.selectedRecipe;
+        selectedRecipe = RecipeAdapter.selectedRecipe;
         title = selectedRecipe.getTitle();
         String shortDesc = selectedRecipe.getShortDesc();
         String prepTime = "" + selectedRecipe.getPrepTime();
@@ -353,7 +354,8 @@ public class RecipeInfoActivity extends AppCompatActivity {
                     Random random = new Random();
                     int n = random.nextInt(900000000) + 999999;
                     Logs addLog;
-                    addLog = new Logs(d, title, mAuth.getCurrentUser().getEmail());
+                    int calories = selectedRecipe.getCalories();
+                    addLog = new Logs(d, title, mAuth.getCurrentUser().getEmail(), calories);
                     database.getReference().child("ZLogs").child(mAuth.getCurrentUser().getUid()).child(title+"-"+n).setValue(addLog);
 
                 }

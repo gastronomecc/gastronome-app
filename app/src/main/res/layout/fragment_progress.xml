@@ -39,29 +39,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout10" />
 
-    <ImageView
-        android:id="@+id/imgBtnLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="50dp"
-        android:rotation="180"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewLine"
-        app:srcCompat="@drawable/btn_dialog_next" />
-
-    <ImageView
-        android:id="@+id/imgBtnRight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/viewLine"
-        app:srcCompat="@drawable/btn_dialog_next" />
-
     <TextView
-        android:id="@+id/tvProgDate"
+        android:id="@+id/tvDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
@@ -80,17 +59,18 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvProgDate"
+        app:layout_constraintTop_toBottomOf="@+id/tvDate"
         app:srcCompat="@drawable/countdown" />
 
     <TextView
-        android:id="@+id/textView27"
+        android:id="@+id/tvTotalCal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:text="2200"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -105,8 +85,30 @@
         android:layout_marginTop="8dp"
         android:text="Total Calories Consumed"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView27" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTotalCal" />
+
+    <ImageButton
+        android:id="@+id/imgBtnRight"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout10"
+        app:srcCompat="@drawable/btn_dialog_next" />
+
+    <ImageButton
+        android:id="@+id/imgBtnLeft"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="50dp"
+        android:rotation="180"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/viewLine"
+        app:srcCompat="@drawable/btn_dialog_next" />
 
 
 </android.support.constraint.ConstraintLayout>
