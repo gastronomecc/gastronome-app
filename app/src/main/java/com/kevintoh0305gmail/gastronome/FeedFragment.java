@@ -16,7 +16,7 @@ public class FeedFragment extends Fragment {
     TabLayout tabLayout;
     ViewPager viewPager;
     PagerAdapter pagerAdapter;
-    ImageButton btnSearch;
+    ImageButton imageButton;
 
     @Nullable
     @Override
@@ -27,19 +27,19 @@ public class FeedFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        btnSearch = view.findViewById(R.id.imgBtnSearch);
         tabLayout = view.findViewById(R.id.tabs);
         viewPager = view.findViewById(R.id.viewPager);
+        imageButton = view.findViewById(R.id.imageButton);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
         pagerAdapter = new PagerAdapter(getChildFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(pagerAdapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(tabListener);
-        btnSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("domishere", "domishere");
-            }
-        });
     }
     private TabLayout.OnTabSelectedListener tabListener = new TabLayout.OnTabSelectedListener(){
         @Override

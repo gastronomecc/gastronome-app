@@ -1,4 +1,13 @@
 from firebase.firebase import FirebaseApplication
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import auth 
+
+#cred = credentials.Certificate('path/to/serviceAccountKey.json')
+cred = credentials.Certificate('C:/Users/renkee/Downloads/p2fsdgastro-firebase-adminsdk-83ufa-8eb8366fbf.json')
+
+
+default_app = firebase_admin.initialize_app(cred)
 
 url="https://p2fsdgastro.firebaseio.com/"
 
@@ -15,17 +24,19 @@ def AddRecipe():
     shortdescp = input ("Enter short description of recipe:")
     goaltype = input("Enter type of user recommended to:")
 
-    
+def retrieveRecipeList():
+    firebase = FirebaseApplication(url, None)
+    print (firebase.get("/Recipes","{0}".format()))
 
 def RemoveRecipe():
     removerecipe = input("Enter name of Recipe you wish to remove")
     firebase = FirebaseApplication(url, None)
     firebase.delete("/Recipes","{0}".format())
 
-def ResetDatabase():
+def UpdateDatabase():
     firebase = FirebaseApplication(url, None)
 
-    #recipe 1, parmesan cloud egg
+    #recipe 1, parmesan cloud egg 
     firebase.put("/Recipes","Parmesan Cloud Eggs",{"calories":94,"dietary":"Vegetarian","difficulty":"Easy",
     "ingredients":{"0":"4 Large eggs, yolks and whites seperated","1":"Pinch of salt","2":"1/4 cup finely grated Parmesan cheese","3":"1 Scallion, finely chopped", "4":"Ground pepper to taste"},"instructions":
     {"0":"Preheat oven to 450°F. Line a large baking sheet with parchment paper. Lightly coat with cooking spray.",
@@ -35,7 +46,7 @@ def ResetDatabase():
      "4":"Bake the egg whites until starting to lightly brown, about 3 minutes. Remove from oven. If the well has filled in during baking, use the spoon to recreate it.",
      "5":"Gently slip a yolk into each well. Bake until the yolks are cooked but still runny, 3 to 5 minutes more. Sprinkle with pepper. Serve immediately."},
      "prepTime":25, "readyTime":25, "servSize":4, "shortDesc":"These light and fluffy eggs are loaded with Parmesan and scallions for tons of flavor, plus there's a luscious runny yolk on top. And don't worry, this impressive brunch recipe is easy enough for anyone to master.",
-     "title": "Parmesan Cloud Eggs", "type": "Get Fit", "fats":"6g","carbs":"1g","sugar":"0g","salt":"198mg","protein":"8g"})
+     "title": "Parmesan Cloud Eggs", "type": "Get Fit", "fats":"6g","carbs":"1g","sugar":"0g","salt":"198mg","protein":"8g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/ParmesanCloudEgg.jpg?alt=media&token=9a29c940-0f7a-4a9d-991b-f22202548f09"})
 
     #recipe 2, avocado & kale omelet 
     firebase.put("/Recipes","Avocado & Kale Omelet",{"calories":339,"dietary":"None","difficulty":"Medium",
@@ -45,7 +56,7 @@ def ResetDatabase():
      "2":"Flip the omelet over and cook until set, about 30 seconds more. Transfer to a plate.",
      "3":"Toss kale with the remaining 1 teaspoon oil, lime juice, cilantro, sunflower seeds, crushed red pepper and a pinch of salt. Top the omelet with the kale salad and avocado."},
      "prepTime":10, "readyTime":10, "servSize":1, "shortDesc":"Move over, avocado toast. Top a high-protein omelet with avocado and fiber-rich kale and you'll keep hunger at bay for longer.",
-     "title": "Avocado & Kale Omelet", "type": "Get Fit", "fats":"28g","carbs":"9g","sugar":"2g","salt":"446g","protein":"15g"})
+     "title": "Avocado & Kale Omelet", "type": "Get Fit", "fats":"28g","carbs":"9g","sugar":"2g","salt":"446g","protein":"15g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/Avocado%26Kale.jpg?alt=media&token=e72c97c5-5780-4caf-9400-0572cc307d56"})
 
     #recipe 3, Buttermilk Oatcakes with Raspberry Compote
     firebase.put("/Recipes","Buttermilk Oatcakes with Raspberry Compote",{"calories":303,"dietary":"None","difficulty":"Medium",
@@ -58,7 +69,7 @@ def ResetDatabase():
      "5":"Flip and continue cooking until browned, 1 to 2 minutes more, reducing heat if necessary to prevent overbrowning.",
      "6":"Serve the oatcakes with the compote."},
     "prepTime":45, "readyTime":45, "servSize":4, "shortDesc":"These high-fiber oatcakes are made with 100% whole grains and no butter. A quick raspberry compote is a nice change from maple syrup.",
-    "title": "Buttermilk Oatcakes with Raspberry Compote", "type": "Lose Weight", "fats":"5g","carbs":"55g","sugar":"19g","salt":"713mg","protein":"12g"})
+    "title": "Buttermilk Oatcakes with Raspberry Compote", "type": "Lose Weight", "fats":"5g","carbs":"55g","sugar":"19g","salt":"713mg","protein":"12g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/OatmealWRaspberry.jpg?alt=media&token=f15c6c3f-0f05-471e-a6aa-a1c9cd30b8dd"})
 
     #recipe 4, Egg-in-a-Hole with Spinach & Bacon
     firebase.put("/Recipes","Egg-in-a-Hole with Spinach & Bacon",{"calories":302,"dietary":"None","difficulty":"Medium",
@@ -73,7 +84,7 @@ def ResetDatabase():
      "7":"Fill each hole with spinach. Make a deep well in the spinach and break an egg into each well.",
      "8":"Bake, rotating the baking sheet 180 degrees about halfway through, 10 to 14 minutes for soft-set yolks. Serve sprinkled with crumbled bacon and the remaining ¼ teaspoon pepper."},
     "prepTime":30, "readyTime":40, "servSize":4, "shortDesc":"When you make this cute breakfast-for-dinner recipe, also known as toad-in-a-hole or a one-eyed jack, you can vary it by using kale or even Swiss chard in place of the spinach.",
-    "title": "Egg-in-a-Hole with Spinach & Bacon", "type": "Get Fit", "fats":"13g","carbs":"30g","sugar":"3g","salt":"646mg","protein":"19g"})
+    "title": "Egg-in-a-Hole with Spinach & Bacon", "type": "Get Fit", "fats":"13g","carbs":"30g","sugar":"3g","salt":"646mg","protein":"19g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/EggInAHole.jpg?alt=media&token=917fc89e-0e14-4ee9-a79a-768bd98c157f"})
 
     #recipe 5, Avocado Toast with Egg, Cheddar & Kimchi
     firebase.put("/Recipes","Avocado Toast with Egg, Cheddar & Kimchi",{"calories":386,"dietary":"Vegetarian","difficulty":"Hard",
@@ -82,7 +93,7 @@ def ResetDatabase():
      "1":"Meanwhile, heat oil in a small nonstick skillet over medium heat. Crack egg into the pan. Reduce heat to medium-low and cook 5 to 7 minutes for a soft-set yolk.",
      "2":"Top the toast with the egg and kimchi."},
     "prepTime":20, "readyTime":20, "servSize":1, "shortDesc":"In this satisfying avocado-egg toast recipe, try full-flavored, high-fiber bread, like a hearty slice of German-style rye or seeded multigrain from your favorite bakery. To turn this into a portable breakfast, swap the toast for a whole-wheat English muffin or wrap.",
-    "title": "Avocado Toast with Egg, Cheddar & Kimchi", "type": "Get Fit", "fats":"28g","carbs":"21g","sugar":"3g","salt":"359mg","protein":"16g"})
+    "title": "Avocado Toast with Egg, Cheddar & Kimchi", "type": "Get Fit", "fats":"28g","carbs":"21g","sugar":"3g","salt":"359mg","protein":"16g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/AvocadoToast.jpg?alt=media&token=628b4428-7c16-48b5-b9de-112fc9c7f98d"})
 
     #recipe 6, Ancho Chicken Breast with Black Beans, Bell Peppers & Scallions
     firebase.put("/Recipes","Ancho Chicken Breast with Black Beans, Bell Peppers & Scallions",{"calories":386,"dietary":"None","difficulty":"Hard",
@@ -96,14 +107,14 @@ def ResetDatabase():
      "6":"Brush both sides of the chicken with the remaining 2 teaspoons oil and coat both sides with the spice mixture.",
      "7":"Coat a large grill pan or skillet with cooking spray and heat over medium-high heat. Reduce heat to medium and add half the chicken. Cook until an instant-read thermometer inserted in"},
     "prepTime":45, "readyTime":45, "servSize":4, "shortDesc":"In this healthy chicken recipe, the meat is rubbed with ancho chile powder, a spice made from dried poblano peppers. It adds mild heat and subtle smokiness to the rub on the chicken, but you can use regular chili powder here instead. This recipe makes an extra ½ cup of the black bean mash—try it wrapped into a burrito for lunch or as a taco filling",
-    "title": "Ancho Chicken Breast with Black Beans, Bell Peppers & Scallions", "type": "Get Fit", "fats":"14g","carbs":"36g","sugar":"11g","salt":"464mg","protein":"32g"})
+    "title": "Ancho Chicken Breast with Black Beans, Bell Peppers & Scallions", "type": "Get Fit", "fats":"14g","carbs":"36g","sugar":"11g","salt":"464mg","protein":"32g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/AnchoChicken.jpg?alt=media&token=54eebd86-cb3c-4f76-9bd6-c7ab4c630a3d"})
 
     #recipe 7, Spinach & Dill Pasta Salad
     firebase.put("/Recipes","Spinach & Dill Pasta Salad",{"calories":367,"dietary":"None","difficulty":"Easy",
     "ingredients":{"0":"1 tablespoon white-wine vinegar","1":"1 tablespoon extra-virgin olive oil","2":"¼ teaspoon dried dill","3":"⅛ teaspoon garlic powder","4":"⅛ teaspoon salt","5":"⅛ teaspoon ground pepper","6":"¾ cup cooked whole-wheat fusilli or penne","7":"1 cup chopped spinach","8":"½ cup cherry tomatoes","9":"¼ cup shelled edamame (thawed if frozen)","10":"2 tablespoons shredded vegan cheese","11":"1 tablespoon finely chopped red onion"},"instructions":
     {"0":"Whisk vinegar, oil, dill, garlic powder, salt and pepper in a medium bowl. Add pasta, spinach, tomatoes, edamame, cheese and onion; stir to combine."},
     "prepTime":15, "readyTime":15, "servSize":1, "shortDesc":"Edamame gives this veggie-packed vegan pasta salad a bit of feel-full protein. Serve topped with extra freshly ground pepper, if desired.",
-    "title": "Spinach & Dill Pasta Salad", "type": "Get Fit", "fats":"19g","carbs":"41g","sugar":"4g","salt":"417mg","protein":"12g"})
+    "title": "Spinach & Dill Pasta Salad", "type": "Get Fit", "fats":"19g","carbs":"41g","sugar":"4g","salt":"417mg","protein":"12g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/Spinach%26DillPasta.jpg?alt=media&token=14755621-3a67-4051-b7f8-f637f8320e37"})
 
     #recipe 8, Chicken with Bell Pepper & Hominy Stir-Fry
     firebase.put("/Recipes","Chicken with Bell Pepper & Hominy Stir-Fry",{"calories":415,"dietary":"None","difficulty":"Medium",
@@ -114,7 +125,7 @@ def ResetDatabase():
      "3":"Stir in hominy, garlic and the remaining 2 teaspoons cumin; cook, stirring, for 1 minute. Stir in green chiles and lime juice and cook for 1 minute more.",
      "4":"Serve the chicken over the hominy mixture, topped with avocado."},
     "prepTime":15, "readyTime":15, "servSize":4, "shortDesc":"Hominy is made by soaking dried corn kernels in lime to remove the tough hull and germ. The result looks like puffed-up corn, perhaps most notably enjoyed in the Mexican soup posole. In this healthy chicken stir-fry recipe, the hominy is added along with the vegetables to make a hearty dinner.",
-    "title": "Chicken with Bell Pepper & Hominy Stir-Fry", "type": "Gain Muscles", "fats":"15g","carbs":"34g","sugar":"10g","salt":"485mg","protein":"37g"})
+    "title": "Chicken with Bell Pepper & Hominy Stir-Fry", "type": "Gain Muscles", "fats":"15g","carbs":"34g","sugar":"10g","salt":"485mg","protein":"37g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/ChickenWBellPepper.jpg?alt=media&token=79f4979a-3d4c-4216-8a97-6925deaa4d0a"})
     
     #recipe 9, Creamy Garlic Pasta with Shrimp & Vegetables
     firebase.put("/Recipes","Creamy Garlic Pasta with Shrimp & Vegetables",{"calories":361,"dietary":"None","difficulty":"Medium",
@@ -123,7 +134,7 @@ def ResetDatabase():
      "1":"Add shrimp, asparagus, bell pepper and peas and cook until the pasta is tender and the shrimp are cooked, 2 to 4 minutes more. Drain well.",
      "2":"Mash garlic and salt in a large bowl until a paste forms. Whisk in yogurt, parsley, lemon juice, oil and pepper. Add the pasta mixture and toss to coat."},
     "prepTime":30, "readyTime":30, "servSize":4, "shortDesc":"Toss a garlicky, Middle Eastern-inspired yogurt sauce with pasta, shrimp, asparagus, peas and red bell pepper for a fresh, satisfying summer meal. Serve with: Slices of cucumber and tomato tossed with lemon juice and olive oil.",
-    "title": "Creamy Garlic Pasta with Shrimp & Vegetables", "type": "Get Fit", "fats":"6g","carbs":"53g","sugar":"14g","salt":"949mg","protein":"28g"})
+    "title": "Creamy Garlic Pasta with Shrimp & Vegetables", "type": "Get Fit", "fats":"6g","carbs":"53g","sugar":"14g","salt":"949mg","protein":"28g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/CreamyGarlicPastaWShrimp.jpg?alt=media&token=59dd7ceb-b9db-4d2e-8377-44106b12032d"})
 
     #recipe 10, Chicken & Spinach Soup with Fresh Pesto
     firebase.put("/Recipes","Chicken & Spinach Soup with Fresh Pesto",{"calories":226,"dietary":"None","difficulty":"Easy",
@@ -134,7 +145,7 @@ def ResetDatabase():
      "3":"Combine the remaining 1 tablespoon oil, Parmesan and basil in a food processor (a mini processor works well). Process until a coarse paste forms, adding a little water and scraping down the sides as necessary.",
      "4":"Cut the chicken into bite-size pieces. Stir the chicken and pesto into the pot. Season with pepper. Heat until hot. Garnish with croutons, if desired."},
     "prepTime":30, "readyTime":30, "servSize":5, "shortDesc":"This fragrant, Italian-flavored soup takes advantage of quick-cooking ingredients—boneless, skinless chicken breast, bagged baby spinach and canned beans. It features a simple homemade basil pesto swirled in at the end to add a fresh herb flavor.",
-    "title": "Chicken & Spinach Soup with Fresh Pesto", "type": "Lose Weight", "fats":"9g","carbs":"18g","sugar":"2g","salt":"211mg","protein":"19g"})
+    "title": "Chicken & Spinach Soup with Fresh Pesto", "type": "Lose Weight", "fats":"9g","carbs":"18g","sugar":"2g","salt":"211mg","protein":"19g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/Chicken%26SpinachSoup.jpg?alt=media&token=33bc6cfe-28ed-42fc-95af-69f066ec2a06"})
 
     #recipe 11, Shrimp Poke
     firebase.put("/Recipes","Shrimp Poke",{"calories":460,"dietary":"None","difficulty":"Medium",
@@ -144,7 +155,7 @@ def ResetDatabase():
      "2":"Combine rice and vinegar in a large bowl. Divide among 4 bowls and top each with ¾ cup shrimp, ½ cup each tomatoes and avocado, and 1 tablespoon each cilantro and black sesame seeds.",
      "3":"Drizzle with the reserved sauce and serve."},
     "prepTime":30, "readyTime":30, "servSize":4, "shortDesc":"Not a fan of raw fish? No problem—this poke (pronounced poke-ay) recipe substitutes cooked peeled shrimp instead. This fast, veggie-loaded dish includes seasoned brown rice for a hearty boost of fiber.",
-    "title": "Shrimp Poke", "type": "Get Fit", "fats":"22g","carbs":"40g","sugar":"4g","salt":"861mg","protein":"29g"})
+    "title": "Shrimp Poke", "type": "Get Fit", "fats":"22g","carbs":"40g","sugar":"4g","salt":"861mg","protein":"29g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/ShrimpPoke.jpg?alt=media&token=6a04ef89-0971-488a-85d3-7a06bed5e2c5"})
 
     #recipe 12, Creamy Fettuccine with Brussels Sprouts & Mushrooms
     firebase.put("/Recipes","Creamy Fettuccine with Brussels Sprouts & Mushrooms",{"calories":384,"dietary":"None","difficulty":"Hard",
@@ -155,7 +166,7 @@ def ResetDatabase():
      "3":"Whisk milk and flour in a bowl; add to the skillet with salt and pepper. Cook, stirring, until the sauce bubbles and thickens, about 2 minutes.",
      "4":"Stir in Asiago until melted. Add the sauce to the pasta; gently toss. Serve with more cheese, if desired."},
     "prepTime":30, "readyTime":30, "servSize":6, "shortDesc":"Sliced Brussels sprouts and mushrooms cook quickly and cling to the pasta in our fall version of pasta primavera. Look for presliced mushrooms to cut prep time. Serve with a tossed salad.",
-    "title": "Creamy Fettuccine with Brussels Sprouts & Mushrooms", "type": "Get Fit", "fats":"10g","carbs":"56g","sugar":"8g","salt":"431mg","protein":"18g"})
+    "title": "Creamy Fettuccine with Brussels Sprouts & Mushrooms", "type": "Get Fit", "fats":"10g","carbs":"56g","sugar":"8g","salt":"431mg","protein":"18g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/CreamyFettuccine.jpg?alt=media&token=fab9170c-4bd1-44a7-81b8-d157e82a92cf"})
 
 
     #recipe 13 Roasted Salmon & Butternut Squash Salad
@@ -169,7 +180,7 @@ def ResetDatabase():
      "5":"Precut butternut squash is usually sold in a 16-ounce package diced squash (3 cups of ½-inch pieces) or a in a 20-ounce package of large cubes (5 cups of 1- to 2-inch pieces). If you can only find the larger cubes for this recipe, cut them into ½-inch dice before cooking and measure out about 3 cups.",
      "6":"Alternatively, you can prep your own diced squash from a whole, peeled and seeded butternut squash."},
     "prepTime":30, "readyTime":35, "servSize":4, "shortDesc":"The natural sweetness of the squash is amplified by a maple syrup-spiked dressing in this hearty salmon salad. Serve with crusty garlic bread and a glass of Beaujolais wine.",
-    "title": "Roasted Salmon & Butternut Squash Salad", "type": "Get Fit", "fats":"23g","carbs":"22g","sugar":"8g","salt":"706mg","protein":"31g"})
+    "title": "Roasted Salmon & Butternut Squash Salad", "type": "Get Fit", "fats":"23g","carbs":"22g","sugar":"8g","salt":"706mg","protein":"31g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/RoastedSalmon.jpg?alt=media&token=590c8738-5717-439a-af8a-6f07455fcfb0"})
 
     #recipe 14 Pistachio-Crusted Chicken with Warm Barley Salad
     firebase.put("/Recipes","Pistachio-Crusted Chicken with Warm Barley Salad",{"calories":565,"dietary":"None","difficulty":"Hard",
@@ -182,7 +193,7 @@ def ResetDatabase():
      "5":"Heat oil in a large skillet over medium heat. Add tomatoes and vinegar. Cook until the tomatoes just start to collapse, about 1 minute. Remove from heat.",
      "6":"Drain the barley, if necessary, and stir into the tomatoes along with the remaining ¼ cup pistachios, ¼ teaspoon salt and parsley. Serve with the chicken."},
     "prepTime":30, "readyTime":30, "servSize":4, "shortDesc":"Barley and pistachios give this healthy chicken recipe a double dose of nutty flavor. For an easy change-up, swap in your favorite whole grain, such as brown rice, farro or quinoa.",
-    "title": "Pistachio-Crusted Chicken with Warm Barley Salad", "type": "Get Muscles", "fats":"27g","carbs":"47g","sugar":"4g","salt":"514mg","protein":"36g"})
+    "title": "Pistachio-Crusted Chicken with Warm Barley Salad", "type": "Get Muscles", "fats":"27g","carbs":"47g","sugar":"4g","salt":"514mg","protein":"36g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/PistachioCrustedChicken.jpg?alt=media&token=61629a21-672d-4062-87de-b477e6fddc89"})
 
     #recipe 15 Vegetarian Shepherd's Pies
     firebase.put("/Recipes","Vegetarian Shepherd's Pies",{"calories":322,"dietary":"Vegetarian","difficulty":"Medium",
@@ -194,7 +205,7 @@ def ResetDatabase():
      "4":"Sprinkle with flour and stir to coat. Stir in broth. Bring to a simmer; cook, stirring, for 1 minute. Stir in lentils and cook, stirring constantly, for 2 minutes.",
      "5":"Divide the hot lentil mixture among the prepared ramekins (or spread in the baking dish). Top with the mashed potatoes. Broil, rotating halfway through, until the potato is lightly browned in spots, 6 to 10 minutes."},
     "prepTime":45, "readyTime":45, "servSize":4, "shortDesc":"These mini vegetarian shepherd's pies feature lentils, carrot and corn, crowned with a velvety mashed potato topping.",
-    "title": "Vegetarian Shepherd's Pies", "type": "Get Fit", "fats":"7g","carbs":"54g","sugar":"8g","salt":"783mg","protein":"12g"})
+    "title": "Vegetarian Shepherd's Pies", "type": "Get Fit", "fats":"7g","carbs":"54g","sugar":"8g","salt":"783mg","protein":"12g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/VegetarianShepherdsPie.jpg?alt=media&token=462a2230-caca-4ac4-be82-7851b26b3e0b"})
 
     #recipe 16 Summer Stewed Fish
     firebase.put("/Recipes","Summer Stewed Fish",{"calories":325,"dietary":"None","difficulty":"Medium",
@@ -203,8 +214,8 @@ def ResetDatabase():
      "1":"Meanwhile, heat the rest of the oil in a large flameproof casserole dish over a medium heat. Add the onion and cook until softened for about 10 mins, then add the garlic and chilli flakes and stir for 1 min.",
      "2":"Tip in the tomatoes and fish fillets. Cover and simmer for 10 mins until the fish is nearly cooked, then uncover.",
      "3":"Tip in the butter beans, season well, then cook until everything is hot. Serve scattered with the croutons, parsley and lemon."},
-    "prepTime":10, "readyTime":25, "servSize":4, "shortDesc":"This storecupboard fish stew is bulked out with bread and is full of fresh, summer flavours",
-    "title": "Summer fish stew", "type": "Lose Weight", "fats":"7g","carbs":"26g","sugar":"8g","salt":"700mg","protein":"34g"})
+    "prepTime":10, "readyTime":25, "servSize":4, "shortDesc":"This storecupboard fish stew is bulked out with bread and is full of fresh, summer flavours.",
+    "title": "Summer fish stew", "type": "Lose Weight", "fats":"7g","carbs":"26g","sugar":"8g","salt":"700mg","protein":"34g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/summer-fish-stew.jpg?alt=media&token=8177223a-937f-499c-91fe-07789c1ac22a"})
 
     #recipe 17 Asian Pulled Chicken Salad
     firebase.put("/Recipes","Asian Pulled Chicken Salad",{"calories":352,"dietary":"None","difficulty":"Easy",
@@ -213,7 +224,7 @@ def ResetDatabase():
      "1":"Remove all the meat from the chicken, shred into large chunks and pop in a large bowl. Add the cabbage, carrots, spring onions, chillies and half the coriander.",
      "2":"Toss together with the dressing and pile onto a serving plate, then scatter over the remaining coriander and peanuts."},
     "prepTime":45, "readyTime":45, "servSize":1, "shortDesc":"Pull apart a ready-roasted chicken to whip up this healthy, vibrant, low-calorie dish in just 20 minutes",
-    "title": "Asian pulled chicken salad", "type": "Lose Weight", "fats":"19g","carbs":"14g","sugar":"11g","salt":"800mg","protein":"29g"})
+    "title": "Asian pulled chicken salad", "type": "Lose Weight", "fats":"19g","carbs":"14g","sugar":"11g","salt":"800mg","protein":"29g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/asian-pulled-chicken-salad.jpg?alt=media&token=a7b4fc8a-1e22-42d3-b3cc-7ca133f9103a"})
 
     #recipe 18 Prawn & Tomato Stew with Gremolata Topping
     firebase.put("/Recipes","Prawn & Tomato Stew with Gremolata Topping",{"calories":308,"dietary":"None","difficulty":"Easy",
@@ -224,7 +235,7 @@ def ResetDatabase():
      "3":"Increase the heat to medium-high, add the tomatoes, wine and stock, and cook for 15 mins.",
      "4":"Add the prawns, lemon juice, capers and potatoes. Cook for 5 mins more, or until the prawns turn pink and are just cooked. Mix together the parsley and lemon zest, then scatter over the stew, then serve with toasted bread, for dunking."},
     "prepTime":10, "readyTime":35, "servSize":4, "shortDesc":"A fish casserole with healthy prawns, topped with an Italian garnish of parsley and lemon zest - it's low in fat and calories too",
-    "title": "Prawn & tomato stew with gremolata topping", "type": "Lose Weight", "fats":"7g","carbs":"29g","sugar":"10g","salt":"1g","protein":"22g"})
+    "title": "Prawn & tomato stew with gremolata topping", "type": "Lose Weight", "fats":"7g","carbs":"29g","sugar":"10g","salt":"1g","protein":"22g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/Prawn%26TomatoStew.jpg?alt=media&token=b75d4ae0-161c-4205-9816-aa149257392d"})
 
     #recipe 19 Greek-Style Roast Fish
     firebase.put("/Recipes","Greek-Style Roast Fish",{"calories":388,"dietary":"None","difficulty":"Easy",
@@ -232,7 +243,7 @@ def ResetDatabase():
     {"0":"Heat oven to 200C/180C fan/gas 6. Tip the potatoes, onion, garlic, oregano and olive oil into a roasting tin, season, then mix together with your hands to coat everything in the oil. Roast for 15 mins, turn everything over and bake for 15 mins more.",
      "1":"Add the lemon and tomatoes, and roast for 10 mins, then top with the fish fillets and cook for 10 mins more. Serve with parsley scattered over."},
     "prepTime":10, "readyTime":50, "servSize":2, "shortDesc":"Oven-bake white fish fillets with potatoes, tomatoes and herbs for a healthy and gluten-free weeknight dinner",
-    "title": "Greek-style roast fish", "type": "Lose Weight", "fats":"13g","carbs":"42g","sugar":"11g","salt":"400mg","protein":"23g"})
+    "title": "Greek-style roast fish", "type": "Lose Weight", "fats":"13g","carbs":"42g","sugar":"11g","salt":"400mg","protein":"23g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/greek-style-roast-fish.jpg?alt=media&token=3a4af934-efb7-4a04-9b7f-080b71518902"})
 
     #recipe 20 Prawn, Fennel & Rocket Risotto
     firebase.put("/Recipes","Prawn, Fennel & Rocket Risotto",{"calories":391,"dietary":"None","difficulty":"Easy",
@@ -242,7 +253,7 @@ def ResetDatabase():
      "2":"When the rice is almost cooked, add the prawns, lemon zest and some seasoning. Continue adding stock and cooking for another 3-4 mins until the prawns are pink and the rice is cooked.",
      "3":"Remove from the heat and stir through the rocket and lemon juice. Check the seasoning, leave the risotto to sit in the pan for 2 mins, then serve."},
     "prepTime":15, "readyTime":35, "servSize":4, "shortDesc":"This prawn and fennel risotto gets a little extra kick from lemon zest and and rocket - perfect for a dinner party",
-    "title": "Prawn, fennel & rocket risotto", "type": "Get Fit", "fats":"5g","carbs":"64g","sugar":"5g","salt":"1200mg","protein":"21g"})
+    "title": "Prawn, fennel & rocket risotto", "type": "Get Fit", "fats":"5g","carbs":"64g","sugar":"5g","salt":"1200mg","protein":"21g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/prawn-fennel-rocket-risotto.jpg?alt=media&token=1c0b6c1c-beb9-431b-a277-9b97acf85831"})
 
     #recipe 21 Paillard of Chicken with Lemon & Herbs
     firebase.put("/Recipes","Paillard of Chicken with Lemon & Herbs",{"calories":240,"dietary":"None","difficulty":"Easy",
@@ -253,7 +264,7 @@ def ResetDatabase():
      "3":"Heat the barbecue. Once the flames have died down, spread the coals out to an even layer. Cook the chicken for 1-2 mins each side. Transfer to a board and leave to rest for a few mins.",
      "4":"Meanwhile, pour the oil and balsamic vinegar into a large bowl. Add the rocket and some seasoning. Toss together, then shave over the Parmesan. Serve the salad with the chicken, with lemon wedges to squeeze over."},
     "prepTime":15, "readyTime":5, "servSize":6, "shortDesc":"Pounding meat until thin and flat is a great technique for barbecued chicken breast, as it ensures it won’t dry out. Try this version with lemon and herbs.",
-    "title": "Paillard of chicken with lemon & herbs", "type": "Get Fit", "fats":"12g","carbs":"1g","sugar":"1g","salt":"300mg","protein":"32g"})
+    "title": "Paillard of chicken with lemon & herbs", "type": "Get Fit", "fats":"12g","carbs":"1g","sugar":"1g","salt":"300mg","protein":"32g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/paillardofchicken.jpg?alt=media&token=4edc367f-33b8-44ef-84e8-3edae35610b3"})
 
     #recipe 22 Superhealthy Salmon Burger
     firebase.put("/Recipes","Superhealthy Salmon Burgers",{"calories":292,"dietary":"None","difficulty":"Easy",
@@ -263,7 +274,7 @@ def ResetDatabase():
      "2":"Meanwhile, use a swivel peeler to peel strips of carrot and cucumber into a bowl. Toss with the vinegar and sugar until the sugar has dissolved, then toss through the coriander leaves.",
      "3":"Divide the salad between 4 plates. Serve with the burgers and rice."},
     "prepTime":20, "readyTime":10, "servSize":4, "shortDesc":"If you're after something a bit lighter than potato-packed fishcakes, try these simple oriental-style burgers",
-    "title": "Superhealthy salmon burgers", "type": "Gain Muscle", "fats":"17g","carbs":"7g","sugar":"6g","salt":"830mg","protein":"29g"})
+    "title": "Superhealthy salmon burgers", "type": "Gain Muscle", "fats":"17g","carbs":"7g","sugar":"6g","salt":"830mg","protein":"29g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/salmonburger.jpg?alt=media&token=6f6090b1-8d95-415b-9996-21ed3473cd81"})
 
     #recipe 23 Asian Tofu with stir-fried noodles, pak choi & sugar snap peas
     firebase.put("/Recipes","Asian Tofu with Stir-Fried Noodles, Pak Choi & Sugar Snap Pea",{"calories":328,"dietary":"None","difficulty":"Medium",
@@ -275,7 +286,7 @@ def ResetDatabase():
      "4":"Add the sugar snap peas, pak choi and pepper, and stir for another 1-2 mins, then add the cooked noodles. Toss well, then add the soy sauce and lime juice, and mix until well combined and the pan is sizzling.",
      "5":"Remove from the heat and divide between 2 bowls. Top each with tofu cubes and drizzle over any juices. Sprinkle with coriander and serve. "},
     "prepTime":10, "readyTime":15, "servSize":2, "shortDesc":"A vegetarian stir-fry packed with spice and flavour. Marinate tofu in ginger, garlic and sesame and serve with a vermicelli noodle mix",
-    "title": "Asian tofu with stir-fried noodles, pak choi & sugar snap pea", "type": "Gain Muscles", "fats":"9g","carbs":"45g","sugar":"9g","salt":"1100mg","protein":"15g"})
+    "title": "Asian tofu with stir-fried noodles, pak choi & sugar snap pea", "type": "Gain Muscles", "fats":"9g","carbs":"45g","sugar":"9g","salt":"1100mg","protein":"15g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/tofupakchoinoodles.jpg?alt=media&token=6464efdc-3db9-404f-a0e6-8a9ece304b53"})
 
     #recipe 24 One-Pot Chili Pasta
     firebase.put("/Recipes","One-Pot Chili Pasta",{"calories":646,"dietary":"None","difficulty":"Medium",
@@ -288,16 +299,16 @@ def ResetDatabase():
      "5":"Let the pot simmer on medium-low for about 15 minutes, or until the pasta is soft and has absorbed most of the liquid. Stir the pot one or two times during the 15 minutes to loosen any pasta stuck to the bottom.",
      "6":"Once the pasta is fully cooked, turn the heat off and add the cheese. Stir the cheese into the pasta until it has melted in and become slightly creamy. Serve hot."},
     "prepTime":10, "readyTime":30, "servSize":2, "shortDesc":"This super hearty One Pot Chili Pasta is bursting with southwest chili flavor, protein, and fiber. It's a meal in a bowl that the whole family will love.",
-    "title": "One-Pot Chili Pasta", "type": "Gain Muscles", "fats":"15g","carbs":"85g","sugar":"0g","salt":"0g","protein":"44g"})
+    "title": "One-Pot Chili Pasta", "type": "Gain Muscles", "fats":"15g","carbs":"85g","sugar":"0g","salt":"0g","protein":"44g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/One-Pot-Chili-Pasta-Vs.jpg?alt=media&token=3ef214b4-279f-4c84-a1b9-44fb735fa0ce"})
 
     #recipe 25 Lamb of Gains
-    firebase.put("/Recipes","Lamb of Gains",{"calories":888,"dietary":"None","difficulty":"Medium",
+    '''firebase.put("/Recipes","Lamb of Gains",{"calories":888,"dietary":"None","difficulty":"Medium",
     "ingredients":{"0":"1 rack of lamb (about 1 1/2 pounds, or 8 ribs), cut into chops and trimmed of fat","1":"Salt and Pepper, to taste","2":"1lb carrots","3":"3 Tbsp Dijon mustard","4":"2 Tbsp extra-virgin olive oil","5":"2 Tbsp finely chopped fresh cilantro","6":"2 Tbsp chopped scallions","7":"2 Tbsp red wine vinegar","8":"1 Tsp loosely packed orange zest"},"instructions":
     {"0":"Heat a large skillet over medium-high heat. Season lamb with salt and pepper and add to skillet. Sear one side, then cook for 2 minutes on each side.",
      "1":"While the lamb cooks, add carrots to a running food processor, using chopper to push carrots through. Or grate the carrots on the large holes of a box grater.",
      "2":"In a large mixing bowl, whisk together Dijon mustard, olive oil, cilantro, scallions, vinegar, and orange zest. Add carrots and, with clean hands, toss with the dressing until carrots are well coated. Season with pepper. Let carrots marinate for 10 minutes. Serve with the lamb."},
     "prepTime":10, "readyTime":30, "servSize":2, "shortDesc":"An easy and healthy meal to help keep you on track and makes great for meal prep throughout the week.",
-    "title": "Lamb of Gains", "type": "Gain Muscles", "fats":"21g","carbs":"50g","sugar":"0g","salt":"0g","protein":"86g"})
+    "title": "Lamb of Gains", "type": "Gain Muscles", "fats":"21g","carbs":"50g","sugar":"0g","salt":"0g","protein":"86g","imageURL":""})'''
 
     #recipe 26 Vanilla Almond Butter Protein Granola
     firebase.put("/Recipes","Vanilla Almond Butter Protein Granola",{"calories":161,"dietary":"None","difficulty":"Medium",
@@ -308,34 +319,107 @@ def ResetDatabase():
      "3":"Spread the granola mixture over a baking sheet, leaving as many clusters as you want, and bake for 8 minutes. Remove from oven, stir, and bake for another 8 minutes, or until lightly golden.",
      "4":"Let cool completely before adding chocolate chips and transferring to a storage container. The granola will still be slightly soft when it comes out of the oven, but it will harden up as it sits at room temperature and cools."},
      "prepTime":10, "readyTime":16, "servSize":2, "shortDesc":"Crunchy, chewy, nutty, and sweet. This vanilla almond butter protein granola makes a nutritious and delicious breakfast or snack!",
-     "title": "Vanilla Almond Butter Protein Granola", "type": "Gain Muscles", "fats":"4g","carbs":"27g","sugar":"0g","salt":"0g","protein":"6g"})
+     "title": "Vanilla Almond Butter Protein Granola", "type": "Gain Muscles", "fats":"4g","carbs":"27g","sugar":"0g","salt":"0g","protein":"6g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/Almond-Butter-Protein-Granola6.jpg?alt=media&token=2cf8898f-7ff9-49a6-9b43-c621e1f671fe"})
 
 
-    print("Database sucessfully restarted to default")
+    print("Database sucessfully updated!\n")
+
+def retrieveUserDetail():
+    #cred = credentials.RefreshToken('C:/Users/renkee/Downloads/p2fsdgastro-firebase-adminsdk-83ufa-8eb8366fbf.json')
+    #default_app = firebase_admin.initialize_app(cred)
+    #default_app = firebase_admin.initialize_app()
 
 
+    #firebase = FirebaseApplication(url, None)
+    useremail = input("Enter email for User you wish to retrieve:")
+    user = auth.get_user_by_email(useremail)
+    print('Successfully fetched user data: {0}'.format(user.getPhoneNumber()))
 
+def disableUserAccount():
+    useremail = input("Enter Email of user you wish to disable: ")
+    try:
+        user = auth.get_user_by_email(useremail)
+        auth.update_user(user.uid, disabled = True)
+        print("User successfully disabled.\n")
+    except:
+        print("Invalid Email, please try again.\n")
+
+def deleteUserAccount():
+    try:
+        useremail = input("Enter Email of user you wish to delete: ")
+        user = auth.get_user_by_email(useremail)
+        auth.delete_user(user.uid)
+        print ("User successfully deleted")
+    except:
+        print("Invalid Email, please try again.\n")
+    
+
+def listUsers():
+    i = 1
+    for user in auth.list_users().iterate_all():
+        print("User {0}".format(i) + ": " + user.email)
+        i = i+ 1
 
 while True:
-    print("------MENU------")
-    print("1. Add a new Recipe")
-    print("2. Remove a particular Recipe")
-    print("3. Reset Database")
-    print("4. Exit")
-    print()
-    option = int(input("Choose an option:"))
-    if option == 1:
-        continue
-        #AddRecipe()
-        
-    elif option == 2:
-        continue
-        #RemoveRecipe()
-      
-    elif option == 3:
-        ResetDatabase()
-        
-    elif option ==4:
-        break
+    print("------Hello Admin------\n")
+    print("1. View more about Recipe")
+    print("2. View more about User\n")
+    print("0. Exit")
 
-    print()
+    try:
+        option = int(input("Choose an option:"))
+        if option == 1:
+            print("\n----Would you like to---- \n")
+            print("1. Retrieve Recipe List")
+            print("2. Remove a Recipe")
+            print("3. Update Recipe database")
+            print("4. Go Back\n")
+            print("0. Exit")
+            try: 
+                option = int(input("Choose an option:"))
+                if option == 1:
+                    retrieveRecipeList()
+                elif option == 2:
+                    RemoveRecipe()
+                elif option == 3:
+                    UpdateDatabase()
+                elif option == 4:
+                    continue
+                elif option == 0:
+                    break
+                else:
+                    print("Sorry wrong number")
+            except:
+                print("\nInvalid input :( Please try again\n")
+                    
+        elif option == 2:
+            print("\n----Would you like to----\n")
+            print("1. List all Users")
+            print("2. Retrieve User's Details")
+            print("3. Disable User's Account")
+            print("4. Go Back\n")
+            print("0. Exit")
+            try:
+                option = int(input("Choose an option:"))
+                if option == 1:
+                    listUsers()
+                elif option == 2:
+                    retrieveUserDetail()
+                elif option == 3:
+                    disableUserAccount()
+                elif option == 4:
+                    continue
+                
+                elif option == 0:
+                    break
+                else:
+                    print("Sorry wrong number")
+            except:
+                print("\nInvalid input :( Please try again\n")
+            
+        elif option == 0:
+            break
+        else:
+            print("Sorry wrong number\n")
+    except:
+        print("\nInvalid input :( Please try again\n")
