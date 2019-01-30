@@ -42,6 +42,7 @@ public class Login extends AppCompatActivity {
         //mAuth.signInWithEmailAndPassword("dom2@gmail.com", "password1").addOnCompleteListener()
         //mAuth.signInWithEmailAndPassword("dom@gmail.com", "password123");
         //Log.d("TEST", mAuth.getCurrentUser().getEmail());
+
         mAuth.signInWithEmailAndPassword("dom2@gmail.com", "password1").addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -52,8 +53,6 @@ public class Login extends AppCompatActivity {
                         }
                     }
                 });
-
-
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

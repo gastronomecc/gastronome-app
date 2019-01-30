@@ -3,8 +3,64 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import auth 
 
+import smtplib, ssl
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
+
 #cred = credentials.Certificate('path/to/serviceAccountKey.json')
 cred = credentials.Certificate('C:/Users/renkee/Downloads/p2fsdgastro-firebase-adminsdk-83ufa-8eb8366fbf.json')
+
+def sendmail():
+    sender_email = "testerlim2000@gmail.com"
+    receiver_email = ""
+    password = input("Type your password and press enter:")
+    
+    i = 1
+    for user in auth.list_users().iterate_all():
+        receiver_email = user.email
+        message = MIMEMultipart("alternative")
+        message["Subject"] = "Gastronome has something for you!"
+        message["From"] = sender_email
+        message["To"] = receiver_email
+
+        text = ""
+        '''text = """\
+        Dear Valued Customer,
+        Did you know that we have a website for Gastronome too?
+        Youtube has many great tutorials:"""'''
+        html = """\
+        <html>
+            <body>
+                <p>Dear Valued Customer,<br>
+                    Did you know that we have a Gastronome website too?<br>
+                    <a href="https://gastronomecc.github.io/gastronome-site/index">
+                     <img width="100" height ="100" src="https://www.waangoo.com/content/images/thumbs/0007442_nutrisoy-fresh-soya-milk-hi-calcium_600.jpeg"/>
+                     </a>
+                </p>
+            </body>
+        </html>
+        """
+
+        #turn these into plan/html MIMEText objects
+        part1 = MIMEText(text,"plain")
+        part2 = MIMEText(html, "html")
+
+        # Add HTML/plain-text parts to MIMEMultipart message
+        # The email client will try to render the last part first
+        message.attach(part1)
+        message.attach(part2)
+
+        # Create secure connection with server and send email
+        context = ssl.create_default_context()
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+            server.login(sender_email, password)
+            server.sendmail(
+                sender_email, receiver_email, message.as_string()
+            )
+        print("Email successfully sent to {0}!".format(user.email))
+        i= i + 1
+
 
 
 default_app = firebase_admin.initialize_app(cred)
@@ -333,7 +389,7 @@ def retrieveUserDetail():
     #firebase = FirebaseApplication(url, None)
     useremail = input("Enter email for User you wish to retrieve:")
     user = auth.get_user_by_email(useremail)
-    print('Successfully fetched user data: {0}'.format(user.getPhoneNumber()))
+    print('Successfully fetched user data: {0}'.format(user.uid))
 
 def disableUserAccount():
     useremail = input("Enter Email of user you wish to disable: ")
@@ -363,7 +419,8 @@ def listUsers():
 while True:
     print("------Hello Admin------\n")
     print("1. View more about Recipe")
-    print("2. View more about User\n")
+    print("2. View more about User")
+    print("3. Mass send Email\n")
     print("0. Exit")
 
     try:
@@ -417,6 +474,8 @@ while True:
             except:
                 print("\nInvalid input :( Please try again\n")
             
+        elif option == 3:
+            sendmail()
         elif option == 0:
             break
         else:
