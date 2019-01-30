@@ -353,9 +353,9 @@ public class RecipeInfoActivity extends AppCompatActivity {
                 {
                     Random random = new Random();
                     int n = random.nextInt(900000000) + 999999;
-                    //int calories = selectedRecipe.getCalories();
+                    int calories = selectedRecipe.getCalories();
                     Logs addLog;
-                    //addLog = new Logs(d, title, mAuth.getCurrentUser().getEmail(),calories);
+                    addLog = new Logs(d, title, mAuth.getCurrentUser().getEmail(),calories);
                     int calories = selectedRecipe.getCalories();
                     addLog = new Logs(d, title, mAuth.getCurrentUser().getEmail(), calories);
                     database.getReference().child("ZLogs").child(mAuth.getCurrentUser().getUid()).child(title+"-"+n).setValue(addLog);
