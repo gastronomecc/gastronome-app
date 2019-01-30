@@ -50,13 +50,14 @@ public class ProgressFragment extends Fragment {
     ImageButton btnRight, btnLeft;
     FirebaseAuth mAuth;
     //FirebaseDatabase database;
-    DatabaseReference ref;
+    DatabaseReference ref, weightRef;
     int totalCal;
     Date currentDay;
     Calendar cal;
     SimpleDateFormat dayFormat, dateFormat;
     String day;
     int dayInNo;
+    double userWeight;
 
     @Nullable
     @Override
@@ -104,6 +105,30 @@ public class ProgressFragment extends Fragment {
             dayInNo = 4;
         }
 
+        final String email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+        DatabaseReference dataRef = database.getReference("Users");
+        dataRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds: dataSnapshot.getChildren())
+                {
+                    User user = ds.getValue(User.class);
+                    Log.d("1st Email: ", user.getEmail());
+                    Log.d("2nd Email: ", email);
+                    if (user.getEmail().equals(email))
+                    {
+                        userWeight =  user.getWeight();
+                    }
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
         tvDate = view.findViewById(R.id.tvDate);
         tvCal = view.findViewById(R.id.tvTotalCal);
         btnLeft = view.findViewById(R.id.imgBtnLeft);
@@ -112,10 +137,10 @@ public class ProgressFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 totalCal = 0;
+                cal.add(Calendar.DAY_OF_YEAR, -1);
                 if (dayInNo == 1) {
                     dayInNo = 7;
                 } else {
-                    cal.add(Calendar.DAY_OF_YEAR, -1);
                     tvDate.setText(dayFormat.format(cal.getTime()) + " " + dateFormat.format(cal.getTime()));
                     dayInNo -= 1;
                 }
@@ -145,10 +170,10 @@ public class ProgressFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 totalCal = 0;
+                cal.add(Calendar.DAY_OF_YEAR, 1);
                 if (dayInNo == 7) {
                     dayInNo = 1;
                 } else {
-                    cal.add(Calendar.DAY_OF_YEAR, 1);
                     tvDate.setText(dayFormat.format(cal.getTime()) + " " + dateFormat.format(cal.getTime()));
                     dayInNo ++;
                 }
@@ -174,6 +199,7 @@ public class ProgressFragment extends Fragment {
         });
         callData();
         LoadWeeklyLogData();
+        getUserWeights();
 
 
 
@@ -299,8 +325,34 @@ public class ProgressFragment extends Fragment {
                 Log.d("Cancel", "" + databaseError.getCode());
             }
         });
+    }
+
+    public void getUserWeights() {
+        weightRef = database.getInstance().getReference("ZLogs").child(mAuth.getInstance().getCurrentUser().getUid());
+        weightRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                int weeklyCal = 0;
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    Logs log = ds.getValue(Logs.class);
+                    weeklyCal += log.getCalories();
+                }
+                double supposedCal = 12250;
+                double excessCal = supposedCal - weeklyCal;
+                double weightChange = excessCal/8;
+                double changeInG = weightChange / 1000;
+                double newWeight = userWeight - changeInG;
+                Log.d("New weight: ", ""+ newWeight);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d("The read failed: ", "" + databaseError.getCode());
+            }
+        });
 
     }
+
 
 //    public void PlotChart()
 //    {
@@ -363,11 +415,12 @@ public class ProgressFragment extends Fragment {
 
 
     public void callData() {
-        ref = database.getInstance().getReference("ZLogs").child(mAuth.getInstance().getCurrentUser().getUid());
-        ref.addValueEventListener(new ValueEventListener() {
+        totalCal = 0;
+        weightRef = database.getInstance().getReference("ZLogs").child(mAuth.getInstance().getCurrentUser().getUid());
+        weightRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot ds:  dataSnapshot.getChildren()) {
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     Logs log = ds.getValue(Logs.class);
                     if (log.day.equals(String.valueOf(dayInNo))) {// MUST GET CURRENT DAY {
                         totalCal += log.getCalories();
@@ -375,6 +428,7 @@ public class ProgressFragment extends Fragment {
                 }
                 tvCal.setText("" + totalCal);
             }
+
 
             @Override
             public void onCancelled(DatabaseError databaseError) {

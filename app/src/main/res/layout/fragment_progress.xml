@@ -66,6 +66,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/countdown"
         app:layout_constraintTop_toBottomOf="@+id/tvDate" />
 
     <TextView
@@ -123,6 +124,4 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView29" />
-
-
 </android.support.constraint.ConstraintLayout>
