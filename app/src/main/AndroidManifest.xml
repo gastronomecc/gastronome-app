@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kevintoh0305gmail.gastronome">
-<<<<<<< HEAD
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -47,8 +46,6 @@
         <activity android:name=".storyboard1" />
         <activity android:name=".onboarding2"></activity>
     </application>
-
-=======
   <uses-permission android:name="android.permission.INTERNET"/>
   <application
       android:allowBackup="true"
@@ -81,5 +78,4 @@
     <activity android:name=".RecipeInfoActivity" />
     <activity android:name=".WeekyLog" />
   </application>
->>>>>>> a2dce941fcd07712716854efa054c2b4bb4ab055
 </manifest>
