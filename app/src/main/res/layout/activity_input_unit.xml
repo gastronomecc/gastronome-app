@@ -4,30 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InputHeight">
+    tools:context=".InputUnit">
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout4"
-        android:layout_width="0dp"
+        android:id="@+id/constraintLayoutUnit"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
         <Button
-            android:id="@+id/btnHeightBack"
+            android:id="@+id/btnUnitBack"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
+            android:background="@drawable/black_arrow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:background="@drawable/black_arrow"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/textViewUnit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -35,7 +34,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/cerebri_sans_regular"
-            android:text="Step 5 of 6"
+            android:text="Step 4 of 6"
             android:textColor="#000000"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -43,7 +42,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
         <View
-            android:layout_width="340dp"
+            android:layout_width="260dp"
             android:layout_height="3dp"
             android:background="#0AC4BA"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -51,62 +50,57 @@
     </android.support.constraint.ConstraintLayout>
 
     <TextView
-        android:id="@+id/tvPromptHeight"
+        android:id="@+id/tvPromptUnit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="70dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="@font/cerebri_sans_bold"
-        android:text="@string/promptHeight"
+        android:text="@string/promptUnit"
         android:textColor="#323643"
         android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/constraintLayout4"
-        app:layout_constraintStart_toStartOf="@+id/constraintLayout4"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutUnit" />
 
     <LinearLayout
-        android:id="@+id/linearLayout3"
+        android:id="@+id/linearLayoutUnit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/tvPromptHeight"
-        app:layout_constraintStart_toStartOf="@+id/tvPromptHeight"
-        app:layout_constraintTop_toBottomOf="@+id/tvPromptHeight">
-
-        <EditText
-            android:id="@+id/etHeight"
-            android:layout_width="130dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvPromptUnit"
+        app:layout_constraintStart_toStartOf="@+id/tvPromptUnit"
+        app:layout_constraintTop_toBottomOf="@+id/tvPromptUnit">
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/unitGroup"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:ems="10"
-            android:fontFamily="@font/cerebri_sans_regular"
-            android:hint="Eg: 160 "
-            android:inputType="numberDecimal"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="36sp"
-            app:layout_constraintStart_toStartOf="@+id/tvPromptHeight"
-            app:layout_constraintTop_toBottomOf="@+id/tvPromptHeight" />
-
-        <TextView
-            android:id="@+id/tvHeightUnit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/cerebri_sans_bold"
-            android:text="CM"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/etHeight"
-            app:layout_constraintEnd_toEndOf="@+id/tvPromptHeight"
-            app:layout_constraintStart_toEndOf="@+id/etHeight"
-            app:layout_constraintTop_toTopOf="@+id/etHeight" />
-
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/radioMetric"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Metric"
+                android:textSize="20sp"
+                android:checked="true"
+                />
+            <RadioButton
+                android:id="@+id/radioImperial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
+                android:text="Imperial" />
+        </RadioGroup>
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnHeightNext"
+        android:id="@+id/btnUnitNext"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="8dp"
@@ -114,19 +108,21 @@
         android:layout_marginEnd="64dp"
         android:background="@drawable/next_button_active"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout3"
-        app:layout_constraintTop_toBottomOf="@+id/tvHeightError" />
+        app:layout_constraintStart_toEndOf="@+id/linearLayoutUnit"
+        app:layout_constraintTop_toBottomOf="@+id/tvUnitError" />
 
     <TextView
-        android:id="@+id/tvHeightError"
+        android:id="@+id/tvUnitError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="29dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="5dp"
         android:fontFamily="@font/cerebri_sans_regular"
         android:textColor="#FF0000"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout3"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+        app:layout_constraintEnd_toEndOf="@+id/linearLayoutUnit"
+        app:layout_constraintStart_toStartOf="@+id/linearLayoutUnit"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutUnit" />
+
 
 </android.support.constraint.ConstraintLayout>

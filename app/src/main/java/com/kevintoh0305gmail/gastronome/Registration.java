@@ -57,7 +57,7 @@ public class Registration extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             // Unit will be kg for now
-                            User newUser = new User(FirebaseAuth.getInstance().getCurrentUser().getUid(), user_name, user_email, HelloPage.profile.getGoal(), HelloPage.profile.getGender(), "imperial", HelloPage.profile.getAge(), HelloPage.profile.getHeight(), HelloPage.profile.getWeight(), calculateBMI(HelloPage.profile.getHeight(), HelloPage.profile.getWeight()));
+                            User newUser = new User(FirebaseAuth.getInstance().getCurrentUser().getUid(), user_name, user_email, HelloPage.profile.getGoal(), HelloPage.profile.getGender(), HelloPage.profile.getUnit(), HelloPage.profile.getAge(), HelloPage.profile.getHeight(), HelloPage.profile.getWeight(), calculateBMI(HelloPage.profile.getHeight(), HelloPage.profile.getWeight()));
                             firebaseDatabase.getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(newUser);
                             mAuth.signOut();
                             Intent in = new Intent(Registration.this, Login.class);
