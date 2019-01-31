@@ -26,7 +26,7 @@ public class HelloPage extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(HelloPage.this, Login.class);
+                Intent in = new Intent(HelloPage.this, ChooseLoginRegister.class);
                 //Clear activity stack
                 in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(in);

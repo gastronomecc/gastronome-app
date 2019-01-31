@@ -70,7 +70,7 @@
         android:id="@+id/btnGenderFemale"
         android:layout_width="145dp"
         android:layout_height="0dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="40dp"
         android:background="@drawable/btn_gender_female"
         app:layout_constraintBottom_toBottomOf="@+id/btnGenderMale"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,8 +82,8 @@
         android:id="@+id/btnGenderMale"
         android:layout_width="145dp"
         android:layout_height="160dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="60dp"
         android:background="@drawable/btn_gender_male"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPromptGender" />
