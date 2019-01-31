@@ -26,19 +26,19 @@ public class Home extends AppCompatActivity {
                 public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                     Fragment selectedFragment = null;
                     switch(menuItem.getItemId()){
-                        case R.id.nav_today:
+                        case R.id.nav_menu:
                             selectedFragment = new MenuFragment();
                             break;
-                        case R.id.nav_feed:
+                        case R.id.nav_home:
                             selectedFragment = new FeedFragment();
                             break;
-                        case R.id.nav_add:
+                        case R.id.nav_favourites:
                             selectedFragment = new FavouritesFragment();
                             break;
-                        case R.id.nav_profile:
+                        case R.id.nav_settings:
                             selectedFragment = new ProfileFragment();
                             break;
-                        case R.id.nav_progress:
+                        case R.id.nav_track:
                             selectedFragment = new ProgressFragment();
                             //selectedFragment = new StatisticsFragment();
                             break;

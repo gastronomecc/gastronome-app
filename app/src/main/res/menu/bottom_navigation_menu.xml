@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/nav_today"
-        android:icon="@drawable/event"
-        android:title="Today" />
-    <item android:id="@+id/nav_feed"
-        android:icon="@drawable/whisk"
-        android:title="Feed" />
-    <item android:id="@+id/nav_add"
-        android:icon="@drawable/add_icon"
-        android:title="Add" />
-    <item android:id="@+id/nav_progress"
-        android:icon="@drawable/statistics"
-        android:title="Progress" />
-    <item android:id="@+id/nav_profile"
-        android:icon="@drawable/profile"
-        android:title="Profile" />
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/active_home"
+        android:title="Home" />
+    <item
+        android:id="@+id/nav_menu"
+        android:icon="@drawable/active_fav"
+        android:title="Menu" />
+    <item
+        android:id="@+id/nav_favourites"
+        android:icon="@drawable/active_fav"
+        android:title="Favourites" />
+    <item
+        android:id="@+id/nav_track"
+        android:icon="@drawable/active_track"
+        android:title="Track" />
+    <item
+        android:id="@+id/nav_settings"
+        android:icon="@drawable/active_set"
+        android:title="Settings" />
 </menu>
