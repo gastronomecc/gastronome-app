@@ -13,7 +13,7 @@ import android.widget.TextView;
 public class InputWeight extends AppCompatActivity {
     EditText txtWeight;
     Button btnBack, btnNext;
-    TextView tvError;
+    TextView tvError, tvUnit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +21,16 @@ public class InputWeight extends AppCompatActivity {
         setContentView(R.layout.activity_input_weight);
         txtWeight = findViewById(R.id.etWeight);
         tvError = findViewById(R.id.tvWeightError);
+        tvUnit = findViewById(R.id.tvWeightUnit);
         btnBack = findViewById(R.id.btnWeightBack);
         btnNext = findViewById(R.id.btnWeightNext);
+
+        // Sets unit to lbs if user's unit is lbs
+        if(HelloPage.profile.getUnit().equals("imperial"))
+        {
+            tvUnit.setText("lbs");
+        }
+
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,7 +42,11 @@ public class InputWeight extends AppCompatActivity {
             public void onClick(View view) {
                 if(isWeightValid())
                 {
-                    HelloPage.profile.setWeight(Double.parseDouble(txtWeight.getText().toString()));
+                    //Converts to kg if unit entered is pounds
+                    if(tvUnit.getText().equals("lbs"))
+                        HelloPage.profile.setWeight(Double.parseDouble(txtWeight.getText().toString()) / 2.20462);
+                    else
+                        HelloPage.profile.setWeight(Double.parseDouble(txtWeight.getText().toString()));
                     startActivity(new Intent(InputWeight.this, ContinueToSignUp.class));
                 }
             }

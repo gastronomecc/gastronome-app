@@ -130,8 +130,10 @@ public class WeekyLog extends AppCompatActivity {
                 double userWeight = 60;
                 double newWeight = userWeight - changeInG;
                 Log.d("New Weight: " , "" + df2.format(newWeight));
-
-                tvEstWeight.setText("Estimated Weight after the week: " + df2.format(newWeight) + "kg");
+                if(HelloPage.profile.getUnit().equals("imperial"))
+                    tvEstWeight.setText("Estimated Weight after the week: " + df2.format(newWeight / 2.20462) + "lbs");
+                else
+                    tvEstWeight.setText("Estimated Weight after the week: " + df2.format(newWeight) + "kg");
 
 
 
