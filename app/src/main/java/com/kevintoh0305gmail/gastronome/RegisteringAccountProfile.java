@@ -6,6 +6,11 @@ public class RegisteringAccountProfile {
     private static double height;
     private static double weight;
     private static String goal;
+    private static String unit;
+
+    public static String getUnit() { return unit; }
+
+    public static void setUnit(String unit) { RegisteringAccountProfile.unit = unit; }
 
     public static String getGender() {
         return gender;

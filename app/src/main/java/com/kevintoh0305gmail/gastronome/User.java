@@ -6,6 +6,7 @@ public class User {
     private String Email;
     private String Gender;
     private String Goal;
+    private String Unit;
     private int Age;
     private double Height;
     private double Weight;
@@ -18,6 +19,10 @@ public class User {
     public void setUserID(String userID) {
         UserID = userID;
     }
+
+    public String getUnit() { return Unit; }
+
+    public void setUnit(String unit) { Unit = unit; }
 
     public String getName() {
         return Name;
@@ -88,12 +93,13 @@ public class User {
 
     }
 
-    public User(String uid, String name, String email, String goal, String gender, int age, double height, double weight, double bmi) {
+    public User(String uid, String name, String email, String goal, String gender, String unit, int age, double height, double weight, double bmi) {
         UserID = uid;
         Name = name;
         Email = email;
         Gender = gender;
         Goal = goal;
+        Unit = unit;
         Age = age;
         Height = height;
         Weight = weight;
