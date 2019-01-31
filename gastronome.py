@@ -34,10 +34,8 @@ def sendmail():
             <body>
                 <p>Dear Valued Customer,<br>
                     Did you know that we have a Gastronome website too?<br>
-                    <a href="https://gastronomecc.github.io/gastronome-site/index">
+                    <a href="https://gastronomecc.github.io/gastronome-site/index"><b><i>Click to get started with Gastronome Web!</i></b></a>
                      <img width="500" height ="150" src="https://gastronomecc.github.io/gastronome-site/assets/images/background.png"/>
-                     </a>
-                     (click on the image above to learn more!)
                 </p>
             </body>
         </html>
@@ -376,7 +374,7 @@ def UpdateDatabase():
      "3":"Spread the granola mixture over a baking sheet, leaving as many clusters as you want, and bake for 8 minutes. Remove from oven, stir, and bake for another 8 minutes, or until lightly golden.",
      "4":"Let cool completely before adding chocolate chips and transferring to a storage container. The granola will still be slightly soft when it comes out of the oven, but it will harden up as it sits at room temperature and cools."},
      "prepTime":10, "readyTime":16, "servSize":2, "shortDesc":"Crunchy, chewy, nutty, and sweet. This vanilla almond butter protein granola makes a nutritious and delicious breakfast or snack!",
-     "title": "Vanilla Almond Butter Protein Granola", "type": "Gain Muscles", "fats":"4g","carbs":"27g","sugar":"0g","salt":"0g","protein":"6g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/Almond-Butter-Protein-Granola6.jpg?alt=media&token=2cf8898f-7ff9-49a6-9b43-c621e1f671fe"})
+     "title": "Vanilla Almond Butter Protein Granola", "type": "Gain Muscles", "fats":"4g","carbs":"27g","sugar":"0g","salt":"0g","protein":"6g","imageURL":"https://firebasestorage.googleapis.com/v0/b/p2fsdgastro.appspot.com/o/Almond-Butter-Protein-Granola.jpg?alt=media&token=2f71c48c-8e97-4032-a09b-9475617fd260"})
 
 
     print("Database sucessfully updated!\n")
