@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".InputHeight">
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -16,15 +16,15 @@
 
         <Button
             android:id="@+id/btnHeightBack"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/black_arrow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:background="@drawable/black_arrow"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView11"
@@ -37,7 +37,7 @@
             android:fontFamily="@font/avenir_roman"
             android:text="Step 4 of 5"
             android:textColor="#03312E"
-            android:textSize="20sp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,21 +49,41 @@
             android:background="#05BDBD"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"></View>
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/tvPromptHeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="60dp"
         android:fontFamily="@font/avenir_black"
         android:text="@string/promptHeight"
         android:textColor="#323643"
-        android:textSize="28sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/constraintLayout4"
         app:layout_constraintStart_toStartOf="@+id/constraintLayout4"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
+
+    <ImageView
+        android:id="@+id/InputHeightSparkle1"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPromptHeight"
+        app:layout_constraintEnd_toStartOf="@+id/tvPromptHeight"
+        app:srcCompat="@drawable/sparkle" />
+
+    <ImageView
+        android:id="@+id/InputHeightSparkle2"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:scaleType="center"
+        app:layout_constraintStart_toEndOf="@+id/tvPromptHeight"
+        app:layout_constraintTop_toBottomOf="@+id/tvPromptHeight"
+        app:srcCompat="@drawable/sparkle" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -77,16 +97,16 @@
 
         <EditText
             android:id="@+id/etHeight"
-            android:layout_width="130dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:ems="10"
-            android:fontFamily="@font/avenir_medium"
+            android:fontFamily="@font/avenir_roman"
             android:hint="Eg: 160 "
             android:inputType="numberDecimal"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="36sp"
+            android:textSize="42sp"
             app:layout_constraintStart_toStartOf="@+id/tvPromptHeight"
             app:layout_constraintTop_toBottomOf="@+id/tvPromptHeight" />
 
@@ -131,4 +151,4 @@
         app:layout_constraintStart_toStartOf="@+id/linearLayout3"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

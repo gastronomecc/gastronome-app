@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,7 +31,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    </android.support.constraint.ConstraintLayout>
+        <ImageButton
+            android:id="@+id/btnSearchRecipes"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/search_icon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <View
         android:id="@+id/viewLine"
         android:layout_width="match_parent"
@@ -41,7 +54,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tabs" />
 
-    <android.support.design.widget.TabLayout
+    <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
         style="@style/CustomViewAllTab"
         android:layout_width="match_parent"
@@ -51,20 +64,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         app:tabIndicatorColor="#0AC4BA"
-        app:tabTextColor="#000000">
+        app:tabTextColor="#03312E">
 
-        <android.support.design.widget.TabItem
+        <com.google.android.material.tabs.TabItem
+            style="@style/CustomTabTextAppearance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Home"
-            android:fontFamily="@font/avenir_black"/>
+            android:fontFamily="@font/avenir_black"
+            android:text="Home" />
 
-        <android.support.design.widget.TabItem
+        <com.google.android.material.tabs.TabItem
+            style="@style/CustomTabTextAppearance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Popular"
-            android:fontFamily="@font/avenir_black"/>
-    </android.support.design.widget.TabLayout>
+            android:fontFamily="@font/avenir_black"
+            android:text="Popular" />
+    </com.google.android.material.tabs.TabLayout>
 
     <View
         android:id="@+id/viewLine2"
@@ -76,7 +91,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tabs" />
 
-    <android.support.v4.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -86,4 +101,4 @@
         app:layout_constraintTop_toTopOf="@+id/viewLine2" />
 
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,11 +1,12 @@
 package com.kevintoh0305gmail.gastronome;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import com.google.android.material.tabs.TabLayout;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,8 +16,8 @@ import android.widget.ImageButton;
 public class FeedFragment extends Fragment {
     TabLayout tabLayout;
     ViewPager viewPager;
+    ImageButton btnSearchRecipes;
     PagerAdapter pagerAdapter;
-    ImageButton imageButton;
 
     @Nullable
     @Override
@@ -29,10 +30,18 @@ public class FeedFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         tabLayout = view.findViewById(R.id.tabs);
         viewPager = view.findViewById(R.id.viewPager);
+        btnSearchRecipes = view.findViewById(R.id.btnSearchRecipes);
         pagerAdapter = new PagerAdapter(getChildFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(pagerAdapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(tabListener);
+
+        btnSearchRecipes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), SearchRecipeActivity.class));
+            }
+        });
     }
     private TabLayout.OnTabSelectedListener tabListener = new TabLayout.OnTabSelectedListener(){
         @Override

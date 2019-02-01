@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".InputAge">
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/btnAgeBack"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/black_arrow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,33 +34,56 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:fontFamily="@font/cerebri_sans_regular"
+            android:fontFamily="@font/avenir_roman"
             android:text="Step 3 of 5"
             android:textColor="#000000"
-            android:textSize="20sp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
         <View
             android:layout_width="255dp"
             android:layout_height="3dp"
-            android:background="#0AC4BA"
+            android:background="#05BDBD"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"></View>
-    </android.support.constraint.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/InputAgeSparkle1"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPromptAge"
+        app:layout_constraintEnd_toStartOf="@+id/tvPromptAge"
+        app:srcCompat="@drawable/sparkle" />
+
+    <ImageView
+        android:id="@+id/InputAgeSparkle2"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:scaleType="center"
+        app:layout_constraintBottom_toTopOf="@+id/etAge"
+        app:layout_constraintStart_toEndOf="@+id/tvPromptAge"
+        app:layout_constraintTop_toBottomOf="@+id/tvPromptAge"
+        app:srcCompat="@drawable/sparkle" />
 
     <TextView
         android:id="@+id/tvPromptAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="8dp"
-        android:fontFamily="@font/cerebri_sans_regular"
+        android:fontFamily="@font/avenir_black"
         android:text="@string/promptAge"
         android:textColor="#323643"
-        android:textSize="28sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,11 +98,11 @@
         android:layout_marginEnd="16dp"
         android:background="@android:color/transparent"
         android:ems="10"
-        android:fontFamily="@font/cerebri_sans_regular"
+        android:fontFamily="@font/avenir_roman"
         android:hint="Eg: 18"
         android:inputType="number"
         android:textAlignment="center"
-        android:textSize="36sp"
+        android:textSize="42sp"
         app:layout_constraintEnd_toEndOf="@+id/tvPromptAge"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tvPromptAge"
@@ -101,11 +127,10 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="64dp"
         android:background="@drawable/next_button_active"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/etAge"
         app:layout_constraintTop_toBottomOf="@+id/tvAgeError" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
