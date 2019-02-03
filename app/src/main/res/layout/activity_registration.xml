@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,10 +9,10 @@
 
     <Button
         android:id="@+id/btnRegisterBack"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/black_arrow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,12 +22,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="130dp"
         android:layout_marginEnd="48dp"
+        android:fontFamily="@font/avenir_black"
         android:text="@string/registrationTitle"
         android:textAlignment="viewStart"
         android:textColor="#323643"
-        android:textSize="24sp"
+        android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,8 +38,8 @@
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/cerebri_sans_bold"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/avenir_medium"
         android:text="Full Name"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/textView"
@@ -49,6 +50,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:fontFamily="@font/avenir_roman"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
@@ -59,6 +61,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:fontFamily="@font/avenir_roman"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="@+id/etRegistrationName"
         app:layout_constraintStart_toStartOf="@+id/etRegistrationName"
@@ -69,6 +72,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:fontFamily="@font/avenir_roman"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="@+id/etRegistrationEmail"
         app:layout_constraintStart_toStartOf="@+id/etRegistrationEmail"
@@ -79,6 +83,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:fontFamily="@font/avenir_roman"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="@+id/etRegistrationPW"
         app:layout_constraintStart_toStartOf="@+id/textView20"
@@ -90,6 +95,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:background="@drawable/signupbutton"
+        android:fontFamily="@font/avenir_black"
         android:text="@string/registrationRegisterButton"
         android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="@+id/etRegistrationCfmPW"
@@ -101,9 +107,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/avenir_medium"
         android:text="@string/registrationEmail"
         android:textSize="16sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/etRegistrationName"
         app:layout_constraintTop_toBottomOf="@+id/etRegistrationName" />
 
@@ -112,9 +118,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/avenir_medium"
         android:text="@string/registrationPassword"
         android:textSize="16sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/etRegistrationEmail"
         app:layout_constraintTop_toBottomOf="@+id/etRegistrationEmail" />
 
@@ -123,9 +129,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/avenir_medium"
         android:text="@string/registrationConfirmPassword"
         android:textSize="16sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/etRegistrationPW"
         app:layout_constraintTop_toBottomOf="@+id/etRegistrationPW" />
 
@@ -144,9 +150,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:fontFamily="@font/cerebri_sans_regular"
+            android:fontFamily="@font/avenir_roman"
             android:text="@string/alreadyhaveaccount1"
-            android:textColor="#000000"
+            android:textColor="#737373"
             android:textSize="16sp" />
 
         <TextView
@@ -154,7 +160,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:fontFamily="@font/cerebri_sans_bold"
+            android:fontFamily="@font/avenir_black"
             android:text="@string/alreadyhaveaccount2"
             android:textColor="#037171"
             android:textSize="16sp"
@@ -162,4 +168,4 @@
     </LinearLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

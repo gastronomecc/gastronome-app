@@ -1,63 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kevintoh0305gmail.gastronome">
-  <uses-permission android:name="android.permission.INTERNET"/>
-  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-  <application
-      android:allowBackup="true"
-      android:icon="@mipmap/ic_launcher"
-      android:label="@string/app_name"
-      android:roundIcon="@mipmap/ic_launcher_round"
-      android:supportsRtl="true"
-      android:theme="@style/AppTheme">
-    <meta-data
-        android:name="preloaded_fonts"
-        android:resource="@array/preloaded_fonts" />
-    <activity android:name=".ChooseLoginRegister">
-      <intent-filter>
-        <action android:name="android.intent.action.VIEW" />
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
-    </activity>
-    <activity android:name=".Login"
-        android:configChanges="orientation"
-        android:screenOrientation="portrait"></activity>
-    <activity android:name=".HelloPage"
-        android:configChanges="orientation"
-        android:screenOrientation="portrait"/>
-    <activity android:name=".Registration"
-        android:configChanges="orientation"
-        android:screenOrientation="portrait"/>
-    <activity android:name=".Home"
-        android:configChanges="orientation"
-        android:screenOrientation="portrait"/>
-    <activity android:name=".GenderSelection"
-        android:configChanges="orientation"
-        android:screenOrientation="portrait"/>
-    <activity android:name=".InputAge"
-        android:configChanges="orientation"
-        android:screenOrientation="portrait"/>
-    <activity android:name=".InputWeight"
-        android:configChanges="orientation"
-        android:screenOrientation="portrait"/>
-    <activity android:name=".InputHeight"
-        android:configChanges="orientation"
-        android:screenOrientation="portrait"/>
-    <activity android:name=".ChooseGoal"
-        android:configChanges="orientation"
-        android:screenOrientation="portrait"/>
-    <activity android:name=".ContinueToSignUp"
-        android:configChanges="orientation"
-        android:screenOrientation="portrait"/>
-    <activity android:name=".RecipeActivity"
-        android:configChanges="orientation"
-        android:screenOrientation="portrait"/>
-    <activity android:name=".RecipeInfoActivity"
-        android:configChanges="orientation"
-        android:screenOrientation="portrait"/>
-    <activity android:name=".WeekyLog"
-        android:configChanges="orientation"
-        android:screenOrientation="portrait"/>
-  </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <activity android:name=".ChooseLoginRegister">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Login"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HelloPage"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Registration"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Home"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".GenderSelection"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InputAge"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InputWeight"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InputHeight"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ChooseGoal"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ContinueToSignUp"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RecipeActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RecipeInfoActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WeekyLog"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SearchRecipeActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+    </application>
+
 </manifest>

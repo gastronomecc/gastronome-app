@@ -1,7 +1,7 @@
 package com.kevintoh0305gmail.gastronome;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -22,6 +22,7 @@ public class InputHeight extends AppCompatActivity {
         tvError = findViewById(R.id.tvHeightError);
         btnBack = findViewById(R.id.btnHeightBack);
         btnNext = findViewById(R.id.btnHeightNext);
+        btnNext.setBackground(btnNext.getContext().getResources().getDrawable(R.drawable.next_button_inactive));
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,9 +10,10 @@
         android:id="@+id/tvHelloPageText1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="280dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginEnd="60dp"
+        android:fontFamily="@font/avenir_black"
         android:text="@string/hellopagetext1"
         android:textColor="#323643"
         android:textSize="30sp"
@@ -28,7 +29,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/cerebri_sans_regular"
+        android:fontFamily="@font/avenir_medium"
         android:text="@string/hellopagetext2"
         android:textAlignment="viewStart"
         android:textColor="#323643"
@@ -41,19 +42,21 @@
         android:id="@+id/btnNext"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#0AC4BA"
+        android:background="#2D8989"
+        android:fontFamily="@font/avenir_black"
         android:text="NEXT"
         android:textColor="#FFFFFF"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnHelloBack"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/black_arrow"
         app:layout_constraintEnd_toStartOf="@+id/tvHelloPageText1"
@@ -61,23 +64,25 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="70dp"
-        android:layout_height="90dp"
-        android:layout_marginBottom="16dp"
+        android:id="@+id/HelloPageSparkle1"
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="center"
         app:layout_constraintBottom_toTopOf="@+id/tvHelloPageText2"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/sparkle" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="70dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="64dp"
+        android:id="@+id/HelloPageSparkle2"
+        android:layout_width="80dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="80dp"
+        android:scaleType="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvHelloPageText2"
-        app:layout_constraintTop_toBottomOf="@+id/tvHelloPageText1"
+        app:layout_constraintTop_toBottomOf="@+id/tvHelloPageText2"
         app:srcCompat="@drawable/sparkle" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

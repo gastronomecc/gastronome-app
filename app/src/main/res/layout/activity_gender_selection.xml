@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/genderTopBar"
@@ -8,18 +8,21 @@
     tools:context=".GenderSelection"
     tools:layout_editor_absoluteY="25dp">
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/btnGenderBack"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/black_arrow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -33,10 +36,10 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:fontFamily="@font/cerebri_sans_regular"
+            android:fontFamily="@font/avenir_roman"
             android:text="Step 2 of 5"
             android:textColor="#000000"
-            android:textSize="20sp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,10 +48,10 @@
         <View
             android:layout_width="170dp"
             android:layout_height="3dp"
-            android:background="#0AC4BA"
+            android:background="#05BDBD"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"></View>
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/tvPromptGender"
@@ -57,7 +60,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="8dp"
-        android:fontFamily="@font/cerebri_sans_bold"
+        android:fontFamily="@font/avenir_black"
         android:text="@string/genderSelectPrompt"
         android:textColor="#323643"
         android:textSize="24sp"
@@ -66,12 +69,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
 
+    <ImageView
+        android:id="@+id/GenderSelectionSparkle1"
+        android:layout_width="40dp"
+        android:layout_height="60dp"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPromptGender"
+        app:layout_constraintEnd_toStartOf="@+id/tvPromptGender"
+        app:srcCompat="@drawable/sparkle" />
+
+    <ImageView
+        android:id="@+id/GenderSelectionSparkle2"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="center"
+        app:layout_constraintBottom_toTopOf="@+id/btnGenderMale"
+        app:layout_constraintStart_toEndOf="@+id/tvPromptGender"
+        app:layout_constraintTop_toBottomOf="@+id/tvPromptGender"
+        app:srcCompat="@drawable/sparkle" />
+
     <Button
         android:id="@+id/btnGenderFemale"
         android:layout_width="145dp"
         android:layout_height="0dp"
-        android:layout_marginStart="40dp"
-        android:background="@drawable/btn_gender_female"
+        android:layout_marginStart="60dp"
+        android:background="@drawable/female"
         app:layout_constraintBottom_toBottomOf="@+id/btnGenderMale"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btnGenderMale"
@@ -81,11 +105,13 @@
     <Button
         android:id="@+id/btnGenderMale"
         android:layout_width="145dp"
-        android:layout_height="160dp"
-        android:layout_marginEnd="40dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
-        android:background="@drawable/btn_gender_male"
+        android:layout_marginEnd="60dp"
+        android:background="@drawable/male"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnGenderFemale"
         app:layout_constraintTop_toBottomOf="@+id/tvPromptGender" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
