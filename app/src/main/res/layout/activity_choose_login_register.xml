@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1">
@@ -29,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/cerebri_sans_regular"
+                android:fontFamily="@font/avenir_roman"
                 android:text="Eat "
                 android:textAlignment="textEnd"
                 android:textColor="#000000"
@@ -40,9 +40,9 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.066" />
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1">
@@ -60,7 +60,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/cerebri_sans_bold"
+                android:fontFamily="@font/avenir_black"
                 android:text="healthy."
                 android:textAlignment="viewStart"
                 android:textColor="#000000"
@@ -72,7 +72,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0" />
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 
@@ -82,7 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:fontFamily="@font/cerebri_sans_bold"
+        android:fontFamily="@font/avenir_black"
         android:text="Gastronome."
         android:textColor="#037171"
         android:textSize="36sp"
@@ -95,11 +95,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:fontFamily="@font/cerebri_sans_regular"
+        android:fontFamily="@font/avenir_roman"
         android:text="Eat Well. Live Well."
-        android:textColor="#000000"
+        android:textColor="#03312E"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -114,7 +114,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="4dp"
         android:background="@drawable/signupbutton"
-        android:fontFamily="@font/cerebri_sans_bold"
+        android:fontFamily="@font/avenir_black"
         android:text="SIGN UP"
         android:textColor="#ffffff"
         android:textSize="16sp"
@@ -128,7 +128,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="11dp"
         android:background="@drawable/loginbutton"
-        android:fontFamily="@font/cerebri_sans_bold"
+        android:fontFamily="@font/avenir_black"
         android:text="LOGIN"
         android:textColor="#03312E"
         android:textSize="16sp"
@@ -143,8 +143,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:fontFamily="@font/cerebri_sans_regular"
+        android:fontFamily="@font/avenir_roman"
         android:text="Terms of Service"
+        android:textColor="#737373"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout7"
         app:layout_constraintStart_toStartOf="@+id/linearLayout7"
@@ -191,4 +192,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/sparkle" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

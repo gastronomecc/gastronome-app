@@ -1,7 +1,7 @@
 package com.kevintoh0305gmail.gastronome;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -24,7 +24,7 @@ public class InputWeight extends AppCompatActivity {
         tvUnit = findViewById(R.id.tvWeightUnit);
         btnBack = findViewById(R.id.btnWeightBack);
         btnNext = findViewById(R.id.btnWeightNext);
-
+        btnNext.setBackground(btnNext.getContext().getResources().getDrawable(R.drawable.next_button_inactive));
         // Sets unit to lbs if user's unit is lbs
         if(HelloPage.profile.getUnit().equals("imperial"))
         {

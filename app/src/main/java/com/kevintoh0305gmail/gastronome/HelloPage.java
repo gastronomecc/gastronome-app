@@ -1,12 +1,11 @@
 package com.kevintoh0305gmail.gastronome;
 
 import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class HelloPage extends AppCompatActivity {
     static RegisteringAccountProfile profile;
@@ -26,7 +25,7 @@ public class HelloPage extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(HelloPage.this, Login.class);
+                Intent in = new Intent(HelloPage.this, ChooseLoginRegister.class);
                 //Clear activity stack
                 in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(in);
