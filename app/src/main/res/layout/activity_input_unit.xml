@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".InputUnit">
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayoutUnit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,11 +15,11 @@
         app:layout_constraintTop_toTopOf="parent">
         <Button
             android:id="@+id/btnUnitBack"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/black_arrow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -33,9 +33,9 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:fontFamily="@font/cerebri_sans_regular"
+            android:fontFamily="@font/avenir_roman"
             android:text="Step 4 of 6"
-            android:textColor="#000000"
+            android:textColor="#03312E"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,28 +44,46 @@
         <View
             android:layout_width="260dp"
             android:layout_height="3dp"
-            android:background="#0AC4BA"
+            android:background="#05BDBD"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"></View>
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/tvPromptUnit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="60dp"
         android:layout_marginHorizontal="10dp"
-        android:fontFamily="@font/cerebri_sans_bold"
+        android:fontFamily="@font/avenir_black"
         android:text="@string/promptUnit"
         android:textColor="#323643"
         android:textSize="28sp"
         android:textStyle="bold"
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayoutUnit"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayoutUnit"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayoutUnit" />
+
+    <ImageView
+        android:id="@+id/InputUnitSparkle1"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPromptUnit"
+        app:layout_constraintEnd_toStartOf="@+id/tvPromptUnit"
+        app:srcCompat="@drawable/sparkle" />
+
+    <ImageView
+        android:id="@+id/InputUnitSparkle2"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:scaleType="center"
+        app:layout_constraintStart_toEndOf="@+id/tvPromptUnit"
+        app:layout_constraintTop_toBottomOf="@+id/tvPromptUnit"
+        app:srcCompat="@drawable/sparkle" />
 
     <LinearLayout
         android:id="@+id/linearLayoutUnit"
@@ -80,11 +98,14 @@
             android:id="@+id/unitGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
             android:orientation="horizontal">
             <RadioButton
                 android:id="@+id/radioMetric"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/avenir_roman"
+                android:textColor="#000000"
                 android:layout_margin="10dp"
                 android:text="Metric"
                 android:textSize="20sp"
@@ -93,6 +114,8 @@
             <RadioButton
                 android:id="@+id/radioImperial"
                 android:layout_width="wrap_content"
+                android:fontFamily="@font/avenir_roman"
+                android:textColor="#000000"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:layout_margin="10dp"
@@ -116,14 +139,11 @@
         android:id="@+id/tvUnitError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginTop="29dp"
         android:fontFamily="@font/cerebri_sans_regular"
         android:textColor="#FF0000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/linearLayoutUnit"
         app:layout_constraintStart_toStartOf="@+id/linearLayoutUnit"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutUnit" />
-
-
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
