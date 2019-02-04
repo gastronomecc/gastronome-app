@@ -23,7 +23,7 @@ public class InputHeight extends AppCompatActivity {
         tvUnit = findViewById(R.id.tvHeightUnit);
         btnBack = findViewById(R.id.btnHeightBack);
         btnNext = findViewById(R.id.btnHeightNext);
-
+        btnNext.setBackground(btnNext.getContext().getResources().getDrawable(R.drawable.next_button_inactive));
         // Set unit to inch if imperial units are chosen
         if(HelloPage.profile.getUnit().equals("imperial"))
         {
