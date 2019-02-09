@@ -7,13 +7,13 @@
 
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/txtLoggingWeek"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:fontFamily="@font/cerebri_sans_bold"
+        android:fontFamily="@font/avenir_black"
         android:text="This Week"
         android:textColor="#48A888"
         android:textSize="16sp"
@@ -22,19 +22,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView31"
+        android:id="@+id/txtLoggingDateRange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
-        android:fontFamily="@font/cerebri_sans_regular"
+        android:fontFamily="@font/avenir_roman"
         android:text="11 Nov - 17 Nov"
         android:textColor="#737373"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+        app:layout_constraintTop_toBottomOf="@+id/txtLoggingWeek" />
 
     <Button
         android:id="@+id/btnDialogNext"
@@ -45,7 +45,7 @@
         android:background="@drawable/btn_dialog_next"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout7"
         app:layout_constraintEnd_toEndOf="@+id/constraintLayout7"
-        app:layout_constraintTop_toTopOf="@+id/textView21" />
+        app:layout_constraintTop_toTopOf="@+id/txtLoggingWeek" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout7"
@@ -54,7 +54,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView31">
+        app:layout_constraintTop_toBottomOf="@+id/txtLoggingDateRange">
 
         <Button
             android:id="@+id/btnMon"

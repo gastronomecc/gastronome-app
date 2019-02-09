@@ -233,6 +233,31 @@
             app:layout_constraintStart_toStartOf="@+id/tvCurrentWeightInput"
             app:layout_constraintTop_toTopOf="@+id/textView42" />
 
+        <TextView
+            android:id="@+id/tvSwipeUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="40dp"
+            android:fontFamily="@font/avenir_medium"
+            android:text="swipe up"
+            android:textAlignment="viewStart"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/textView8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgSwipeUpArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toTopOf="@+id/tvSwipeUp"
+            app:layout_constraintEnd_toEndOf="@+id/tvSwipeUp"
+            app:layout_constraintStart_toStartOf="@+id/tvSwipeUp"
+            app:srcCompat="@drawable/swipeup" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

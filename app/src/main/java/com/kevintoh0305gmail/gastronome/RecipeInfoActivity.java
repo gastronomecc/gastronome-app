@@ -18,12 +18,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Random;
 
 public class RecipeInfoActivity extends AppCompatActivity {
 
-    TextView tvTitle, tvShortDesc, tvServSize;
+    TextView tvTitle, tvShortDesc, tvServSize, tvLoggingDate, tvLoggingWeek;
     Button btnPrepTime, btnDifficulty, btnDietary, btnIngredients, btnSteps, btnNutrition, btnIncrease, btnDecrease;
     ImageButton imgBtnAdd;
     ImageView imgRecipeImage, btnFavourite;
@@ -207,6 +211,8 @@ public class RecipeInfoActivity extends AppCompatActivity {
     public void imgBtnAddClick() {
         LayoutInflater layoutInflater = LayoutInflater.from(getApplicationContext());
         final View view = layoutInflater.inflate(R.layout.logdialog, null);
+        tvLoggingDate = view.findViewById(R.id.txtLoggingDateRange);
+        tvLoggingWeek = view.findViewById(R.id.txtLoggingWeek);
         btnMon = view.findViewById(R.id.btnMon);
         btnTues = view.findViewById(R.id.btnTues);
         btnWed = view.findViewById(R.id.btnWed);
@@ -216,19 +222,28 @@ public class RecipeInfoActivity extends AppCompatActivity {
         btnSun = view.findViewById(R.id.btnSun);
         btnAddtoRecipe = view.findViewById(R.id.btnDialogAdd);
         btnCancel = view.findViewById(R.id.btnDialogCancel);
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DAY_OF_YEAR, (1 - Calendar.LONG));
+        Date firstDayOfWeek = calendar.getTime();
+        calendar = Calendar.getInstance();
+        calendar.add(Calendar.DAY_OF_YEAR, 7 - Calendar.LONG);
+        Date lastDayOfWeek = calendar.getTime();
+        DateFormat dateFormat = new SimpleDateFormat("dd MMM");
+        tvLoggingDate.setText(dateFormat.format(firstDayOfWeek)+" - "+dateFormat.format(lastDayOfWeek));
+
+
         btnSun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (sunSelect) {
                     sunSelect = false;
                     btnSun.setBackgroundResource(R.drawable.dialog_button_sun_inactive);
-                }
-                else {
+                } else {
                     sunSelect = true;
                     btnSun.setBackgroundResource(R.drawable.dialog_button_sun_active);
                 }
 
-                }
+            }
         });
         btnMon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -236,8 +251,7 @@ public class RecipeInfoActivity extends AppCompatActivity {
                 if (monSelect) {
                     monSelect = false;
                     btnMon.setBackgroundResource(R.drawable.dialog_button_mon_inactive);
-                }
-                else {
+                } else {
                     monSelect = true;
                     btnMon.setBackgroundResource(R.drawable.dialog_button_mon_active);
                 }
@@ -250,8 +264,7 @@ public class RecipeInfoActivity extends AppCompatActivity {
                 if (tuesSelect) {
                     tuesSelect = false;
                     btnTues.setBackgroundResource(R.drawable.dialog_button_tue_inactive);
-                }
-                else {
+                } else {
                     tuesSelect = true;
                     btnTues.setBackgroundResource(R.drawable.dialog_button_tue_active);
                 }
@@ -264,8 +277,7 @@ public class RecipeInfoActivity extends AppCompatActivity {
                 if (wedSelect) {
                     wedSelect = false;
                     btnWed.setBackgroundResource(R.drawable.dialog_button_wed_inactive);
-                }
-                else {
+                } else {
                     wedSelect = true;
                     btnWed.setBackgroundResource(R.drawable.dialog_button_wed_active);
                 }
@@ -278,8 +290,7 @@ public class RecipeInfoActivity extends AppCompatActivity {
                 if (thursSelect) {
                     thursSelect = false;
                     btnThurs.setBackgroundResource(R.drawable.dialog_button_thurs_inactive);
-                }
-                else {
+                } else {
                     thursSelect = true;
                     btnThurs.setBackgroundResource(R.drawable.dialog_button_thurs_active);
                 }
@@ -292,8 +303,7 @@ public class RecipeInfoActivity extends AppCompatActivity {
                 if (friSelect) {
                     friSelect = false;
                     btnFri.setBackgroundResource(R.drawable.dialog_button_fri_inactive);
-                }
-                else {
+                } else {
                     friSelect = true;
                     btnFri.setBackgroundResource(R.drawable.dialog_button_fri_active);
                 }
@@ -306,8 +316,7 @@ public class RecipeInfoActivity extends AppCompatActivity {
                 if (satSelect) {
                     satSelect = false;
                     btnSat.setBackgroundResource(R.drawable.dialog_button_sat_inactive);
-                }
-                else {
+                } else {
                     satSelect = true;
                     btnSat.setBackgroundResource(R.drawable.dialog_button_sat_active);
                 }
@@ -322,10 +331,8 @@ public class RecipeInfoActivity extends AppCompatActivity {
         dialog.show();
 
 
-
         //dialogBuilder.setCancelable(true)
-           //     .create().show();
-
+        //     .create().show();
 
 
         btnAddtoRecipe.setOnClickListener(new View.OnClickListener() {
@@ -347,14 +354,13 @@ public class RecipeInfoActivity extends AppCompatActivity {
                 if (sunSelect)
                     days.add("7");
                 Log.d("Tester", days.get(0));
-                for (String d : days)
-                {
+                for (String d : days) {
                     Random random = new Random();
                     int n = random.nextInt(900000000) + 999999;
                     Logs addLog;
                     int calories = selectedRecipe.getCalories();
                     addLog = new Logs(d, title, mAuth.getCurrentUser().getEmail(), calories);
-                    database.getReference().child("ZLogs").child(mAuth.getCurrentUser().getUid()).child(title+"-"+n).setValue(addLog);
+                    database.getReference().child("ZLogs").child(mAuth.getCurrentUser().getUid()).child(title + "-" + n).setValue(addLog);
 
                 }
                 dialog.cancel();
