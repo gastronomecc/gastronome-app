@@ -20,8 +20,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-import javax.xml.transform.Result;
-
 public class SearchRecipeActivity extends AppCompatActivity {
 
     EditText txtSearch;
