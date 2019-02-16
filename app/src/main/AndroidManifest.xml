@@ -77,5 +77,9 @@
             android:name=".SearchRecipeActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".InputUnit"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
     </application>
 </manifest>

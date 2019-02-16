@@ -59,7 +59,7 @@ public class ProgressFragment extends Fragment {
     String day;
     int dayInNo;
     double userWeight;
-    String goal;
+    String goal, userUnit;
 
     @Nullable
     @Override
@@ -123,11 +123,16 @@ public class ProgressFragment extends Fragment {
                     if (user.getEmail().equals(email))
                     {
                         userWeight =  user.getWeight();
+                        userUnit = user.getUnit();
                         goal = user.getGoal();
                     }
 
                 }
-                tvCurrent.setText(userWeight + "kg");
+                //Weight displayed here
+                if(userUnit.equals("metric"))
+                    tvCurrent.setText(userWeight + "kg");
+                else
+                    tvCurrent.setText((userWeight * 2.20462) + "lbs");
                 tvGoal.setText(goal);
             }
 
@@ -350,7 +355,11 @@ public class ProgressFragment extends Fragment {
                 double weightChange = excessCal/8;
                 double changeInG = weightChange / 1000;
                 double newWeight = userWeight - changeInG;
-                tvEstimated.setText(df2.format(newWeight) + "kg");
+                // Weight displayed here
+                if(userUnit.equals("metric"))
+                    tvEstimated.setText(df2.format(newWeight) + "kg");
+                else
+                    tvEstimated.setText(df2.format(newWeight * 2.20462) + "lbs");
                 Log.d("New weight: ", ""+ df2.format(newWeight));
             }
 
