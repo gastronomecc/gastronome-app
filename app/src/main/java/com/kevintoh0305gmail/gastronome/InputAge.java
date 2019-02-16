@@ -34,7 +34,7 @@ public class InputAge extends AppCompatActivity {
             public void onClick(View view) {
                 if(isAgeValid()) {
                     HelloPage.profile.setAge(Integer.parseInt(txtAge.getText().toString()));
-                    startActivity(new Intent(InputAge.this, InputHeight.class));
+                    startActivity(new Intent(InputAge.this, InputUnit.class));
                 }
             }
         });

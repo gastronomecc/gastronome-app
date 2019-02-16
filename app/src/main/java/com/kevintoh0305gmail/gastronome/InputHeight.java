@@ -13,27 +13,38 @@ import android.widget.TextView;
 public class InputHeight extends AppCompatActivity {
     EditText txtHeight;
     Button btnNext, btnBack;
-    TextView tvError;
+    TextView tvError, tvUnit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_height);
         txtHeight = findViewById(R.id.etHeight);
         tvError = findViewById(R.id.tvHeightError);
+        tvUnit = findViewById(R.id.tvHeightUnit);
         btnBack = findViewById(R.id.btnHeightBack);
         btnNext = findViewById(R.id.btnHeightNext);
         btnNext.setBackground(btnNext.getContext().getResources().getDrawable(R.drawable.next_button_inactive));
+        // Set unit to inch if imperial units are chosen
+        if(HelloPage.profile.getUnit().equals("imperial"))
+        {
+            tvUnit.setText("Inches");
+        }
+
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(InputHeight.this, InputAge.class));
+                startActivity(new Intent(InputHeight.this, InputUnit.class));
             }
         });
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(isHeightValid()) {
-                    HelloPage.profile.setHeight(Double.parseDouble(txtHeight.getText().toString()));
+                if (isHeightValid()) {
+                    //Converts to inches if imperial is chosen
+                    if (tvUnit.getText().equals("Inches"))
+                        HelloPage.profile.setHeight(Double.parseDouble(txtHeight.getText().toString()) * 2.54);
+                    else
+                        HelloPage.profile.setHeight(Double.parseDouble(txtHeight.getText().toString()));
                     startActivity(new Intent(InputHeight.this, InputWeight.class));
                 }
             }

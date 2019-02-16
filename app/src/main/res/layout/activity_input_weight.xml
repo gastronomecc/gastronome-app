@@ -35,7 +35,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/avenir_roman"
-            android:text="Step 5 of 5"
+            android:text="Step 6 of 6"
             android:textColor="#000000"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"

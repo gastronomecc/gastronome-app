@@ -30,6 +30,8 @@
     <string name="genderMale">Male</string>
     <!--Prompt Age Page-->
     <string name="promptAge">How old are you?</string>
+    <!--Prompt Unit Page-->
+    <string name="promptUnit">What\'s your preferred unit system?</string>
     <!--Prompt Height Page-->
     <string name="promptHeight">How tall are you?</string>
     <!--Prompt Weight Page-->
